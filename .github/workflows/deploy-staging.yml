@@ -1,0 +1,62 @@
+name: CI/CD APP - Staging
+on:
+  push:
+    branches: [staging]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ secrets.REGISTRY_USER }}
+          password: ${{ secrets.REGISTRY_TOKEN }}
+
+      - name: Build and push APP image (STAGING)
+        id: build
+        run: |
+          echo "${{ secrets.ENV_STAGING }}" > .env.staging
+
+          IMAGE=ghcr.io/${{ secrets.REGISTRY_OWNER }}/podhub-app/podhub-app:staging-${{ github.sha }}
+          CACHE_IMAGE=ghcr.io/${{ secrets.REGISTRY_OWNER }}/podhub-app/podhub-app:cache-staging
+
+          docker buildx build \
+            --build-arg ENV_FILE=.env.staging \
+            --cache-from type=registry,ref=${CACHE_IMAGE} \
+            --cache-to   type=registry,ref=${CACHE_IMAGE},mode=max \
+            --tag $IMAGE \
+            --push \
+            .
+
+          echo "IMAGE=$IMAGE" >> $GITHUB_OUTPUT
+
+      - name: Deploy APP Staging
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          port: ${{ secrets.SERVER_SSH_PORT }}
+          command_timeout: 10m
+          script: |
+            set -e
+
+            echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io \
+              -u ${{ secrets.GHCR_USER }} \
+              --password-stdin
+
+            IMAGE="${{ steps.build.outputs.IMAGE }}"
+            echo "Pulling image: $IMAGE"
+            docker pull "$IMAGE"
+
+            export IMAGE="$IMAGE"
+            echo "Deploying APP Staging $IMAGE"
+            /var/www/podhub/app/deploy/deploy_stage_devel.sh staging

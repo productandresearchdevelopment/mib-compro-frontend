@@ -1,0 +1,131 @@
+{
+  "nav": {
+    "home": "Beranda",
+    "solution": "Solusi",
+    "product": "Produk",
+    "company": "Perusahaan",
+    "contactUs": "Hubungi Kami"
+  },
+  "hero": {
+    "title": "Rasakan Keunggulan dalam Setiap Gerak",
+    "subtitle": "Saksikan bagaimana kami mendefinisikan ulang manajemen teknis melalui presisi, inovasi, dan eksekusi strategis.",
+    "exploreSolutions": "Jelajahi Solusi",
+    "learnMore": "Pelajari Lebih Lanjut"
+  },
+  "solutions": {
+    "title": "Solusi yang Kami Berikan",
+    "subtitle": "Jelajahi rangkaian solusi perangkat lunak dan IoT kami yang dirancang untuk menyederhanakan dan mengoptimalkan operasi Anda."
+  },
+  "whyChooseUs": {
+    "badge": "Mengapa Memilih Kami",
+    "title": "Mengapa MIB adalah Pilihan Tepat untuk Bisnis Anda",
+    "subtitle": "Kami menggabungkan perangkat lunak inovatif dan teknologi IoT untuk menghadirkan solusi yang menyederhanakan operasi, meningkatkan efisiensi, dan memberikan dampak nyata.",
+    "integrated": {
+      "title": "Solusi Terintegrasi",
+      "description": "Kami menyediakan solusi perangkat lunak dan IoT end-to-end yang bekerja secara mulus bersama untuk memecahkan tantangan operasional Anda."
+    },
+    "scalable": {
+      "title": "Skalabel & Fleksibel",
+      "description": "Solusi kami dirancang untuk tumbuh bersama bisnis Anda—mudah diskalakan, diadaptasi, dan dikustomisasi sesuai kebutuhan Anda."
+    },
+    "reliable": {
+      "title": "Andal & Aman",
+      "description": "Kami mengutamakan keamanan data, keandalan sistem, dan performa berkelanjutan untuk menjaga bisnis Anda berjalan dengan percaya diri."
+    },
+    "repairCentre": {
+      "title": "Pusat Perbaikan & Gudang",
+      "description": "Layanan Perbaikan, Manajemen Suku Cadang, Manajemen Gudang"
+    }
+  },
+  "preview": {
+    "title": "Rasakan Keunggulan dalam Setiap Gerak",
+    "subtitle": "Saksikan bagaimana kami mendefinisikan ulang manajemen teknis melalui presisi, inovasi, dan eksekusi strategis."
+  },
+  "howWeWork": {
+    "title": "Memberikan layanan terbaik dengan ide-ide inovatif",
+    "subtitle": "Kami adalah tim yang bersemangat dari para antusias teknis dan digital yang berdedikasi untuk membantu bisnis sukses di dunia digital.",
+    "projectsCount": "Proyek selesai bersama qualita",
+    "howWeWork": "CARA KAMI BEKERJA"
+  },
+  "products": {
+    "title": "Solusi yang Didukung oleh Produk Kami",
+    "subtitle": "Dari sistem perangkat lunak cerdas hingga perangkat IoT, produk kami dirancang untuk memecahkan tantangan operasional nyata.",
+    "fsm": {
+      "title": "Field Service Management",
+      "description": "Solusi komprehensif yang menyederhanakan operasi, mengoptimalkan alokasi sumber daya, dan meningkatkan kepuasan pelanggan melalui otomatisasi cerdas.",
+      "features": ["Pelacakan Real-time", "Work Orders", "Analitik Dashboard", "Platform Cloud"],
+      "learnMore": "Pelajari Lebih",
+      "tryDemo": "Coba Demo"
+    },
+    "iot": {
+      "title": "Solusi IoT",
+      "description": "Solusi IoT end-to-end untuk lingkungan multi-industri dengan pemantauan real-time, analitik, dan kemampuan respons otomatis.",
+      "features": ["Pemantauan 24/7", "Alert Real-time", "Manajemen Perangkat", "Deteksi AI"],
+      "learnMore": "Pelajari Lebih",
+      "tryDemo": "Coba Demo"
+    }
+  },
+  "useCases": {
+    "badge": "Use Case",
+    "title": "Solusi untuk Setiap Industri",
+    "learnMore": "Pelajari lebih",
+    "industries": {
+      "banking": {
+        "name": "Perbankan",
+        "description": "Temukan bagaimana solusi perangkat lunak dan IoT kami membantu bisnis menyederhanakan operasi dan mendapatkan kontrol penuh di berbagai industri.",
+        "features": ["Pemantauan transaksi", "Keamanan data & kepatuhan", "Pelaporan & analitik real-time"]
+      },
+      "manufacturing": {
+        "name": "Manufaktur",
+        "description": "Optimalkan lini produksi, prediksi kebutuhan pemeliharaan, dan kelola rantai pasokan dengan sensor IoT terintegrasi.",
+        "features": ["Pemeliharaan prediktif", "Visibilitas rantai pasokan", "Otomatisasi kontrol kualitas"]
+      },
+      "logistics": {
+        "name": "Logistik & Distribusi",
+        "description": "Lacak operasi armada secara real-time, optimalkan rute pengiriman, dan pastikan keamanan kargo.",
+        "features": ["Pelacakan armada", "Optimasi rute", "Manajemen inventaris"]
+      },
+      "energy": {
+        "name": "Energi & Utilitas",
+        "description": "Pantau kinerja jaringan, kelola aset jarak jauh, dan tingkatkan efisiensi distribusi energi.",
+        "features": ["Pemantauan jaringan", "Manajemen aset jarak jauh", "Smart metering"]
+      }
+    }
+  },
+  "news": {
+    "title": "Berita & Wawasan Terbaru",
+    "subtitle": "Tetap update dengan tren terbaru, wawasan, dan kemajuan teknologi dalam solusi perangkat lunak dan IoT.",
+    "viewAll": "Lihat Semua Berita",
+    "readMore": "Baca Selengkapnya"
+  },
+  "faq": {
+    "title": "Pertanyaan yang Sering Diajukan",
+    "subtitle": "Temukan jawaban atas pertanyaan umum tentang perangkat lunak, solusi IoT, kemampuan integrasi, dan layanan dukungan teknis kami.",
+    "moreQuestions": "Pertanyaan Lainnya",
+    "contactUs": "Hubungi Kami",
+    "questions": [
+      {
+        "question": "Bagaimana solusi IoT Anda terintegrasi dengan sistem yang sudah ada?",
+        "answer": "Platform IoT kami dirancang dengan fleksibilitas sebagai prioritas. Kami menyediakan dokumentasi API yang lengkap dan middleware khusus untuk memastikan integrasi yang mulus dengan sistem ERP, CRM, dan operasional Anda yang sudah ada."
+      },
+      {
+        "question": "Apakah perangkat lunak Field Service Management dapat dikustomisasi?",
+        "answer": "Ya, perangkat lunak FSM kami sangat dapat dikustomisasi. Kami memahami bahwa setiap bisnis beroperasi secara berbeda, sehingga kami menawarkan fitur modular yang memungkinkan Anda menyesuaikan alur kerja, pelaporan, dan peran pengguna."
+      },
+      {
+        "question": "Dukungan apa yang Anda tawarkan setelah implementasi?",
+        "answer": "Kami menawarkan dukungan teknis 24/7 yang komprehensif, manajer akun khusus, dan pemantauan sistem berkelanjutan. Selain itu, kami menyediakan pembaruan perangkat lunak reguler dan sesi pelatihan untuk tim Anda."
+      },
+      {
+        "question": "Seberapa aman data yang dikumpulkan oleh perangkat IoT Anda?",
+        "answer": "Keamanan adalah prioritas utama kami. Semua data yang dikumpulkan oleh perangkat IoT kami dienkripsi end-to-end. Kami mematuhi standar kepatuhan industri yang ketat dan melakukan audit keamanan reguler."
+      }
+    ]
+  },
+  "footer": {
+    "cta": {
+      "title": "Siap untuk Memulai?",
+      "button": "Mari Bicara dengan Kami"
+    }
+  }
+}

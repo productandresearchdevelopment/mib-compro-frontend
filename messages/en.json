@@ -1,0 +1,131 @@
+{
+  "nav": {
+    "home": "Home",
+    "solution": "Solution",
+    "product": "Product",
+    "company": "Company",
+    "contactUs": "Contact Us"
+  },
+  "hero": {
+    "title": "Experience Excellence in Motion",
+    "subtitle": "Witness how we redefine technical management through precision, innovation, and strategic execution.",
+    "exploreSolutions": "Explore Solutions",
+    "learnMore": "Learn More"
+  },
+  "solutions": {
+    "title": "Solutions We Deliver",
+    "subtitle": "Explore our range of software and IoT solutions designed to streamline and optimize your operations."
+  },
+  "whyChooseUs": {
+    "badge": "Why Choose Us",
+    "title": "Why MIB is The Right Choice for Your Business",
+    "subtitle": "We combine innovative software and IoT technology to deliver solutions that streamline operations, improve efficiency, and drive real impact.",
+    "integrated": {
+      "title": "Integrated Solutions",
+      "description": "We provide end-to-end software and IoT solutions that work seamlessly together to solve your operational challenges."
+    },
+    "scalable": {
+      "title": "Scalable & Flexible",
+      "description": "Our solutions are built to grow with your business—easy to scale, adapt, and customize based on your needs."
+    },
+    "reliable": {
+      "title": "Reliable & Secure",
+      "description": "We prioritize data security, system reliability, and continuous performance to keep your business running with confidence."
+    },
+    "repairCentre": {
+      "title": "Repair Centre & Warehouse",
+      "description": "Repair Services, Sparepart Management, Warehouse Management"
+    }
+  },
+  "preview": {
+    "title": "Experience Excellence in Motion",
+    "subtitle": "Witness how we redefine technical management through precision, innovation, and strategic execution."
+  },
+  "howWeWork": {
+    "title": "Provide the best service with out of the box ideas",
+    "subtitle": "We are a passionate team of technical and digital enthusiasts dedicated to helping businesses succeed in the digital world.",
+    "projectsCount": "Project finish with qualita",
+    "howWeWork": "HOW WE WORK"
+  },
+  "products": {
+    "title": "Solutions Powered by Our Products",
+    "subtitle": "From smart software systems to IoT devices, our products are designed to solve real operational challenges.",
+    "fsm": {
+      "title": "Field Service Management",
+      "description": "Comprehensive solution that streamlines operations, optimizes resource allocation, and enhances customer satisfaction through intelligent automation.",
+      "features": ["Real-time Tracking", "Work Orders", "Dashboard Analytics", "Cloud Platform"],
+      "learnMore": "Learn More",
+      "tryDemo": "Try Demo"
+    },
+    "iot": {
+      "title": "IoT Solutions",
+      "description": "End-to-end IoT solutions for multi-industry environments with real-time monitoring, analytics, and automated response capabilities.",
+      "features": ["24/7 Monitoring", "Real-time Alerts", "Device Management", "AI Detection"],
+      "learnMore": "Learn More",
+      "tryDemo": "Try Demo"
+    }
+  },
+  "useCases": {
+    "badge": "Use Case",
+    "title": "Solutions Built for Every Industry",
+    "learnMore": "Learn more",
+    "industries": {
+      "banking": {
+        "name": "Banking",
+        "description": "Discover how our software and IoT solutions help businesses streamline operations, improve efficiency, and gain full control across different industries.",
+        "features": ["Transaction monitoring", "Data security & compliance", "Real-time reporting & analytics"]
+      },
+      "manufacturing": {
+        "name": "Manufacturing",
+        "description": "Optimize production lines, predict maintenance needs, and manage supply chains with integrated IoT sensors and powerful analytics dashboards.",
+        "features": ["Predictive maintenance", "Supply chain visibility", "Quality control automation"]
+      },
+      "logistics": {
+        "name": "Logistics & Distribution",
+        "description": "Track fleet operations in real-time, optimize delivery routes, and ensure cargo safety with advanced tracking and management software.",
+        "features": ["Fleet tracking", "Route optimization", "Inventory management"]
+      },
+      "energy": {
+        "name": "Energy & Utilities",
+        "description": "Monitor grid performance, manage remote assets, and improve energy distribution efficiency with our robust industrial IoT solutions.",
+        "features": ["Grid monitoring", "Remote asset management", "Smart metering"]
+      }
+    }
+  },
+  "news": {
+    "title": "Latest News & Insights",
+    "subtitle": "Stay updated with the latest trends, insights, and technological advancements in software and IoT solutions.",
+    "viewAll": "View All News",
+    "readMore": "Read More"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Find answers to common questions about our software, IoT solutions, integration capabilities, and technical support services.",
+    "moreQuestions": "More Questions",
+    "contactUs": "Contact Us",
+    "questions": [
+      {
+        "question": "How do your IoT solutions integrate with existing systems?",
+        "answer": "Our IoT platforms are designed with flexibility in mind. We provide extensive API documentation and custom middleware to ensure seamless integration with your existing ERP, CRM, and operational systems without disrupting your current workflow."
+      },
+      {
+        "question": "Is the Field Service Management software customizable?",
+        "answer": "Yes, our FSM software is highly customizable. We understand that every business operates differently, so we offer modular features allowing you to tailor workflows, reporting, and user roles to match your specific operational needs."
+      },
+      {
+        "question": "What kind of support do you offer after implementation?",
+        "answer": "We offer comprehensive 24/7 technical support, dedicated account managers, and continuous system monitoring. Additionally, we provide regular software updates and training sessions for your team to ensure you maximize the value of our solutions."
+      },
+      {
+        "question": "How secure is the data collected by your IoT devices?",
+        "answer": "Security is our top priority. All data collected by our IoT devices is encrypted end-to-end. We adhere to strict industry compliance standards and conduct regular security audits to ensure your operational data is fully protected against unauthorized access."
+      }
+    ]
+  },
+  "footer": {
+    "cta": {
+      "title": "Ready to Get Started?",
+      "button": "Lets Talk with us"
+    }
+  }
+}
