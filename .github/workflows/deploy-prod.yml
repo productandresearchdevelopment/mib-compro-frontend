@@ -25,8 +25,8 @@ jobs:
         run: |
           echo "${{ secrets.ENV_PROD }}" > .env.prod
 
-          IMAGE=ghcr.io/${{ secrets.REGISTRY_OWNER }}/podhub-app/podhub-app:prod-${{ github.sha }}
-          CACHE_IMAGE=ghcr.io/${{ secrets.REGISTRY_OWNER }}/podhub-app/podhub-app:cache-prod
+          IMAGE=ghcr.io/${{ secrets.REGISTRY_OWNER }}/mib-app/mib-app:prod-${{ github.sha }}
+          CACHE_IMAGE=ghcr.io/${{ secrets.REGISTRY_OWNER }}/mib-app/mib-app:cache-prod
 
           docker buildx build \
             --build-arg ENV_FILE=.env.prod \
@@ -59,4 +59,4 @@ jobs:
 
             export IMAGE="$IMAGE"
             echo "Deploying APP Prod $IMAGE"
-            /var/www/podhub/app/deploy/deploy_prod_bluegreen.sh
+            /var/www/mib/app/deploy/deploy_prod_bluegreen.sh
