@@ -93,13 +93,13 @@ export default function SolutionsMegaMenu({
     <>
       {/* Gray background overlay outside the floating box */}
       <div
-        className="fixed inset-x-0 top-20 bottom-0 bg-black/20 z-30 transition-all duration-300 animate-in fade-in hidden md:block"
+        className="fixed inset-x-0 top-20 bottom-0 bg-black/8 z-30 transition-all duration-300 animate-in fade-in hidden md:block"
         onMouseEnter={onClose}
       />
 
       {/* Floating White Card Container */}
       <div
-        className="absolute top-[88px] left-6 right-6 max-w-7xl mx-auto bg-white border border-slate-100 rounded-[32px] shadow-2xl z-40 transition-all duration-300 hidden md:block before:absolute before:-top-2 before:left-0 before:right-0 before:h-2 before:content-['']"
+        className="absolute top-[88px] left-6 right-6 max-w-[1232px] mx-auto bg-white border border-slate-100 rounded-3xl z-40 transition-all duration-300 hidden md:block before:absolute before:-top-2 before:left-0 before:right-0 before:h-2 before:content-['']"
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
       >
@@ -186,7 +186,7 @@ export default function SolutionsMegaMenu({
               <div className="flex flex-col gap-3">
                 {/* QIFESS Card */}
                 <Link
-                  href={`${baseHref}/product`}
+                  href={`${baseHref}/product/qifess`}
                   className="p-4 rounded-xl border border-slate-100 bg-slate-50/50 hover:bg-slate-50 hover:border-slate-200 transition-all flex flex-col gap-2 group/qifess relative"
                   onClick={onClose}
                 >
@@ -195,7 +195,7 @@ export default function SolutionsMegaMenu({
                       QI<span className="text-[#3b82f6]">FESS</span>
                     </span>
                     <div className="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 group-hover/qifess:text-primary group-hover/qifess:border-slate-300 transition-colors shrink-0">
-                      <HugeiconsIcon icon={ArrowUpRight01Icon} className="w-4 h-4" />
+                      <HugeiconsIcon icon={ArrowUpRight01Icon} className="w-4.5 h-4.5" />
                     </div>
                   </div>
                   <p className="text-[13.5px] text-slate-500 font-medium leading-relaxed max-w-[280px]">
@@ -207,7 +207,7 @@ export default function SolutionsMegaMenu({
 
                 {/* ProtectQube Card */}
                 <Link
-                  href={`${baseHref}/product`}
+                  href={`${baseHref}/product/protectqube`}
                   className="p-4 rounded-xl border border-slate-100 bg-slate-50/50 hover:bg-slate-50 hover:border-slate-200 transition-all flex flex-col gap-2 group/qube relative"
                   onClick={onClose}
                 >
@@ -216,7 +216,7 @@ export default function SolutionsMegaMenu({
                       protect<span className="text-[#f97316]">qube</span>
                     </span>
                     <div className="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 group-hover/qube:text-primary group-hover/qube:border-slate-300 transition-colors shrink-0">
-                      <HugeiconsIcon icon={ArrowUpRight01Icon} className="w-4 h-4" />
+                      <HugeiconsIcon icon={ArrowUpRight01Icon} className="w-4.5 h-4.5" />
                     </div>
                   </div>
                   <p className="text-[13.5px] text-slate-500 font-medium leading-relaxed max-w-[280px]">

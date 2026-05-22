@@ -105,7 +105,7 @@ export default function Footer({
                 <Link href={`${baseHref}/service`} className="text-white/90 hover:text-white transition-colors">Our Service</Link>
                 <Link href={`${baseHref}/contact`} className="text-white/90 hover:text-white transition-colors">Contact Us</Link>
                 <Link href={`${baseHref}/news`} className="text-white/90 hover:text-white transition-colors">News</Link>
-                <Link href={`${baseHref}/career`} className="text-white/90 hover:text-white transition-colors">Career</Link>
+                <Link href={`${baseHref}/careers`} className="text-white/90 hover:text-white transition-colors">Careers</Link>
                 <Link href={`${baseHref}/profiles`} className="text-white/90 hover:text-white transition-colors">Profiles</Link>
               </div>
             </div>

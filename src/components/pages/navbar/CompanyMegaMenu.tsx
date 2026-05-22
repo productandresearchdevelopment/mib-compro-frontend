@@ -40,7 +40,7 @@ export default function CompanyMegaMenu({
     {
       name: locale === "id" ? "Karir" : "Careers",
       icon: "Briefcase01Icon",
-      href: `${baseHref}/company`
+      href: `${baseHref}/careers`
     },
     {
       name: locale === "id" ? "Berita Terbaru" : "News",
@@ -60,13 +60,13 @@ export default function CompanyMegaMenu({
     <>
       {/* Gray background overlay outside the floating box */}
       <div
-        className="fixed inset-x-0 top-20 bottom-0 bg-black/20 z-30 transition-all duration-300 animate-in fade-in hidden md:block"
+        className="fixed inset-x-0 top-20 bottom-0 bg-black/8 z-30 transition-all duration-300 animate-in fade-in hidden md:block"
         onMouseEnter={onClose}
       />
 
       {/* Floating White Card Container */}
       <div
-        className="absolute top-[88px] left-6 right-6 max-w-7xl mx-auto bg-white border border-slate-100 rounded-[32px] shadow-2xl z-40 transition-all duration-300 hidden md:block before:absolute before:-top-2 before:left-0 before:right-0 before:h-2 before:content-['']"
+        className="absolute top-[88px] left-6 right-6 max-w-[1232px] mx-auto bg-white border border-slate-100 rounded-3xl z-40 transition-all duration-300 hidden md:block before:absolute before:-top-2 before:left-0 before:right-0 before:h-2 before:content-['']"
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
       >
@@ -77,7 +77,7 @@ export default function CompanyMegaMenu({
               <span className="text-[12px] font-bold tracking-widest text-slate-400 uppercase">
                 {locale === "id" ? "Perusahaan Kami" : "Our Company"}
               </span>
-              
+
               <div className="flex flex-col gap-2">
                 {COMPANY_LINKS.map((item, idx) => {
                   const Icon = getIcon(item.icon);
@@ -108,7 +108,10 @@ export default function CompanyMegaMenu({
                 onClick={onClose}
               >
                 {locale === "id" ? "Jelajahi Solusi" : "Explore Solutions"}
-                <HugeiconsIcon icon={ArrowRight01Icon} className="w-4.5 h-4.5 group-hover/explore:translate-x-1.5 transition-transform" />
+                <HugeiconsIcon
+                  icon={ArrowRight01Icon}
+                  className="w-4.5 h-4.5 group-hover/explore:translate-x-1.5 transition-transform"
+                />
               </Link>
             </div>
           </div>
@@ -141,7 +144,7 @@ export default function CompanyMegaMenu({
               />
               {/* Dark gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-              
+
               <div className="relative z-10 flex items-end justify-between gap-4 w-full">
                 <p className="text-[15px] font-semibold text-white leading-snug max-w-[320px] line-clamp-2">
                   {locale === "id"
@@ -149,7 +152,10 @@ export default function CompanyMegaMenu({
                     : "PT Qualita Indonesia Introduces IoT-Based Energy Monitoring Dashboard"}
                 </p>
                 <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center text-slate-900 group-hover/news:scale-110 transition-transform shrink-0">
-                  <HugeiconsIcon icon={ArrowUpRight01Icon} className="w-4 h-4" />
+                  <HugeiconsIcon
+                    icon={ArrowUpRight01Icon}
+                    className="w-4 h-4"
+                  />
                 </div>
               </div>
             </Link>

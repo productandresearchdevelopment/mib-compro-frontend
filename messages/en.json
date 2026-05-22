@@ -4,13 +4,15 @@
     "solution": "Solution",
     "product": "Product",
     "company": "Company",
+    "news": "News",
+    "careers": "Careers",
     "contactUs": "Contact Us"
   },
   "hero": {
-    "title": "Experience Excellence in Motion",
-    "subtitle": "Witness how we redefine technical management through precision, innovation, and strategic execution.",
+    "title": "Bridging Innovation with Real-World Intelligence",
+    "subtitle": "We provide integrated software and IoT solutions that help businesses streamline processes, improve efficiency, and make data-driven decisions in real time.",
     "exploreSolutions": "Explore Solutions",
-    "learnMore": "Learn More"
+    "viewProduct": "View Product"
   },
   "solutions": {
     "title": "Solutions We Deliver",
@@ -96,7 +98,17 @@
     "title": "Latest News & Insights",
     "subtitle": "Stay updated with the latest trends, insights, and technological advancements in software and IoT solutions.",
     "viewAll": "View All News",
-    "readMore": "Read More"
+    "readMore": "Read More",
+    "badge": "News & Event",
+    "description": "Explore our collection of articles, news, events and insights, shares the latest updates, events, and milestones from the Qualita team.",
+    "filterAll": "All",
+    "filterNews": "News",
+    "filterBlog": "Blog",
+    "filterEvent": "Event",
+    "share": "Share Article:",
+    "relatedTitle": "Related Articles",
+    "backToList": "Back to News List",
+    "readTime": "min read"
   },
   "faq": {
     "title": "Frequently Asked Questions",
@@ -127,5 +139,223 @@
       "title": "Ready to Get Started?",
       "button": "Lets Talk with us"
     }
+  },
+  "careers": {
+    "title": "Careers at Mitra Inovasi Bisnis",
+    "subtitle": "Discover exciting career opportunities and grow with us in the world of innovative technology solutions.",
+    "bannerTitle": "Current openings\nat Mitra Inovasi Bisnis",
+    "bannerBtn": "Get to know our company",
+    "searchPlaceholder": "Search positions, skills, or departments...",
+    "jobFoundSingular": "1 Job found",
+    "jobFoundPlural": "{count} Jobs found",
+    "applyNow": "Apply Now",
+    "department": "Department",
+    "location": "Location",
+    "type": "Job Type",
+    "backToList": "Back to Open Positions",
+    "successTitle": "Application Submitted!",
+    "successMessage": "Thank you for applying to Mitra Inovasi Bisnis. Our HR team will review your application and contact you soon.",
+    "formName": "Full Name",
+    "formEmail": "Email Address",
+    "formPhone": "Phone Number",
+    "formCoverLetter": "Cover Letter / Message",
+    "formResume": "Upload Resume / CV",
+    "formSubmit": "Submit Application",
+    "formUploading": "Uploading...",
+    "formDragDrop": "Drag and drop your PDF/Word CV here, or click to browse",
+    "noJobs": "No Job Openings Found",
+    "noJobsDesc": "We couldn't find any job openings matching your search criteria. Please try a different search or check back later."
+  },
+  "product": {
+    "badge": "Product by Mitra Inovasi Bisnis",
+    "heroTitle": "One Ecosystem. Multiple Solutions. Built for Smarter Operations.",
+    "heroSubtitle": "From powerful software platforms to real-time IoT systems and reliable hardware — our products are designed to work together, helping you manage, monitor, and scale your operations seamlessly.",
+    "exploreMore": "Explore More",
+    "exploreSoftware": "Explore Software",
+    "exploreIot": "Explore IoT Systems",
+    "exploreHardware": "Explore Hardware",
+    "softwareTitle": "Powerful Software Built for Performance",
+    "softwareDesc": "Scalable software platforms that help you manage operations, teams and data with ease and accuracy.",
+    "iotTitle": "Smart IoT Systems for Real-Time Insights",
+    "iotDesc": "Connected devices and sensors that monitor, track, and deliver data in real time — anywhere, anytime.",
+    "hardwareTitle": "Reliable Hardware You Can Count On",
+    "hardwareDesc": "High-quality hardware devices designed to support your operations in the field and the office.",
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "requestDemo": "Request Demo",
+    "howItWorks": "How It Works",
+    "features": "Features",
+    "keyBenefits": "Key Benefits",
+    "specifications": "Specifications",
+    "certifications": "Certifications",
+    "dimensions": "Dimensions",
+    "telemetry": "Active Telemetry",
+    "liveFeed": "Live Telemetry Feed",
+    "backToList": "Back to Products",
+    "ctaTitle": "Ready to Find the Right Solution for Your Business?",
+    "ctaBtn": "Request Demo"
+  },
+  "solution": {
+    "badge": "Mitra Inovasi Bisnis Solutions",
+    "backToList": "Back to Solutions",
+    "requestConsultation": "Request Consultation",
+    "getDemo": "Get Demo",
+    "requestDemo": "Request Demo",
+    "whoBenefits": "Who Benefits From This Solution?",
+    "whoBenefitsDesc": "Discover how our integrated solutions deliver strategic value across different operational functions.",
+    "coreStrengths": "Core Strengths",
+    "features": "Core Features",
+    "standardTitle": "Tailored Solutions for Smarter Operations",
+    "standardSubtitle": "Empowering your business with scalable technical tools, seamless integration, and expert support."
+  },
+  "features": {
+    "title": "Three Core Pillars of MIB Business",
+    "subtitle": "Supporting digital transformation through dynamic smart hardware, advanced software systems, and managed operations.",
+    "aiotBadge": "AIoT & HARDWARE",
+    "aiotTitle": "Advanced Smart Security Systems & Edge IoT Integration.",
+    "aiotDesc": "Providing state-of-the-art hardware: Payment Soundboxes, Cash Counting Machines, EDCs, POS systems, Smart Security Padlocks, and Computer Vision analytics.",
+    "lastConnection": "Last connection from Jakarta, ID",
+    "servicesBadge": "SERVICES",
+    "servicesHeader": "MIB Managed Operations",
+    "servicesTitle": "End-to-End Operational Support & SLA Commitment.",
+    "servicesDesc": "Offering high-tier services including Labor Outsourcing, Staging & Deployment, Delivery Management, Second Level Maintenance, Seat & Site Maintenance, and Full Managed Services.",
+    "clientDispatchBadge": "CLIENT DISPATCH",
+    "clientMessage": "Please perform staging and installation for 50 new POS branches tomorrow.",
+    "engineerMessage": "Understood. The field engineering team has been dispatched in accordance with 99% SLA.",
+    "resolvedStatus": "RESOLVED",
+    "slaTitle": "SLA Commitment",
+    "slaDesc": "Ensuring round-the-clock systems uptime and outstanding operational reliability without compromise.",
+    "softwareBadge": "SOFTWARE & PLATFORM",
+    "softwareHeader": "QIFESS",
+    "softwareSub": "Field Service Management",
+    "softwareDesc": "Instantly coordinate field technicians, monitor ticket pipelines, track staging flows, and analyze team metrics."
+  },
+  "qifess": {
+    "badge": "SOFTWARE & PLATFORM SYSTEM",
+    "title": "The QIFESS Ecosystem Unifies Your Field Operations",
+    "subtitle": "Empower your team with smart, adaptive workflows tailored to your real-world operational needs—from ticket management to performance analytics.",
+    "features": {
+      "fast": {
+        "title": "Rapid Staging & Ticketing",
+        "desc": "Instant task order creation and automated live-telemetry device deployments directly to the field."
+      },
+      "powerful": {
+        "title": "High-Performance Analytics",
+        "desc": "Track job completion rates, SLA response times, and monitor overall team performance live."
+      },
+      "security": {
+        "title": "Enterprise-Grade Security",
+        "desc": "End-to-end fully encrypted data transmissions and highly granular role-based access control (RBAC)."
+      },
+      "ai": {
+        "title": "AI-Driven Automation",
+        "desc": "Smart scheduling and automated AI field technician dispatch to save hours and reduce operational overhead."
+      }
+    }
+  },
+  "protectQube": {
+    "badge": "AIoT & SMART CCTV SURVEILLANCE",
+    "title": "protectQube AIoT: Intelligent Physical Security",
+    "subtitle": "Integrated surveillance ecosystem combining AI-driven cameras, real-time anomaly detection, and ATM protective sensors.",
+    "videoOverlay": {
+      "liveFeed": "Live Camera Feed - Perimeter Security Zone #482",
+      "skimmerDetected": "VIRTUAL BOUNDARY BREACH DETECTED!",
+      "facialActive": "FACIAL & ANOMALY RECOGNITION ACTIVE",
+      "integritySecure": "PEOPLE COUNTING & LINE CROSSING MONITOR ACTIVE",
+      "playDemo": "Play AIoT Security Video Demo"
+    },
+    "features": {
+      "atm": {
+        "title": "Computer Vision",
+        "desc": "Intelligent video analysis to detect any suspicious activities in the perimeter area in real-time."
+      },
+      "alert": {
+        "title": "Facial Recognition",
+        "desc": "Advanced AI facial recognition for biometric matching, criminal blacklisting, and secure access controls."
+      },
+      "video": {
+        "title": "People Counting",
+        "desc": "Real-time flow calculation and crowd density analysis to optimize queue flow and venue capacity."
+      },
+      "access": {
+        "title": "Line Crossing Detection",
+        "desc": "Instant virtual boundary violation detection to prevent unauthorized access to restricted zones."
+      }
+    }
+  },
+  "hardwareShowcase": {
+    "badge": "HARDWARE PORTFOLIO",
+    "title": "Explore MIB Premium Smart Hardware",
+    "subtitle": "Engineered for high reliability and rugged performance to power modern banking, logistics, and retail field endpoints.",
+    "viewMore": "Read More",
+    "items": {
+      "padlock": {
+        "title": "Smart Padlock",
+        "desc": "Grade-6 heavy duty physical lock with active GPS telemetry, encrypted mobile Bluetooth/LTE keys, and live audit trailing."
+      },
+      "soundbox": {
+        "title": "Payment Soundbox",
+        "desc": "High-volume instant audio checkout confirmations for successful QRIS and card transactions supporting retail services."
+      },
+      "edc": {
+        "title": "EDC",
+        "desc": "Versatile wireless Point-of-Sale platform supporting chip cards, QRIS, and NFC contactless payments."
+      },
+      "counter": {
+        "title": "Mesin Hitung Uang",
+        "desc": "High-velocity note counter with automated ultraviolet, infrared, and magnetic counterfeit detection."
+      },
+      "pos": {
+        "title": "Mesin POS",
+        "desc": "Modern cash register terminal with high processing speed to power retail sales and inventory integration."
+      },
+      "cctv": {
+        "title": "CCTV",
+        "desc": "Smart surveillance camera with local AI analytics, facial detection, and encrypted edge recording."
+      },
+      "cash_deposit": {
+        "title": "Cash Deposit",
+        "desc": "Secure smart cash deposit machine to automate real-time vaulting and banking cash flow management."
+      }
+    }
+  },
+  "servicesShowcase": {
+      "badge": "MIB MANAGED OPERATIONS",
+      "title": "End-to-End Field Operations & Managed Services",
+      "subtitle": "From outsourcing skilled talent, staging, secure logistics, site maintenance, to fully managed services — we support your business operations seamlessly.",
+      "items": {
+        "labor": {
+          "title": "Labor Outsourcing",
+          "desc": "Provision of skilled and professional field, administrative, and technical labor to scale your operations flexibly."
+        },
+        "staging": {
+          "title": "Staging & Deployment",
+          "desc": "Pre-deployment hardware preparation, firmware configuration, and automated stress testing before site rollout."
+        },
+        "delivery": {
+          "title": "Delivery Management",
+          "desc": "Secure, real-time tracked logistical distribution of business assets and merchant POS terminals nationwide."
+        },
+        "slm": {
+          "title": "Second Level Maintenance",
+          "desc": "Advanced IT support and emergency troubleshooting by tier-2 engineers for hardware and network recovery."
+        },
+        "seat": {
+          "title": "Seat Management",
+          "desc": "Complete end-to-end desk environment leasing, including provisioning, support, and hardware refreshes."
+        },
+        "site": {
+          "title": "Site Maintenance",
+          "desc": "On-site physical and technical maintenance for bank branches, ATM kiosks, and logistics depots to guarantee uptimes."
+        },
+        "managed": {
+          "title": "Managed Services",
+          "desc": "Proactive 24/7 monitoring, telemetry tracking, and management of business operations infrastructure."
+        },
+        "full_managed": {
+          "title": "Full Managed Services",
+          "desc": "Comprehensive, military-grade end-to-end operational managed service covered by a strict 99.9% SLA commitment."
+        }
+      }
+    }
   }
-}

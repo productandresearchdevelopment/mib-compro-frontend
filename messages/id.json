@@ -4,13 +4,15 @@
     "solution": "Solusi",
     "product": "Produk",
     "company": "Perusahaan",
+    "news": "Berita",
+    "careers": "Karir",
     "contactUs": "Hubungi Kami"
   },
   "hero": {
-    "title": "Rasakan Keunggulan dalam Setiap Gerak",
-    "subtitle": "Saksikan bagaimana kami mendefinisikan ulang manajemen teknis melalui presisi, inovasi, dan eksekusi strategis.",
+    "title": "Menjembatani Inovasi dengan Kecerdasan Dunia Nyata",
+    "subtitle": "Kami menyediakan solusi perangkat lunak dan IoT terintegrasi yang membantu bisnis menyederhanakan proses, meningkatkan efisiensi, dan membuat keputusan berbasis data secara real-time.",
     "exploreSolutions": "Jelajahi Solusi",
-    "learnMore": "Pelajari Lebih Lanjut"
+    "viewProduct": "Lihat Produk"
   },
   "solutions": {
     "title": "Solusi yang Kami Berikan",
@@ -96,7 +98,17 @@
     "title": "Berita & Wawasan Terbaru",
     "subtitle": "Tetap update dengan tren terbaru, wawasan, dan kemajuan teknologi dalam solusi perangkat lunak dan IoT.",
     "viewAll": "Lihat Semua Berita",
-    "readMore": "Baca Selengkapnya"
+    "readMore": "Baca Selengkapnya",
+    "badge": "Berita & Acara",
+    "description": "Jelajahi koleksi artikel, berita, acara, dan wawasan kami yang membagikan pembaruan, acara, dan pencapaian terbaru dari tim Qualita.",
+    "filterAll": "Semua",
+    "filterNews": "Berita",
+    "filterBlog": "Blog",
+    "filterEvent": "Acara",
+    "share": "Bagikan Artikel:",
+    "relatedTitle": "Artikel Terkait",
+    "backToList": "Kembali ke Daftar Berita",
+    "readTime": "menit baca"
   },
   "faq": {
     "title": "Pertanyaan yang Sering Diajukan",
@@ -127,5 +139,223 @@
       "title": "Siap untuk Memulai?",
       "button": "Mari Bicara dengan Kami"
     }
+  },
+  "careers": {
+    "title": "Karir di Mitra Inovasi Bisnis",
+    "subtitle": "Temukan peluang karir yang menarik dan berkembang bersama kami di dunia solusi teknologi inovatif.",
+    "bannerTitle": "Lowongan saat ini\ndi Mitra Inovasi Bisnis",
+    "bannerBtn": "Kenali perusahaan kami",
+    "searchPlaceholder": "Cari posisi, keahlian, atau departemen...",
+    "jobFoundSingular": "1 Pekerjaan ditemukan",
+    "jobFoundPlural": "{count} Pekerjaan ditemukan",
+    "applyNow": "Lamar Sekarang",
+    "department": "Departemen",
+    "location": "Lokasi",
+    "type": "Tipe Pekerjaan",
+    "backToList": "Kembali ke Posisi Terbuka",
+    "successTitle": "Lamaran Dikirim!",
+    "successMessage": "Terima kasih telah melamar di Mitra Inovasi Bisnis. Tim HR kami akan meninjau lamaran Anda dan segera menghubungi Anda.",
+    "formName": "Nama Lengkap",
+    "formEmail": "Alamat Email",
+    "formPhone": "Nomor Telepon",
+    "formCoverLetter": "Surat Lamaran / Pesan",
+    "formResume": "Unggah Resume / CV",
+    "formSubmit": "Kirim Lamaran",
+    "formUploading": "Mengunggah...",
+    "formDragDrop": "Tarik dan letakkan CV PDF/Word Anda di sini, atau klik untuk memilih file",
+    "noJobs": "Lowongan Pekerjaan Tidak Ditemukan",
+    "noJobsDesc": "Kami tidak dapat menemukan lowongan pekerjaan yang cocok dengan kriteria pencarian Anda. Silakan coba pencarian lain atau periksa kembali nanti."
+  },
+  "product": {
+    "badge": "Produk oleh Mitra Inovasi Bisnis",
+    "heroTitle": "Satu Ekosistem. Banyak Solusi. Dirancang untuk Operasi Lebih Cerdas.",
+    "heroSubtitle": "Dari platform perangkat lunak yang tangguh hingga sistem IoT real-time dan perangkat keras yang andal — produk kami dirancang untuk bekerja bersama, membantu Anda mengelola, memantau, dan mengembangkan operasi Anda dengan mulus.",
+    "exploreMore": "Jelajahi Lebih Banyak",
+    "exploreSoftware": "Jelajahi Perangkat Lunak",
+    "exploreIot": "Jelajahi Sistem IoT",
+    "exploreHardware": "Jelajahi Perangkat Keras",
+    "softwareTitle": "Perangkat Lunak Tangguh yang Dirancang untuk Kinerja",
+    "softwareDesc": "Platform perangkat lunak skalabel yang membantu Anda mengelola operasi, tim, dan data dengan mudah dan akurat.",
+    "iotTitle": "Sistem IoT Cerdas untuk Wawasan Real-Time",
+    "iotDesc": "Perangkat dan sensor terhubung yang memantau, melacak, dan mengirimkan data secara real-time — di mana saja, kapan saja.",
+    "hardwareTitle": "Perangkat Keras Andal yang Dapat Anda Andalkan",
+    "hardwareDesc": "Perangkat keras berkualitas tinggi yang dirancang untuk mendukung operasional Anda di lapangan dan di kantor.",
+    "learnMore": "Pelajari Lebih Lengkap",
+    "getStarted": "Mulai Sekarang",
+    "requestDemo": "Minta Demo",
+    "howItWorks": "Cara Kerja",
+    "features": "Fitur",
+    "keyBenefits": "Manfaat Utama",
+    "specifications": "Spesifikasi",
+    "certifications": "Sertifikasi",
+    "dimensions": "Dimensi",
+    "telemetry": "Telemetri Aktif",
+    "liveFeed": "Umpan Telemetri Langsung",
+    "backToList": "Kembali ke Produk",
+    "ctaTitle": "Siap Menemukan Solusi Tepat untuk Bisnis Anda?",
+    "ctaBtn": "Minta Demo"
+  },
+  "solution": {
+    "badge": "Solusi Mitra Inovasi Bisnis",
+    "backToList": "Kembali ke Solusi",
+    "requestConsultation": "Minta Konsultasi",
+    "getDemo": "Minta Demo",
+    "requestDemo": "Minta Demo",
+    "whoBenefits": "Siapa yang Mendapatkan Manfaat Dari Solusi Ini?",
+    "whoBenefitsDesc": "Temukan bagaimana solusi terintegrasi kami memberikan nilai strategis di berbagai fungsi operasional.",
+    "coreStrengths": "Kekuatan Utama",
+    "features": "Fitur Utama",
+    "standardTitle": "Solusi Khusus untuk Operasi yang Lebih Cerdas",
+    "standardSubtitle": "Memberdayakan bisnis Anda dengan alat teknis yang skalabel, integrasi tanpa hambatan, dan dukungan ahli."
+  },
+  "features": {
+    "title": "Tiga Pilar Utama Bisnis MIB",
+    "subtitle": "Mendukung transformasi digital melalui integrasi perangkat keras pintar, sistem perangkat lunak canggih, dan layanan operasional terbaik.",
+    "aiotBadge": "AIoT & HARDWARE",
+    "aiotTitle": "Sistem Keamanan Cerdas & Integrasi IoT Terdepan.",
+    "aiotDesc": "Menyediakan perangkat keras premium: Soundbox pembayaran, Mesin Hitung Uang, EDC, Mesin POS, Gembok Pintar (Security Padlock), hingga solusi visual berbasis Computer Vision.",
+    "lastConnection": "Koneksi terakhir dari Jakarta, ID",
+    "servicesBadge": "SERVICES",
+    "servicesHeader": "MIB Managed Operations",
+    "servicesTitle": "Dukungan Teknis & Operasional Menyeluruh.",
+    "servicesDesc": "Menawarkan layanan profesional mencakup Labor Outsourcing, Staging & Deployment, Delivery Management, Seat & Site Maintenance, hingga Full Managed Services.",
+    "clientDispatchBadge": "CLIENT DISPATCH",
+    "clientMessage": "Mohon lakukan staging dan instalasi POS baru untuk 50 cabang besok.",
+    "engineerMessage": "Dimengerti. Tim teknisi lapangan telah dikerahkan sesuai standar SLA 99%.",
+    "resolvedStatus": "RESOLVED",
+    "slaTitle": "Komitmen SLA",
+    "slaDesc": "Kami memastikan keandalan layanan operasional dan ketersediaan sistem sepanjang hari tanpa kompromi.",
+    "softwareBadge": "SOFTWARE & PLATFORM",
+    "softwareHeader": "QIFESS",
+    "softwareSub": "Field Service Management",
+    "softwareDesc": "Kelola teknisi lapangan, pantau status tiket, staging aset, dan analisis kinerja tim operasional secara instan."
+  },
+  "qifess": {
+    "badge": "SISTEM PLATFORM PERANGKAT LUNAK",
+    "title": "Ekosistem QIFESS Menyatukan Operasional Lapangan Anda",
+    "subtitle": "Berdayakan tim Anda dengan alur kerja cerdas yang menyesuaikan dengan kebutuhan operasional nyata Anda—mulai dari manajemen tiket hingga analitik performa.",
+    "features": {
+      "fast": {
+        "title": "Staging & Tiket Cepat",
+        "desc": "Pembuatan tiket kerja instan dan otomatisasi deployment perangkat ke lokasi lapangan secara real-time."
+      },
+      "powerful": {
+        "title": "Analitik Berkinerja Tinggi",
+        "desc": "Lacak tingkat penyelesaian tugas, waktu respons SLA, dan pantau efisiensi kerja tim secara langsung."
+      },
+      "security": {
+        "title": "Keamanan Tingkat Tinggi",
+        "desc": "Keamanan data end-to-end terenkripsi penuh serta kontrol akses berbasis peran (RBAC) yang sangat ketat."
+      },
+      "ai": {
+        "title": "Otomatisasi Berbasis AI",
+        "desc": "Penjadwalan cerdas dan perutean teknisi lapangan otomatis berbasis AI untuk menghemat waktu serta biaya operasional."
+      }
+    }
+  },
+  "protectQube": {
+    "badge": "AIoT & CCTV SURVEILLANCE PINTAR",
+    "title": "protectQube AIoT: Solusi Keamanan Fisik Cerdas",
+    "subtitle": "Sistem pengawasan terintegrasi yang menggabungkan kamera pengawas berbasis kecerdasan buatan, pendeteksi anomali real-time, dan sensor perlindungan ATM.",
+    "videoOverlay": {
+      "liveFeed": "Umpan Kamera Langsung - Zona Keamanan Perimeter #482",
+      "skimmerDetected": "DETEKSI PELANGGARAN BATAS VIRTUAL!",
+      "facialActive": "REKOGNISI WAJAH & ANOMALIR AKTIF",
+      "integritySecure": "ANALISIS PENGHITUNG ORANG & PENYILANGAN GARIS AKTIF",
+      "playDemo": "Putar Demo Video Keamanan AIoT"
+    },
+    "features": {
+      "atm": {
+        "title": "Computer Vision",
+        "desc": "Analisis video cerdas untuk mendeteksi setiap aktivitas mencurigakan di area perimeter secara real-time."
+      },
+      "alert": {
+        "title": "Facial Recognition",
+        "desc": "Rekognisi wajah canggih berbasis AI untuk pencocokan biometrik, daftar hitam pelaku kejahatan, dan kontrol akses aman."
+      },
+      "video": {
+        "title": "People Counting",
+        "desc": "Penghitungan orang real-time dan analisis kepadatan area untuk mengoptimalkan alur antrean serta kapasitas ruang."
+      },
+      "access": {
+        "title": "Line Crossing Detection",
+        "desc": "Deteksi pelanggaran batas virtual secara instan untuk mencegah akses tanpa izin ke zona terbatas."
+      }
+    }
+  },
+  "hardwareShowcase": {
+    "badge": "PORTFOLIO PERANGKAT KERAS",
+    "title": "Eksplorasi Perangkat Keras Premium MIB",
+    "subtitle": "Dirancang dengan keandalan tinggi dan performa tangguh untuk mendukung operasi ritel dan perbankan di lapangan.",
+    "viewMore": "Selengkapnya",
+    "items": {
+      "padlock": {
+        "title": "Smart Padlock",
+        "desc": "Gembok Grade-6 berdaya tahan tinggi dengan pelacakan GPS, kunci seluler terenkripsi, dan pencatatan riwayat audit waktu nyata."
+      },
+      "soundbox": {
+        "title": "Payment Soundbox",
+        "desc": "Konfirmasi audio pembayaran seketika begitu transaksi QRIS / kartu sukses guna menunjang ritel modern."
+      },
+      "edc": {
+        "title": "EDC",
+        "desc": "Platform Point-of-Sale nirkabel serbaguna dengan dukungan pembayaran kartu chip, QRIS, dan nirsentuh NFC."
+      },
+      "counter": {
+        "title": "Mesin Hitung Uang",
+        "desc": "Penghitungan cepat dengan sensor pendeteksi uang palsu sinar UV/IR/Magnetik otomatis serta data treasury."
+      },
+      "pos": {
+        "title": "Mesin POS",
+        "desc": "Terminal mesin kasir modern berkecepatan tinggi untuk menunjang transaksi ritel dan integrasi sistem inventaris."
+      },
+      "cctv": {
+        "title": "CCTV",
+        "desc": "Kamera pengawas pintar dengan analitik kecerdasan buatan, deteksi wajah, dan perekaman real-time terenkripsi."
+      },
+      "cash_deposit": {
+        "title": "Cash Deposit",
+        "desc": "Mesin setor tunai mandiri yang aman dan real-time untuk optimalisasi manajemen arus kas perbankan serta ritel."
+      }
+    }
+  },
+  "servicesShowcase": {
+      "badge": "MIB MANAGED OPERATIONS",
+      "title": "Layanan Operasional & Managed Services Lapangan",
+      "subtitle": "Dari penyediaan tenaga ahli, staging perangkat kasir, pengiriman terkelola, pemeliharaan ATM, hingga operasi terkelola ujung-ke-ujung.",
+      "items": {
+        "labor": {
+          "title": "Labor Outsourcing",
+          "desc": "Penyediaan tenaga kerja profesional dan terampil untuk mendukung operasional lapangan, administrasi, dan teknis perusahaan Anda secara fleksibel."
+        },
+        "staging": {
+          "title": "Staging & Deployment",
+          "desc": "Proses persiapan perangkat keras, instalasi perangkat lunak standar, pengetesan performa sebelum didistribusikan langsung ke cabang di lapangan."
+        },
+        "delivery": {
+          "title": "Delivery Management",
+          "desc": "Manajemen pengiriman aset dan logistik operasional yang aman, terpantau real-time, dan tepat waktu ke seluruh Indonesia."
+        },
+        "slm": {
+          "title": "Second Level Maintenance",
+          "desc": "Dukungan pemeliharaan teknis tingkat lanjut oleh engineer berpengalaman untuk memecahkan gangguan hardware dan software secara instan."
+        },
+        "seat": {
+          "title": "Seat Management",
+          "desc": "Pengelolaan workstation end-to-end, mencakup penyediaan hardware, pemeliharaan berkala, hingga penggantian unit secara terintegrasi."
+        },
+        "site": {
+          "title": "Site Maintenance",
+          "desc": "Layanan pemeliharaan berkala secara langsung ke lokasi kantor cabang, ATM, atau depot logistik guna memastikan keandalan fisik perangkat."
+        },
+        "managed": {
+          "title": "Managed Services",
+          "desc": "Pengelolaan infrastruktur TI dan telekomunikasi secara berkelanjutan dengan pemantauan proaktif dan sistem pelaporan performa transparan."
+        },
+        "full_managed": {
+          "title": "Full Managed Services",
+          "desc": "Layanan operasional terkelola ujung-ke-ujung (E2E) 24/7 untuk memastikan seluruh roda bisnis Anda berjalan sempurna dengan SLA 99%."
+        }
+      }
+    }
   }
-}

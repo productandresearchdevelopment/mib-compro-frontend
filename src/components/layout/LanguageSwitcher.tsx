@@ -21,7 +21,7 @@ const LOCALE_CONFIG = {
 
 type Locale = (typeof routing.locales)[number];
 
-export default function LanguageSwitcher() {
+export default function LanguageSwitcher({ isDark = false }: { isDark?: boolean }) {
   const locale = useLocale() as Locale;
   const router = useRouter();
   const pathname = usePathname();
@@ -64,7 +64,7 @@ export default function LanguageSwitcher() {
       {/* Trigger Button */}
       <button
         onClick={() => setIsOpen((prev) => !prev)}
-        className="flex items-center gap-2 px-3 py-1.5 rounded-lg hover:bg-slate-100 transition-colors duration-200 cursor-pointer"
+        className="flex items-center gap-2 px-3 py-1.5 rounded-lg transition-colors duration-200 cursor-pointer"
         aria-label="Switch language"
         aria-expanded={isOpen}
         aria-haspopup="listbox"
@@ -82,7 +82,7 @@ export default function LanguageSwitcher() {
         </div>
 
         {/* Label */}
-        <span className="text-black text-base font-semibold leading-none whitespace-nowrap">
+        <span className={`${isDark ? "text-white" : "text-black"} text-base font-semibold leading-none whitespace-nowrap`}>
           {current.label}
         </span>
 
@@ -96,7 +96,7 @@ export default function LanguageSwitcher() {
           strokeWidth="2.5"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className={`text-black transition-transform duration-200 shrink-0 ${
+          className={`${isDark ? "text-white text-opacity-80" : "text-black"} transition-transform duration-200 shrink-0 ${
             isOpen ? "rotate-180" : "rotate-0"
           }`}
         >
