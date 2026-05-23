@@ -25,7 +25,7 @@ export default function RootLayout({
         <Script
           defer
           src="https://umami.qifess.id/script.js"
-          data-website-id="5bdaa7f1-d008-4b39-be5d-4078a2b09308"
+          data-website-id="46360e53-22cf-4898-9398-4853d13369f0"
         />
       </body>
     </html>
