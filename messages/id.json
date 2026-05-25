@@ -357,5 +357,14 @@
           "desc": "Layanan operasional terkelola ujung-ke-ujung (E2E) 24/7 untuk memastikan seluruh roda bisnis Anda berjalan sempurna dengan SLA 99%."
         }
       }
+    },
+    "highlights": {
+      "cta": {
+        "headlinePart1": "Lahir di lingkungan paling menantang,",
+        "headlinePart2": "mendukung operasional",
+        "headlinePart3": "berisiko tinggi di berbagai industri",
+        "button": "Pelajari lebih lanjut tentang kami"
+      },
+      "featuredTitle": "Wawasan Unggulan"
     }
   }

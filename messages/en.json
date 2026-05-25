@@ -357,5 +357,14 @@
           "desc": "Comprehensive, military-grade end-to-end operational managed service covered by a strict 99.9% SLA commitment."
         }
       }
+    },
+    "highlights": {
+      "cta": {
+        "headlinePart1": "Born in the toughest environments,",
+        "headlinePart2": "powers high-stakes",
+        "headlinePart3": "operations across industries",
+        "button": "Learn more about us"
+      },
+      "featuredTitle": "Featured Insights"
     }
   }

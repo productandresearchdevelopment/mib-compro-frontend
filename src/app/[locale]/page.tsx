@@ -9,6 +9,7 @@ import Hero from "@/components/pages/home/Hero";
 import Features from "@/components/pages/home/Features";
 import SolutionsDetail from "@/components/pages/home/SolutionsDetail";
 import ServicesShowcase from "@/components/pages/home/ServicesShowcase";
+import Highlights from "@/components/pages/home/Highlights";
 import WhyChooseUs from "@/components/pages/home/WhyChooseUs";
 import Preview from "@/components/pages/home/Preview";
 import HowWeWork from "@/components/pages/home/HowWeWork";
@@ -29,13 +30,7 @@ export default function LandingPage() {
         <Features />
         <SolutionsDetail />
         <ServicesShowcase />
-        {/* <WhyChooseUs /> */}
-        {/* <Preview /> */}
-        {/* <HowWeWork /> */}
-        {/* <Products /> */}
-        {/* <UseCases />
-        <News />
-        <Faq /> */}
+        <Highlights />
       </main>
 
       <Footer

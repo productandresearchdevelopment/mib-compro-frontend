@@ -11,8 +11,9 @@ import {
   ArrowRight, 
   Play
 } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Link from "next/link";
 
 export interface ShowcaseItem {
   id: string;
@@ -26,6 +27,7 @@ export default function SolutionsDetail() {
   const tQifess = useTranslations("qifess");
   const tProtect = useTranslations("protectQube");
   const tHardware = useTranslations("hardwareShowcase");
+  const locale = useLocale();
 
   // State-based ref to avoid Framer Motion hydration warning
   const [scrollContainer, setScrollContainer] = useState<HTMLElement | null>(null);
@@ -45,49 +47,49 @@ export default function SolutionsDetail() {
       id: "padlock",
       title: tHardware("items.padlock.title"),
       description: tHardware("items.padlock.desc"),
-      href: "/product",
+      href: `/${locale}/product/padlock?hideBack=true`,
       image: "https://images.unsplash.com/photo-1510519138101-570d1dca3d66?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
     },
     {
       id: "soundbox",
       title: tHardware("items.soundbox.title"),
       description: tHardware("items.soundbox.desc"),
-      href: "/product",
+      href: `/${locale}/product/soundbox?hideBack=true`,
       image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
     },
     {
       id: "edc",
       title: tHardware("items.edc.title"),
       description: tHardware("items.edc.desc"),
-      href: "/product",
+      href: `/${locale}/product/edc?hideBack=true`,
       image: "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
     },
     {
       id: "counter",
       title: tHardware("items.counter.title"),
       description: tHardware("items.counter.desc"),
-      href: "/product",
+      href: `/${locale}/product/mhu?hideBack=true`,
       image: "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
     },
     {
       id: "pos",
       title: tHardware("items.pos.title"),
       description: tHardware("items.pos.desc"),
-      href: "/product",
+      href: `/${locale}/product/pos?hideBack=true`,
       image: "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
     },
     {
       id: "cctv",
       title: tHardware("items.cctv.title"),
       description: tHardware("items.cctv.desc"),
-      href: "/product",
+      href: `/${locale}/product/cctv?hideBack=true`,
       image: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
     },
     {
       id: "cash_deposit",
       title: tHardware("items.cash_deposit.title"),
       description: tHardware("items.cash_deposit.desc"),
-      href: "/product",
+      href: `/${locale}/product/cash-deposit?hideBack=true`,
       image: "https://images.unsplash.com/photo-1621416894569-0f39ed31d247?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
     },
   ];
@@ -457,11 +459,12 @@ export default function SolutionsDetail() {
           {/* Scrolling Panel Track - Perfectly proportioned and aligned to avoid cuts */}
           <motion.div 
             style={{ x: xTranslation }} 
-            className="flex gap-8 px-6 md:px-0 md:ml-[calc(max(1.5rem,(100vw-60rem)/2+1.5rem))] w-[max-content]"
+            className="flex gap-8 px-6 md:px-0 md:ml-[calc(max(1.5rem,(100vw-80rem)/2+1.5rem))] w-[max-content]"
           >
             {hardwareItems.map((hardware) => (
-              <div 
+              <Link
                 key={hardware.id} 
+                href={hardware.href}
                 className="w-[80vw] sm:w-[320px] md:w-[340px] lg:w-[360px] h-[480px] flex flex-col justify-end group shrink-0 rounded-3xl border border-slate-100 shadow-2xl relative overflow-hidden transition-all duration-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] hover:scale-[1.01] cursor-pointer"
               >
                 {/* Visual Area: crisp absolute background image */}
@@ -483,15 +486,14 @@ export default function SolutionsDetail() {
                     {hardware.description}
                   </p>
                   
-                  <a 
-                    href={hardware.href} 
+                  <div 
                     className="flex items-center gap-2 text-white font-bold transition-all text-sm w-fit mt-1 group-hover:gap-3.5"
                   >
                     {tHardware("viewMore")}
                     <ArrowRight className="w-4 h-4 text-white" />
-                  </a>
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))}
             {/* Blank filler space to allow full scroll off-screen */}
             <div className="w-[15vw] md:w-[300px] shrink-0"></div>

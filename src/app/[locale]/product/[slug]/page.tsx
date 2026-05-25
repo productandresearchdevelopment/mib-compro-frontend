@@ -56,6 +56,17 @@ export default function ProductDetailPage(props: { params: Promise<{ locale: str
   // States for interactive layouts
   const [activeWorkflowIndex, setActiveWorkflowIndex] = useState(0);
   const [activeStepIndex, setActiveStepIndex] = useState(0);
+  const [hideBack, setHideBack] = useState(false);
+  
+  // Check if we should hide back link when accessed from SolutionsDetail
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const searchParams = new URLSearchParams(window.location.search);
+      if (searchParams.get("hideBack") === "true") {
+        setHideBack(true);
+      }
+    }
+  }, []);
   
   // Real-time IoT simulator states
   const [simulatedValues, setSimulatedValues] = useState<Record<string, string>>({});
@@ -142,15 +153,17 @@ export default function ProductDetailPage(props: { params: Promise<{ locale: str
         
         {/* ================= 1. COMMON HERO SECTION ================= */}
         <section className="relative max-w-7xl mx-auto px-6 py-12 md:py-20 flex flex-col md:flex-row items-center gap-12 md:gap-16 border-b border-slate-100">
-          <div className="absolute top-6 left-6">
-            <Link 
-              href={`/${locale}/product`}
-              className="inline-flex items-center gap-2 text-slate-500 hover:text-[#100420] font-semibold text-sm transition-colors"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              <span>{t("backToList")}</span>
-            </Link>
-          </div>
+          {!hideBack && (
+            <div className="absolute top-6 left-6">
+              <Link 
+                href={`/${locale}/product`}
+                className="inline-flex items-center gap-2 text-slate-500 hover:text-[#100420] font-semibold text-sm transition-colors"
+              >
+                <ArrowLeft className="w-4 h-4" />
+                <span>{t("backToList")}</span>
+              </Link>
+            </div>
+          )}
 
           <motion.div 
             initial={{ opacity: 0, x: -40 }}
@@ -773,30 +786,9 @@ export default function ProductDetailPage(props: { params: Promise<{ locale: str
           </div>
         </section>
 
-
-        {/* ================= 7. COMMON bottom CTA SECTION ================= */}
-        <section className="bg-[#100420] py-20 md:py-28 text-white text-center relative overflow-hidden">
-          <div className="absolute -top-40 -left-40 w-96 h-96 bg-primary/25 rounded-full blur-[128px]" />
-          <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-[#2068F7]/25 rounded-full blur-[128px]" />
-
-          <div className="max-w-4xl mx-auto px-6 relative z-10 flex flex-col items-center gap-8 md:gap-10">
-            <h2 className="text-3xl md:text-6xl font-black tracking-tight leading-tight max-w-3xl">
-              {t("ctaTitle")}
-            </h2>
-            
-            <Link 
-              href={`/${locale}/contact`}
-              className="group inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-primary text-white font-bold hover:bg-primary/95 transition-all shadow-xl shadow-primary/20 hover:scale-[1.03] active:scale-[0.98] text-lg"
-            >
-              <span>{t("ctaBtn")}</span>
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </div>
-        </section>
-
       </main>
 
-      <Footer showCta={false} />
+      <Footer />
     </div>
   );
 }
