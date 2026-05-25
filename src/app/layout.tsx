@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 import { CookiesProvider } from "next-client-cookies/server";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "MIB - Partner in Innovation",
@@ -20,6 +21,12 @@ export default function RootLayout({
     <html className={GeistSans.variable} suppressHydrationWarning>
       <body>
         <CookiesProvider>{children}</CookiesProvider>
+
+        <Script
+          defer
+          src="https://umami.qifess.id/script.js"
+          data-website-id="46360e53-22cf-4898-9398-4853d13369f0"
+        />
       </body>
     </html>
   );
