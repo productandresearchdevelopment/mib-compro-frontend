@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-import { cookies } from "next/headers";
 import createMiddleware from "next-intl/middleware";
 import { routing } from "./i18n/routing";
 
@@ -8,7 +7,7 @@ const intlMiddleware = createMiddleware(routing);
 
 export default async function middleware(req: NextRequest) {
   const pathName = req.nextUrl.pathname;
-  const token = (await cookies()).get("token");
+  const token = req.cookies.get("token");
 
   // Keep existing auth logic
   const authPagePatterns = [

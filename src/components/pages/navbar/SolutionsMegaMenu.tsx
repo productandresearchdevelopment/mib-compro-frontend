@@ -228,11 +228,11 @@ export default function SolutionsMegaMenu({
               </div>
             </div>
 
-            {/* Latest News */}
+            {/* Latest Insights */}
             <div className="flex flex-col gap-4">
               <div className="flex items-center justify-between">
                 <span className="text-[12px] font-bold tracking-widest text-slate-400 uppercase">
-                  {locale === "id" ? "Berita Terbaru" : "Latest News"}
+                  {locale === "id" ? "Insight Terbaru" : "Latest Insights"}
                 </span>
                 {/* Pagination Dots */}
                 <div className="flex gap-1.5 items-center">
@@ -244,7 +244,7 @@ export default function SolutionsMegaMenu({
 
               {/* News Card Banner */}
               <Link
-                href={`${baseHref}/news`}
+                href={`${baseHref}/insights`}
                 className="relative aspect-[21/9] rounded-2xl overflow-hidden group/news shadow-md border border-slate-100 flex flex-col justify-end p-5"
                 onClick={onClose}
               >

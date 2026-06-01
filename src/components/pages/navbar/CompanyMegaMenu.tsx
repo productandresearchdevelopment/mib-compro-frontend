@@ -43,9 +43,9 @@ export default function CompanyMegaMenu({
       href: `${baseHref}/careers`
     },
     {
-      name: locale === "id" ? "Berita Terbaru" : "News",
+      name: locale === "id" ? "Insight Terbaru" : "Insight",
       icon: "NewspaperIcon",
-      href: `${baseHref}/news`
+      href: `${baseHref}/insights`
     },
     {
       name: locale === "id" ? "Hubungi Kami" : "Contact Us",
@@ -116,11 +116,11 @@ export default function CompanyMegaMenu({
             </div>
           </div>
 
-          {/* RIGHT COLUMN: Latest News (col-span-6) */}
+          {/* RIGHT COLUMN: Latest Insights (col-span-6) */}
           <div className="col-span-6 flex flex-col gap-4 border-l border-slate-100 pl-10">
             <div className="flex items-center justify-between">
               <span className="text-[12px] font-bold tracking-widest text-slate-400 uppercase">
-                {locale === "id" ? "Berita Terbaru" : "Latest News"}
+                {locale === "id" ? "Insight Terbaru" : "Latest Insights"}
               </span>
               {/* Pagination Dots */}
               <div className="flex gap-1.5 items-center">
@@ -130,9 +130,9 @@ export default function CompanyMegaMenu({
               </div>
             </div>
 
-            {/* News Card Banner */}
+            {/* Insights Card Banner */}
             <Link
-              href={`${baseHref}/news`}
+              href={`${baseHref}/insights`}
               className="relative aspect-[16/9] rounded-2xl overflow-hidden group/news shadow-md border border-slate-100 flex flex-col justify-end p-6 w-full h-[230px]"
               onClick={onClose}
             >

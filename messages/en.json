@@ -4,7 +4,7 @@
     "solution": "Solution",
     "product": "Product",
     "company": "Company",
-    "news": "News",
+    "news": "Insight",
     "careers": "Careers",
     "contactUs": "Contact Us"
   },
@@ -95,11 +95,11 @@
     }
   },
   "news": {
-    "title": "Latest News & Insights",
+    "title": "Latest Stories, Trends & Tech Updates",
     "subtitle": "Stay updated with the latest trends, insights, and technological advancements in software and IoT solutions.",
-    "viewAll": "View All News",
+    "viewAll": "View All Insights",
     "readMore": "Read More",
-    "badge": "News & Event",
+    "badge": "Insight",
     "description": "Explore our collection of articles, news, events and insights, shares the latest updates, events, and milestones from the Qualita team.",
     "filterAll": "All",
     "filterNews": "News",
@@ -108,7 +108,13 @@
     "share": "Share Article:",
     "relatedTitle": "Related Articles",
     "backToList": "Back to News List",
-    "readTime": "min read"
+    "readTime": "min read",
+    "showing": "Showing {count} of {total} articles",
+    "demoTitle": "Maximize Your Business Potential",
+    "demoDesc": "Explore how our integrated field service management and smart AIoT solutions can streamline your operations, increase efficiency, and cut costs.",
+    "demoBtn": "Get a free demo",
+    "demoRatings": "5 ★ 2,500+ Projects Completed",
+    "lastUpdated": "Last updated"
   },
   "faq": {
     "title": "Frequently Asked Questions",
@@ -323,6 +329,7 @@
       "badge": "MIB MANAGED OPERATIONS",
       "title": "End-to-End Field Operations & Managed Services",
       "subtitle": "From outsourcing skilled talent, staging, secure logistics, site maintenance, to fully managed services — we support your business operations seamlessly.",
+      "readDetails": "Read Details",
       "items": {
         "labor": {
           "title": "Labor Outsourcing",
@@ -366,5 +373,18 @@
         "button": "Learn more about us"
       },
       "featuredTitle": "Featured Insights"
+    },
+    "contact": {
+      "badge": "Contact Us",
+      "title": "Let's Talk About Your Needs",
+      "form": {
+        "name": "Your Name",
+        "email": "Email Address",
+        "company": "Company",
+        "phone": "Phone Number (optional)",
+        "subject": "Subject / Interested",
+        "message": "Message",
+        "submit": "Leave us a Message"
+      }
     }
   }

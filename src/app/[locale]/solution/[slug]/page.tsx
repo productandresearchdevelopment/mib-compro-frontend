@@ -531,7 +531,6 @@ function FsmSolutionLayout({ data, locale }: { data: SolutionItem; locale: strin
         </section>
       )}
 
-      {/* --- FEATURE INSIGHTS SECTION (LIGHT THEME) --- */}
       {data.featureInsight && (
         <section className="relative max-w-7xl mx-auto px-6 py-24 z-10 border-t border-slate-100">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">

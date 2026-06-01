@@ -7,16 +7,11 @@ import { useTranslations } from "next-intl";
 
 import Hero from "@/components/pages/home/Hero";
 import Features from "@/components/pages/home/Features";
-import SolutionsDetail from "@/components/pages/home/SolutionsDetail";
 import ServicesShowcase from "@/components/pages/home/ServicesShowcase";
 import Highlights from "@/components/pages/home/Highlights";
-import WhyChooseUs from "@/components/pages/home/WhyChooseUs";
-import Preview from "@/components/pages/home/Preview";
-import HowWeWork from "@/components/pages/home/HowWeWork";
-import Products from "@/components/pages/home/Products";
-import UseCases from "@/components/pages/home/UseCases";
-import News from "@/components/pages/home/News";
-import Faq from "@/components/pages/home/Faq";
+import QifessSection from "@/components/pages/home/QifessSection";
+import ProtectQubeSection from "@/components/pages/home/ProtectQubeSection";
+import HardwareShowcaseSection from "@/components/pages/home/HardwareShowcaseSection";
 
 export default function LandingPage() {
   const tFooter = useTranslations("footer");
@@ -28,8 +23,10 @@ export default function LandingPage() {
       <main>
         <Hero />
         <Features />
-        <SolutionsDetail />
+        <QifessSection />
+        <ProtectQubeSection />
         <ServicesShowcase />
+        <HardwareShowcaseSection />
         <Highlights />
       </main>
 

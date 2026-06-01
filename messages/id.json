@@ -4,7 +4,7 @@
     "solution": "Solusi",
     "product": "Produk",
     "company": "Perusahaan",
-    "news": "Berita",
+    "news": "Insight",
     "careers": "Karir",
     "contactUs": "Hubungi Kami"
   },
@@ -95,11 +95,11 @@
     }
   },
   "news": {
-    "title": "Berita & Wawasan Terbaru",
+    "title": "Cerita, Tren & Kabar Teknologi Terbaru",
     "subtitle": "Tetap update dengan tren terbaru, wawasan, dan kemajuan teknologi dalam solusi perangkat lunak dan IoT.",
-    "viewAll": "Lihat Semua Berita",
+    "viewAll": "Lihat Semua Insight",
     "readMore": "Baca Selengkapnya",
-    "badge": "Berita & Acara",
+    "badge": "Insight",
     "description": "Jelajahi koleksi artikel, berita, acara, dan wawasan kami yang membagikan pembaruan, acara, dan pencapaian terbaru dari tim Qualita.",
     "filterAll": "Semua",
     "filterNews": "Berita",
@@ -108,7 +108,13 @@
     "share": "Bagikan Artikel:",
     "relatedTitle": "Artikel Terkait",
     "backToList": "Kembali ke Daftar Berita",
-    "readTime": "menit baca"
+    "readTime": "menit baca",
+    "showing": "Menampilkan {count} dari {total} artikel",
+    "demoTitle": "Maksimalkan Potensi Bisnis Anda",
+    "demoDesc": "Pelajari bagaimana solusi manajemen layanan lapangan terintegrasi dan sistem AIoT cerdas kami dapat menyederhanakan operasional, meningkatkan efisiensi, dan menekan biaya.",
+    "demoBtn": "Minta demo gratis",
+    "demoRatings": "5 ★ 2.500+ Proyek Selesai",
+    "lastUpdated": "Terakhir diperbarui"
   },
   "faq": {
     "title": "Pertanyaan yang Sering Diajukan",
@@ -323,6 +329,7 @@
       "badge": "MIB MANAGED OPERATIONS",
       "title": "Layanan Operasional & Managed Services Lapangan",
       "subtitle": "Dari penyediaan tenaga ahli, staging perangkat kasir, pengiriman terkelola, pemeliharaan ATM, hingga operasi terkelola ujung-ke-ujung.",
+      "readDetails": "Selengkapnya",
       "items": {
         "labor": {
           "title": "Labor Outsourcing",
@@ -366,5 +373,18 @@
         "button": "Pelajari lebih lanjut tentang kami"
       },
       "featuredTitle": "Wawasan Unggulan"
+    },
+    "contact": {
+      "badge": "Hubungi Kami",
+      "title": "Mari Bicara Tentang Kebutuhan Anda",
+      "form": {
+        "name": "Nama Anda",
+        "email": "Alamat Email",
+        "company": "Perusahaan",
+        "phone": "Nomor Telepon (opsional)",
+        "subject": "Subjek / Tertarik",
+        "message": "Pesan",
+        "submit": "Tinggalkan Pesan Untuk Kami"
+      }
     }
   }

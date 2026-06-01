@@ -88,7 +88,7 @@ export default function Highlights() {
             
             {/* LEFT COLUMN (60% of width): Image Overlay Style (Full Image, Text Inside) */}
             <Link
-              href={`/${locale}/news/${leftItem.slug}`}
+              href={`/${locale}/insights/${leftItem.slug}`}
               className="group relative block md:col-span-3 w-full h-[350px] sm:h-[400px] md:h-[420px] overflow-hidden rounded-xl md:rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-500"
             >
               {/* Background Image */}
@@ -125,7 +125,7 @@ export default function Highlights() {
               
               {/* Image Card Container */}
               <Link
-                href={`/${locale}/news/${rightItem.slug}`}
+                href={`/${locale}/insights/${rightItem.slug}`}
                 className="group relative block w-full h-[210px] sm:h-[250px] md:h-[270px] overflow-hidden rounded-xl md:rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-500 bg-slate-100"
               >
                 {/* Image */}
@@ -144,7 +144,7 @@ export default function Highlights() {
                   <span>{rightItem.date}</span>
                 </div>
                 <Link
-                  href={`/${locale}/news/${rightItem.slug}`}
+                  href={`/${locale}/insights/${rightItem.slug}`}
                   className="group mt-2.5 inline-block"
                 >
                   <h3 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight leading-snug group-hover:text-primary transition-colors line-clamp-3">

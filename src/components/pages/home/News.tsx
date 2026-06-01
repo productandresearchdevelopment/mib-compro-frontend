@@ -30,7 +30,7 @@ export default function News() {
       title: item.title[locale as "en" | "id"],
       date: item.date,
       image: item.image,
-      link: `/${locale}/news/${item.slug}`
+      link: `/${locale}/insights/${item.slug}`
     }));
   }, [locale]);
 
@@ -51,7 +51,7 @@ export default function News() {
               {tNews("subtitle")}
             </p>
           </div>
-          <Link href={`/${locale}/news`} className="flex items-center gap-2 font-semibold text-slate-900 border border-slate-300 bg-white hover:bg-slate-100 px-6 py-3 rounded-full transition-colors shrink-0">
+          <Link href={`/${locale}/insights`} className="flex items-center gap-2 font-semibold text-slate-900 border border-slate-300 bg-white hover:bg-slate-100 px-6 py-3 rounded-full transition-colors shrink-0">
             {tNews("viewAll")}
             <HugeiconsIcon icon={ArrowRight01Icon} className="w-5 h-5" />
           </Link>
