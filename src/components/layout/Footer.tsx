@@ -107,8 +107,8 @@ export default function Footer({
 
             <div className="flex flex-col gap-8">
               <p className="text-white text-base leading-relaxed">
-                Ruby commercial, Summarecon, Jl. Bulevar Selatan Blok TD No.19,
-                Marga Mulya, Bekasi Utara, Kota Bekasi.
+                18 Office Park 16 Floor, Jl.TB Simatupang No.18, Jakarta Selatan -
+                Indonesia
               </p>
 
               <div className="flex flex-col gap-4">
@@ -124,18 +124,14 @@ export default function Footer({
                     icon={Mail01Icon}
                     className="w-6 h-6 text-white"
                   />
-                  <span className="text-white text-base">
-                    contact@qualita-indonesia.com
-                  </span>
+                  <span className="text-white text-base">contact@mib.com</span>
                 </div>
                 <div className="flex items-center gap-2.5">
                   <HugeiconsIcon
                     icon={Mail01Icon}
                     className="w-6 h-6 text-white"
                   />
-                  <span className="text-white text-base">
-                    career@qualita-indonesia.com
-                  </span>
+                  <span className="text-white text-base">career@mib.com</span>
                 </div>
               </div>
             </div>
@@ -240,7 +236,7 @@ export default function Footer({
         {/* Copyright & Legal Links */}
         <div className="w-full mt-24 pt-4 flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="text-white/80 text-base">
-            © 2026 PT. QUALITA INDONESIA. All rights reserved.
+            © 2026 PT. Mitra Inovasi Bisnis. All rights reserved.
           </p>
           <div className="flex flex-wrap items-center gap-4 text-sm text-white/90">
             <Link

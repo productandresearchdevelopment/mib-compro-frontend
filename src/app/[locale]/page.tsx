@@ -23,11 +23,11 @@ export default function LandingPage() {
       <main>
         <Hero />
         <Features />
-        <QifessSection />
+        {/* <QifessSection />
         <ProtectQubeSection />
         <ServicesShowcase />
         <HardwareShowcaseSection />
-        <Highlights />
+        <Highlights /> */}
       </main>
 
       <Footer
