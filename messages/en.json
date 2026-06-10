@@ -386,5 +386,75 @@
         "message": "Message",
         "submit": "Leave us a Message"
       }
-    }
+    },
+    "coverage": {
+      "badge": "Operational Coverage",
+      "title": "Nationwide Operational Excellence",
+      "subtitle": "Supporting businesses across Indonesia with a robust network of storage facilities, expert technicians, and specialized service centers.",
+      "stats": {
+        "warehouse": {
+          "title": "Warehouse",
+          "desc": "Strategic storage facilities nationwide"
+        },
+        "fieldEngineer": {
+          "title": "Field Engineer",
+          "desc": "Certified technicians ready to serve"
+        },
+        "repairCenter": {
+          "title": "Repair Center",
+          "desc": "Specialized repair and maintenance centers"
+        },
+        "servicePoints": {
+          "title": "Service Points",
+          "desc": "Service points across Indonesia"
+        }
+      }
+    },
+    "milestones": {
+      "badge": "MIB Timeline",
+      "title": "MIB Milestones Through the Years",
+      "subtitle": "Discover our journey of innovation, expanding physical hardware networks, robust software platforms, and nationwide technical field services.",
+      "items": {
+        "founding": {
+          "year": "2016",
+          "title": "Company Establishment",
+          "desc": "Mitra Inovasi Bisnis was founded with a strategic vision to provide high-quality cash handling hardware and secure technology services in Indonesia."
+        },
+        "hardware": {
+          "year": "2018",
+          "title": "First Flagship Hardware Suite",
+          "desc": "Successfully launched currency validators (MHU) and cash-deposit hardware systems to key financial institutions and banks in Jakarta."
+        },
+        "qifess": {
+          "year": "2020",
+          "title": "Launch of QIFESS FSM Platform",
+          "desc": "Developed the QIFESS Field Service Management platform to optimize labor dispatching, SLA performance calculations, and remote merchant ticketing."
+        },
+        "protectqube": {
+          "year": "2022",
+          "title": "Introducing protectQube AIoT",
+          "desc": "Pioneered smart perimeter CCTV AI surveillance, incorporating on-edge facial recognition, occupancy metrics, and automated banking kiosk protection."
+        },
+        "scale": {
+          "year": "2024",
+          "title": "Nationwide Scale & Expansion",
+          "desc": "Expanded MIB's operational footprint to cover all 34 provinces of Indonesia, deploying 500+ field engineers across 188+ service points."
+        }
+      }
+    },
+  "companyHero": {
+    "title": "About Our Company Profile",
+    "subtitle": "We are an end-to-end ICT & automation partner, creating new customer experiences and streamlining business processes through integrated technology.",
+    "badge": "About Company",
+    "explore": "Explore Solutions",
+    "contact": "Contact Us",
+    "whoWeAreTitle": "Who We Are?",
+    "whoWeAreP1": "Established in 2012, Mitrainovasi is becoming a well known company with series of reputable competences to meet stakeholder’s high expectation.",
+    "whoWeAreP2": "Mitrainovasi focussing business in Information & Communication Technology and Automation to innovate business process by creating a new customer experience based on technology, people and process.",
+    "whatDrivesUsTitle": "What Drive Us?",
+    "missionTitle": "Mission",
+    "missionText": "Creating a winning business partnership for all stakeholders",
+    "valuesTitle": "Values",
+    "valuesText": "Integrity & Sustainability"
   }
+}

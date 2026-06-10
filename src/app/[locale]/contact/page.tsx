@@ -83,7 +83,7 @@ export default function ContactPage() {
                 </span>
               </div>
 
-              <h1 className="text-4xl md:text-6xl font-bold text-[var(--black)] tracking-tight max-w-3xl leading-tight">
+              <h1 className="text-3xl md:text-[40px] font-semibold text-[var(--black)] tracking-tight max-w-3xl leading-tight">
                 {t("title")}
               </h1>
             </div>

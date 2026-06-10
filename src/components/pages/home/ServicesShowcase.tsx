@@ -96,7 +96,7 @@ export default function ServicesShowcase() {
               {t("badge")}
             </span>
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 leading-[1.15]">
+          <h2 className="text-3xl md:text-[40px] font-semibold tracking-tight text-slate-900 leading-tight">
             {t("title")}
           </h2>
           <p className="text-slate-500 text-base md:text-lg leading-relaxed max-w-4xl">

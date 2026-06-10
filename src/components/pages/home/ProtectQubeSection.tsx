@@ -10,26 +10,38 @@ import {
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-export default function ProtectQubeSection() {
+interface ProtectQubeSectionProps {
+  lightTheme?: boolean;
+}
+
+export default function ProtectQubeSection({ lightTheme = false }: ProtectQubeSectionProps) {
   const tProtect = useTranslations("protectQube");
   const [activeProtectTab, setActiveProtectTab] = useState<string>("atm");
 
   return (
-    <section className="py-16 md:py-24 bg-primary-600 text-white relative overflow-hidden flex flex-col justify-center">
+    <section className={`py-16 md:py-24 relative overflow-hidden flex flex-col justify-center transition-colors duration-300 ${
+      lightTheme ? "bg-white text-slate-900 border-y border-slate-200/80" : "bg-primary-600 text-white"
+    }`}>
       <div className="mx-auto max-w-7xl w-full space-y-8 px-6">
         
         {/* Header Block perfectly centered to match image reference */}
         <div className="flex flex-col items-center justify-center text-center space-y-5 max-w-4xl mx-auto mb-10">
           <div className="flex items-center gap-2 select-none">
-            <span className="w-2.5 h-2.5 bg-white rounded-[2px] shadow-sm" />
-            <span className="text-xs sm:text-sm font-bold text-white uppercase tracking-widest font-mono drop-shadow-sm">
+            <span className={`w-2.5 h-2.5 rounded-[2px] ${lightTheme ? "bg-red-600" : "bg-white shadow-sm"}`} />
+            <span className={`text-xs sm:text-sm font-bold uppercase tracking-widest font-mono ${
+              lightTheme ? "text-slate-500" : "text-white drop-shadow-sm"
+            }`}>
               {tProtect("badge")}
             </span>
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.1] text-center drop-shadow-sm">
+          <h2 className={`text-3xl md:text-[40px] font-semibold tracking-tight leading-tight text-center ${
+            lightTheme ? "text-slate-900" : "text-white drop-shadow-sm"
+          }`}>
             {tProtect("title")}
           </h2>
-          <p className="text-white/90 text-base md:text-lg leading-relaxed max-w-2xl text-center font-medium">
+          <p className={`text-base md:text-lg leading-relaxed max-w-2xl text-center font-medium ${
+            lightTheme ? "text-slate-500" : "text-white/90"
+          }`}>
             {tProtect("subtitle")}
           </p>
         </div>
@@ -49,14 +61,18 @@ export default function ProtectQubeSection() {
                 onClick={() => setActiveProtectTab(tab.key)}
                 className={`flex items-center gap-2 pb-2 text-sm font-bold transition-all relative ${
                   isActive
-                    ? "text-white"
-                    : "text-white/60 hover:text-white/90"
+                    ? lightTheme ? "text-slate-900" : "text-white"
+                    : lightTheme ? "text-slate-500 hover:text-slate-800" : "text-white/60 hover:text-white/90"
                 }`}
               >
                 {tab.icon}
                 {tProtect(`features.${tab.key}.title`)}
                 {isActive && (
-                  <span className="absolute bottom-[-2px] left-0 right-0 h-[2.5px] bg-white rounded-full shadow-[0_0_8px_rgba(255,255,255,0.6)]" />
+                  lightTheme ? (
+                    <span className="absolute bottom-[-2px] left-0 right-0 h-[2.5px] bg-red-600 rounded-full" />
+                  ) : (
+                    <span className="absolute bottom-[-2px] left-0 right-0 h-[2.5px] bg-white rounded-full shadow-[0_0_8px_rgba(255,255,255,0.6)]" />
+                  )
                 )}
               </button>
             );
@@ -65,7 +81,9 @@ export default function ProtectQubeSection() {
 
         {/* Central AIoT CCTV & Video Mockup player - Dynamic based on activeProtectTab */}
         <div className="relative w-full">
-          <div className="aspect-2/1 w-full relative rounded-2xl overflow-hidden bg-black border border-white/10 shadow-2xl">
+          <div className={`aspect-2/1 w-full relative rounded-2xl overflow-hidden bg-black border shadow-2xl ${
+            lightTheme ? "border-slate-200" : "border-white/10"
+          }`}>
             
             {/* CCTV Feed Background Image (Dynamic based on selected tab) */}
             {[
@@ -97,7 +115,7 @@ export default function ProtectQubeSection() {
               <div className="flex items-start justify-between text-[10px] sm:text-xs tracking-wider">
                 <div className="flex items-center gap-2.5">
                   <span className="relative flex size-2.5">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75"></span>
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-50 opacity-75"></span>
                     <span className="relative inline-flex rounded-full size-2.5 bg-red-600"></span>
                   </span>
                   <span className="font-bold text-red-500">REC [LIVE]</span>
@@ -175,7 +193,7 @@ export default function ProtectQubeSection() {
                     <div className="absolute left-[30%] top-0 h-full w-[1px] border-l border-dashed border-emerald-400/50"></div>
                     
                     {/* Counting Panel Overlay */}
-                    <div className="absolute bottom-[10%] right-[10%] bg-emerald-950/85 border border-emerald-400/40 p-2.5 rounded-lg space-y-1 text-[9px] text-emerald-400 w-[170px] backdrop-blur-xs">
+                    <div className="absolute bottom-[10%] right-[10%] bg-emerald-955 bg-emerald-950 border border-emerald-400/40 p-2.5 rounded-lg space-y-1 text-[9px] text-emerald-400 w-[170px] backdrop-blur-xs">
                       <div className="flex items-center justify-between font-bold border-b border-emerald-500/20 pb-1">
                         <span>PEOPLE COUNTING</span>
                         <span className="text-white text-xs">04</span>
@@ -240,7 +258,9 @@ export default function ProtectQubeSection() {
 
         {/* Active Feature Detailed Explanation & Carousel Indicator (Exact Mockup Layout!) */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 pt-6">
-          <p className="text-white/95 text-lg md:text-xl font-medium leading-relaxed max-w-4xl transition-all duration-300">
+          <p className={`text-lg md:text-xl font-medium leading-relaxed max-w-4xl transition-all duration-300 ${
+            lightTheme ? "text-slate-700" : "text-white/95"
+          }`}>
             {tProtect(`features.${activeProtectTab}.desc`)}
           </p>
           
@@ -257,8 +277,10 @@ export default function ProtectQubeSection() {
                <button
                   key={tab.key}
                   onClick={() => setActiveProtectTab(tab.key)}
-                  className={`size-2.5 rounded-full transition-all duration-350 border border-white/40 ${
-                    isActive ? "bg-white scale-120 w-6 shadow-[0_0_8px_rgba(255,255,255,0.6)]" : "bg-transparent hover:bg-white/30"
+                  className={`size-2.5 rounded-full transition-all duration-350 border ${
+                    lightTheme 
+                      ? `border-slate-300 ${isActive ? "bg-slate-900 scale-120 w-6" : "bg-transparent hover:bg-slate-200"}`
+                      : `border-white/40 ${isActive ? "bg-white scale-120 w-6 shadow-[0_0_8px_rgba(255,255,255,0.6)]" : "bg-transparent hover:bg-white/30"}`
                   }`}
                 />
               );

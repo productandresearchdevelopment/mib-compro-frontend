@@ -93,7 +93,7 @@ export default function CareersPage() {
 
             {/* Inner Content */}
             <div className="relative z-10 max-w-4xl flex flex-col items-center gap-6">
-              <h1 className="text-3xl md:text-6xl font-bold text-white tracking-tight leading-tight whitespace-pre-line">
+              <h1 className="text-3xl md:text-[40px] font-semibold text-white tracking-tight leading-tight whitespace-pre-line">
                 {t("bannerTitle")}
               </h1>
               
@@ -112,7 +112,7 @@ export default function CareersPage() {
             
             {/* Title & Desc */}
             <div className="flex flex-col gap-4 max-w-4xl">
-              <h2 className="text-3xl md:text-5xl font-bold text-[#100420] tracking-tight leading-tight">
+              <h2 className="text-3xl md:text-[40px] font-semibold text-[#100420] tracking-tight leading-tight">
                 {t("title")}
               </h2>
               <p className="text-lg text-[#475569] font-normal leading-relaxed">

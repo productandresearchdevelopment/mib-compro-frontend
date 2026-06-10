@@ -143,7 +143,7 @@ export default function HardwareShowcaseSection() {
           </div>
           
           {/* Title */}
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 leading-[1.15]">
+          <h2 className="text-3xl md:text-[40px] font-semibold tracking-tight text-slate-900 leading-tight">
             {tHardware("title")}
           </h2>
           

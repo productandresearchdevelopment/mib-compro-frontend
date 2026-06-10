@@ -23,7 +23,7 @@ export default function Faq() {
   }, [tFaq]);
 
   return (
-    <section id="faq" className="py-24 bg-white">
+    <section id="faq" className="pt-24 pb-32 bg-white">
       <div className="max-w-7xl mx-auto px-6 w-full flex flex-col lg:flex-row gap-16 lg:gap-24 items-start">
         <div className="flex flex-col gap-8 lg:w-5/12 lg:sticky lg:top-32">
           <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-slate-900 leading-tight">

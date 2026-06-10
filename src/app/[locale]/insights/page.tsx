@@ -86,7 +86,7 @@ export default function NewsListingPage() {
                 {t("badge")}
               </span>
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-black tracking-tight leading-tight">
+            <h1 className="text-3xl md:text-[40px] font-semibold text-black tracking-tight leading-tight">
               {t("title")}
             </h1>
           </div>

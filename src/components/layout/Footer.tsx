@@ -34,7 +34,7 @@ export default function Footer({
   return (
     <footer className="w-full relative overflow-hidden bg-[#0f172a]">
       {/* Top Wave Divider with droplet notch (looks like top section dips into the dark footer) */}
-      <div className="absolute top-0 left-0 right-0 w-full overflow-hidden leading-none z-10 pointer-events-none select-none">
+      {/* <div className="absolute top-0 left-0 right-0 w-full overflow-hidden leading-none z-10 pointer-events-none select-none">
         <svg
           viewBox="0 0 1200 40"
           preserveAspectRatio="none"
@@ -45,7 +45,7 @@ export default function Footer({
             className="fill-white dark:fill-background"
           />
         </svg>
-      </div>
+      </div> */}
       {/* Right Abstract Visual Shape (Corner of the entire footer - Multi-layered Abstract Fluid Waves) */}
       <div className="absolute right-0 top-0 h-[480px] w-[35%] hidden lg:block pointer-events-none select-none z-0">
         <div className="relative w-full h-full">
@@ -54,21 +54,18 @@ export default function Footer({
             preserveAspectRatio="none"
             className="w-full h-full text-primary"
           >
-            {/* Layer 1: Wide, Soft Ambient Back Wave */}
             <path
               d="M100 0 C160 120, 140 180, 260 220 C340 250, 320 320, 500 340 V0 Z"
               fill="currentColor"
               className="opacity-20 blur-[2px]"
             />
 
-            {/* Layer 2: Intersecting Middle Fluid Wave */}
             <path
               d="M180 0 C240 140, 220 200, 330 240 C400 270, 380 340, 500 375 V0 Z"
               fill="currentColor"
               className="opacity-45"
             />
 
-            {/* Layer 3: Solid Front Sweeping Wave */}
             <path
               d="M260 0 C300 160, 280 220, 380 260 C440 290, 420 360, 500 400 V0 Z"
               fill="currentColor"

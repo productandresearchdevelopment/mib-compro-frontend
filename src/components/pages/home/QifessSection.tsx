@@ -12,7 +12,7 @@ export default function QifessSection() {
       <div className="mx-auto max-w-7xl space-y-16 px-6">
         {/* Header Block matching provided structure but sized perfectly */}
         <div className="flex flex-col lg:flex-row justify-between items-start gap-8">
-          <h2 className="text-4xl md:text-5xl lg:text-[48px] font-semibold tracking-tight text-slate-900 leading-[1.3] lg:max-w-[680px]">
+          <h2 className="text-3xl md:text-[40px] font-semibold tracking-tight text-slate-900 leading-tight lg:max-w-[680px]">
             {tQifess("title")}
           </h2>
           <p className="text-lg text-slate-500 font-medium leading-[1.8] lg:max-w-[550px] lg:text-right md:ml-auto">

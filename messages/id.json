@@ -386,5 +386,75 @@
         "message": "Pesan",
         "submit": "Tinggalkan Pesan Untuk Kami"
       }
-    }
+    },
+    "coverage": {
+      "badge": "Cakupan Operasional",
+      "title": "Keunggulan Operasional Skala Nasional",
+      "subtitle": "Mendukung bisnis di seluruh Indonesia dengan jaringan fasilitas penyimpanan, teknisi ahli, dan pusat layanan khusus yang kuat.",
+      "stats": {
+        "warehouse": {
+          "title": "Gudang",
+          "desc": "Fasilitas penyimpanan strategis di seluruh Indonesia"
+        },
+        "fieldEngineer": {
+          "title": "Teknisi Lapangan",
+          "desc": "Teknisi bersertifikat yang siap melayani"
+        },
+        "repairCenter": {
+          "title": "Pusat Perbaikan",
+          "desc": "Pusat perbaikan dan pemeliharaan khusus"
+        },
+        "servicePoints": {
+          "title": "Titik Layanan",
+          "desc": "Titik layanan yang tersebar di seluruh Indonesia"
+        }
+      }
+    },
+    "milestones": {
+      "badge": "Lini Masa MIB",
+      "title": "Milestone MIB Dari Tahun ke Tahun",
+      "subtitle": "Temukan perjalanan inovasi kami, perluasan jaringan perangkat keras fisik, platform perangkat lunak yang andal, dan layanan operasional teknis skala nasional.",
+      "items": {
+        "founding": {
+          "year": "2016",
+          "title": "Pendirian Perusahaan",
+          "desc": "Mitra Inovasi Bisnis didirikan dengan visi strategis untuk menyediakan perangkat keras penanganan uang tunai berkualitas tinggi dan layanan teknologi aman di Indonesia."
+        },
+        "hardware": {
+          "year": "2018",
+          "title": "Rangkaian Perangkat Keras Unggulan Pertama",
+          "desc": "Berhasil meluncurkan mesin penghitung uang (MHU) dan sistem perangkat keras setor tunai ke lembaga keuangan dan bank utama di Jakarta."
+        },
+        "qifess": {
+          "year": "2020",
+          "title": "Peluncuran Platform QIFESS FSM",
+          "desc": "Mengembangkan platform QIFESS Field Service Management untuk mengoptimalkan penugasan teknisi, kalkulasi performa SLA, dan tiket merchant jarak jauh."
+        },
+        "protectqube": {
+          "year": "2022",
+          "title": "Memperkenalkan protectQube AIoT",
+          "desc": "Mempelopori pengawasan AI CCTV perimeter pintar, menggabungkan pengenalan wajah pada perangkat, metrik hunian, dan perlindungan kios perbankan otomatis."
+        },
+        "scale": {
+          "year": "2024",
+          "title": "Skala Nasional & Ekspansi Jaringan",
+          "desc": "Memperluas jejak operasional MIB hingga mencakup seluruh 34 provinsi di Indonesia, menempatkan 500+ teknisi lapangan di 188+ titik layanan."
+        }
+      }
+    },
+  "companyHero": {
+    "title": "Profil Perusahaan Kami",
+    "subtitle": "Kami adalah mitra ICT & otomatisasi end-to-end, menciptakan pengalaman pelanggan baru dan merampingkan proses bisnis melalui teknologi terintegrasi.",
+    "badge": "Tentang Perusahaan",
+    "explore": "Jelajahi Solusi",
+    "contact": "Hubungi Kami",
+    "whoWeAreTitle": "Siapa Kami?",
+    "whoWeAreP1": "Didirikan pada tahun 2012, Mitrainovasi berkembang menjadi perusahaan terkemuka dengan serangkaian kompetensi terpercaya untuk memenuhi ekspektasi tinggi para pemangku kepentingan.",
+    "whoWeAreP2": "Mitrainovasi berfokus pada bisnis Teknologi Informasi & Komunikasi dan Otomatisasi untuk menginovasikan proses bisnis dengan menciptakan pengalaman pelanggan baru berbasis teknologi, sumber daya manusia, dan proses.",
+    "whatDrivesUsTitle": "Apa yang Mendorong Kami?",
+    "missionTitle": "Misi",
+    "missionText": "Menciptakan kemitraan bisnis yang saling menguntungkan bagi semua pemangku kepentingan",
+    "valuesTitle": "Nilai-Nilai",
+    "valuesText": "Integritas & Keberlanjutan"
   }
+}

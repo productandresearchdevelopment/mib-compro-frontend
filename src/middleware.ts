@@ -49,6 +49,6 @@ export const config = {
   matcher: [
     "/",
     "/(id|en)/:path*",
-    "/((?!api|_next/static|_next/image|favicon.ico|images|icons|fonts).*)",
+    "/((?!api|_next/static|_next/image|favicon.ico|images|icons|fonts|vidio).*)",
   ],
 };
