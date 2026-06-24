@@ -78,7 +78,7 @@ export default function HardwareShowcaseSection() {
       title: tHardware("items.padlock.title"),
       description: tHardware("items.padlock.desc"),
       href: `/${locale}/product/padlock?hideBack=true`,
-      image: "https://images.unsplash.com/photo-1510519138101-570d1dca3d66?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      image: "/images/product/padlock.jpeg",
     },
     {
       id: "soundbox",

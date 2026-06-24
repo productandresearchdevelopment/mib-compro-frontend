@@ -19,6 +19,7 @@ import { NEWS_DATA, NewsItem } from "@/data/newsData";
 export default function NewsListingPage() {
   const locale = useLocale();
   const t = useTranslations("news");
+  const tFooter = useTranslations("footer");
   const [activeFilter, setActiveFilter] = useState<"All" | "News" | "Blog" | "Event">("All");
 
   // Filter Categories list
@@ -270,7 +271,12 @@ export default function NewsListingPage() {
         </div>
       </main>
 
-      <Footer showCta={true} />
+      <Footer
+        showCta={true}
+        ctaTitle={tFooter("cta.insightTitle")}
+        ctaButtonText={tFooter("cta.insightButton")}
+        ctaButtonHref="/contact"
+      />
     </div>
   );
 }

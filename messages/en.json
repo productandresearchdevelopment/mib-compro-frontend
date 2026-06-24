@@ -10,7 +10,7 @@
   },
   "hero": {
     "title": "Bridging Innovation with Real-World Intelligence",
-    "subtitle": "We provide integrated software and IoT solutions that help businesses streamline processes, improve efficiency, and make data-driven decisions in real time.",
+    "subtitle": "We integrate technology, infrastructure, and people to deliver end-to-end solutions across software, hardware, managed services, and intelligent operations.",
     "exploreSolutions": "Explore Solutions",
     "viewProduct": "View Product"
   },
@@ -51,7 +51,7 @@
   },
   "products": {
     "title": "Solutions Powered by Our Products",
-    "subtitle": "From smart software systems to IoT devices, our products are designed to solve real operational challenges.",
+    "subtitle": "From smart software systems to AIoT devices, our products are designed to solve real operational challenges.",
     "fsm": {
       "title": "Field Service Management",
       "description": "Comprehensive solution that streamlines operations, optimizes resource allocation, and enhances customer satisfaction through intelligent automation.",
@@ -60,8 +60,8 @@
       "tryDemo": "Try Demo"
     },
     "iot": {
-      "title": "IoT Solutions",
-      "description": "End-to-end IoT solutions for multi-industry environments with real-time monitoring, analytics, and automated response capabilities.",
+      "title": "AIoT Solutions",
+      "description": "End-to-end AIoT solutions for multi-industry environments with real-time monitoring, analytics, and automated response capabilities.",
       "features": ["24/7 Monitoring", "Real-time Alerts", "Device Management", "AI Detection"],
       "learnMore": "Learn More",
       "tryDemo": "Try Demo"
@@ -143,6 +143,15 @@
   "footer": {
     "cta": {
       "title": "Ready to Get Started?",
+      "contactTitle": "Let's Build Something Great Together",
+      "companyTitle": "Let's Build The Future Together",
+      "companyButton": "Talk With Us",
+      "insightTitle": "Stay Informed, Stay Ahead",
+      "insightButton": "Get In Touch",
+      "productTitle": "Ready to Transform Your Operations?",
+      "productButton": "Get In Touch",
+      "solutionTitle": "Find the Right Solution for Your Business",
+      "solutionButton": "Get In Touch",
       "button": "Lets Talk with us"
     }
   },
@@ -175,14 +184,14 @@
   "product": {
     "badge": "Product by Mitra Inovasi Bisnis",
     "heroTitle": "One Ecosystem. Multiple Solutions. Built for Smarter Operations.",
-    "heroSubtitle": "From powerful software platforms to real-time IoT systems and reliable hardware — our products are designed to work together, helping you manage, monitor, and scale your operations seamlessly.",
+    "heroSubtitle": "From powerful software platforms to real-time AIoT systems and reliable hardware — our products are designed to work together, helping you manage, monitor, and scale your operations seamlessly.",
     "exploreMore": "Explore More",
     "exploreSoftware": "Explore Software",
-    "exploreIot": "Explore IoT Systems",
+    "exploreIot": "Explore AIoT Systems",
     "exploreHardware": "Explore Hardware",
     "softwareTitle": "Powerful Software Built for Performance",
     "softwareDesc": "Scalable software platforms that help you manage operations, teams and data with ease and accuracy.",
-    "iotTitle": "Smart IoT Systems for Real-Time Insights",
+    "iotTitle": "Smart AIoT Systems for Real-Time Insights",
     "iotDesc": "Connected devices and sensors that monitor, track, and deliver data in real time — anywhere, anytime.",
     "hardwareTitle": "Reliable Hardware You Can Count On",
     "hardwareDesc": "High-quality hardware devices designed to support your operations in the field and the office.",
@@ -308,11 +317,11 @@
         "desc": "Versatile wireless Point-of-Sale platform supporting chip cards, QRIS, and NFC contactless payments."
       },
       "counter": {
-        "title": "Mesin Hitung Uang",
+        "title": "Money Counting Machine",
         "desc": "High-velocity note counter with automated ultraviolet, infrared, and magnetic counterfeit detection."
       },
       "pos": {
-        "title": "Mesin POS",
+        "title": "POS machine",
         "desc": "Modern cash register terminal with high processing speed to power retail sales and inventory integration."
       },
       "cctv": {

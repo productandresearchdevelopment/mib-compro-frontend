@@ -35,32 +35,32 @@ export default function SolutionsMegaMenu({
     {
       name: "AIoT",
       icon: "CpuIcon",
-      href: `${baseHref}/solution/aiot`
+      href: `${baseHref}/our-solution/aiot`
     },
     {
       name: locale === "id" ? "Pelacakan Aset" : "Asset Tracking",
       icon: "Location01Icon",
-      href: `${baseHref}/solution/asset-tracking`
+      href: `${baseHref}/our-solution/asset-tracking`
     },
     {
       name: "Field Service Management",
       icon: "TaskDone01Icon",
-      href: `${baseHref}/solution/fsm`
+      href: `${baseHref}/our-solution/fsm`
     },
     {
       name: locale === "id" ? "Pelaporan & Analitik" : "Reporting & Analytics",
       icon: "Analytics01Icon",
-      href: `${baseHref}/solution/analytics`
+      href: `${baseHref}/our-solution/analytics`
     },
     {
       name: locale === "id" ? "Energi & Utilitas" : "Energy & Utilities",
       icon: "FlashIcon",
-      href: `${baseHref}/solution/energy`
+      href: `${baseHref}/our-solution/energy`
     },
     {
       name: locale === "id" ? "Infrastruktur Cerdas" : "Smart Infrastructure",
       icon: "Building01Icon",
-      href: `${baseHref}/solution/smart-infrastructure`
+      href: `${baseHref}/our-solution/smart-infrastructure`
     }
   ];
 
@@ -68,22 +68,22 @@ export default function SolutionsMegaMenu({
     {
       name: locale === "id" ? "Perbankan" : "Banking",
       icon: "BankIcon",
-      href: `${baseHref}/solution/banking`
+      href: `${baseHref}/our-solution/banking`
     },
     {
       name: locale === "id" ? "Logistik & Distribusi" : "Logistics & Distribution",
       icon: "DeliveryTruck01Icon",
-      href: `${baseHref}/solution/logistics`
+      href: `${baseHref}/our-solution/logistics`
     },
     {
       name: locale === "id" ? "Manufaktur" : "Manufacturing",
       icon: "FactoryIcon",
-      href: `${baseHref}/solution/manufacturing`
+      href: `${baseHref}/our-solution/manufacturing`
     },
     {
       name: locale === "id" ? "Energi & Utilitas" : "Energy & Utilities",
       icon: "FlashIcon",
-      href: `${baseHref}/solution/energy-industry`
+      href: `${baseHref}/our-solution/energy-industry`
     }
   ];
 
@@ -165,7 +165,7 @@ export default function SolutionsMegaMenu({
             {/* Explore all solutions link */}
             <div className="mt-2 border-t border-slate-100 pt-6">
               <Link
-                href={`${baseHref}/solution`}
+                href={`${baseHref}/our-solution`}
                 className="inline-flex items-center gap-2 text-[16px] font-bold text-slate-900 hover:text-primary transition-colors group/explore"
                 onClick={onClose}
               >
@@ -177,10 +177,10 @@ export default function SolutionsMegaMenu({
 
           {/* RIGHT COLUMN: Featured solutions & Latest News (col-span-5) */}
           <div className="col-span-5 flex flex-col gap-8 border-l border-slate-100 pl-10">
-            {/* Features Solution */}
+            {/* Main Products */}
             <div className="flex flex-col gap-4">
               <span className="text-[12px] font-bold tracking-widest text-slate-400 uppercase">
-                {locale === "id" ? "Fitur Solusi" : "Features Solution"}
+                {locale === "id" ? "Produk Utama" : "Main Products"}
               </span>
 
               <div className="flex flex-col gap-3">
@@ -191,9 +191,14 @@ export default function SolutionsMegaMenu({
                   onClick={onClose}
                 >
                   <div className="flex items-center justify-between w-full">
-                    <span className="font-extrabold text-[22px] tracking-tighter text-[#1e3a8a]">
-                      QI<span className="text-[#3b82f6]">FESS</span>
-                    </span>
+                    <div className="relative h-7 w-28">
+                      <Image
+                        src="/images/logo-qifess.png"
+                        alt="QIFESS Logo"
+                        fill
+                        className="object-contain object-left"
+                      />
+                    </div>
                     <div className="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 group-hover/qifess:text-primary group-hover/qifess:border-slate-300 transition-colors shrink-0">
                       <HugeiconsIcon icon={ArrowUpRight01Icon} className="w-4.5 h-4.5" />
                     </div>
@@ -205,24 +210,29 @@ export default function SolutionsMegaMenu({
                   </p>
                 </Link>
 
-                {/* ProtectQube Card */}
+                {/* AI ATM Security Card */}
                 <Link
-                  href={`${baseHref}/product/protectqube`}
+                  href={`${baseHref}/product/surveillance-ai-atm`}
                   className="p-4 rounded-xl border border-slate-100 bg-slate-50/50 hover:bg-slate-50 hover:border-slate-200 transition-all flex flex-col gap-2 group/qube relative"
                   onClick={onClose}
                 >
                   <div className="flex items-center justify-between w-full">
-                    <span className="font-bold text-[19px] tracking-tight text-slate-800">
-                      protect<span className="text-[#f97316]">qube</span>
-                    </span>
+                    <div className="relative h-8 w-40">
+                      <Image
+                        src="/images/logo-protectcube.png"
+                        alt="surveillance-ai-atm Logo"
+                        fill
+                        className="object-contain object-left"
+                      />
+                    </div>
                     <div className="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 group-hover/qube:text-primary group-hover/qube:border-slate-300 transition-colors shrink-0">
                       <HugeiconsIcon icon={ArrowUpRight01Icon} className="w-4.5 h-4.5" />
                     </div>
                   </div>
                   <p className="text-[13.5px] text-slate-500 font-medium leading-relaxed max-w-[280px]">
                     {locale === "id"
-                      ? "Peringatan pemantauan real-time untuk melindungi apa yang paling berharga."
-                      : "Realtime monitoring alerts to protect what matters most."}
+                      ? "Sistem pengawasan keamanan ATM berbasis AI dan computer vision."
+                      : "AI-powered security and surveillance systems for ATM cabins."}
                   </p>
                 </Link>
               </div>

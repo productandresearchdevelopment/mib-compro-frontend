@@ -364,242 +364,116 @@ export const PRODUCTS_DATA: ProductItem[] = [
     slug: "simq",
     category: "software",
     title: {
-      en: "Intelligent Queue Management & Resource Planning",
-      id: "Manajemen Antrean Cerdas & Perencanaan Sumber Daya"
+      en: "Unified Inventory, Warehouse & Repair Management System",
+      id: "Sistem Terintegrasi Manajemen Inventaris, Gudang & Perbaikan"
     },
     tagline: {
-      en: "Queue & Customer Operations",
-      id: "Operasi Antrean & Pelanggan"
+      en: "Inventory & Repair Operations",
+      id: "Operasi Inventaris & Perbaikan"
     },
     badge: {
       en: "SIMQ Platform",
       id: "Platform SIMQ"
     },
     description: {
-      en: "SIMQ streamlines customer flows and counter dispatching using smart wait-time forecasting algorithms and unified ticket kiosks.",
-      id: "SIMQ menyederhanakan alur pelanggan dan pembagian loket menggunakan algoritma prakiraan waktu tunggu cerdas dan kios tiket terpadu."
+      en: "SIMQ provides real-time visibility into your inventory, automates warehouse stock operations, and streamlines repair center ticketing and spare parts tracking.",
+      id: "SIMQ memberikan visibilitas real-time ke dalam inventaris Anda, mengotomatiskan operasional stok gudang, serta menyederhanakan tiket pusat perbaikan dan pelacakan suku cadang."
     },
-    heroImage: "/images/preview_video_bg.png",
+    heroImage: "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
     workflows: [
       {
         title: {
-          en: "Bank Branch Desks",
-          id: "Loket Kantor Cabang Bank"
+          en: "Warehouse Stock Control",
+          id: "Kontrol Stok Gudang"
         },
         description: {
-          en: "Manage customer arrivals, separate VIP customer desks, and optimize teller work distribution in real-time.",
-          id: "Kelola kedatangan nasabah, pisahkan meja nasabah VIP, dan optimalkan distribusi kerja teller secara real-time."
+          en: "Manage stock-in/stock-out, track batch barcodes, optimize space allocation, and perform stock audits with real-time digital documentation.",
+          id: "Kelola barang masuk/keluar, lacak barcode batch, optimalkan alokasi ruang, dan lakukan audit stok dengan dokumentasi digital real-time."
         },
         image: "/images/usecase_main.png"
       },
       {
         title: {
-          en: "Public Service Lounges",
-          id: "Lounge Layanan Publik"
+          en: "Repair Centre & Sparepart Tracking",
+          id: "Pusat Perbaikan & Pelacakan Suku Cadang"
         },
         description: {
-          en: "Enable online pre-booking, dynamic SMS wait-list notifications, and comprehensive terminal ticketing.",
-          id: "Aktifkan pemesanan pra-daring, notifikasi daftar tunggu SMS dinamis, dan tiket terminal komprehensif."
+          en: "Track device repair cycles, log SLA completion, manage repair queues, and maintain real-time inventory of incoming spare parts.",
+          id: "Lacak siklus perbaikan perangkat, catat penyelesaian SLA, kelola antrean perbaikan, dan pantau stok suku cadang masuk secara real-time."
         },
         image: "/images/why-choose-us.jpg"
       }
     ],
+    steps: [
+      {
+        number: "01",
+        title: {
+          en: "Stock Receiving & Intake",
+          id: "Penerimaan & Input Stok"
+        },
+        description: {
+          en: "Scan incoming devices, verify serial numbers, and register items into the main inventory catalog.",
+          id: "Pindai perangkat masuk, verifikasi nomor seri, dan daftarkan barang ke katalog inventaris utama."
+        },
+        image: "/images/usecase_main.png"
+      },
+      {
+        number: "02",
+        title: {
+          en: "Warehouse Placement",
+          id: "Penyimpanan di Gudang"
+        },
+        description: {
+          en: "Assign bin locations, update stock status, and monitor inventory levels across multiple warehouses.",
+          id: "Tetapkan lokasi rak, perbarui status stok, dan pantau tingkat inventaris di beberapa gudang."
+        },
+        image: "/images/why-choose-us.jpg"
+      },
+      {
+        number: "03",
+        title: {
+          en: "Repair & Diagnostic Ticketing",
+          id: "Tiket Perbaikan & Diagnostik"
+        },
+        description: {
+          en: "Dispatch faulty devices to repair lines, log issues, track parts replaced, and verify SLA.",
+          id: "Kirim perangkat rusak ke lini perbaikan, catat masalah, lacak suku cadang yang diganti, dan verifikasi SLA."
+        },
+        image: "/images/about-us.jpg"
+      },
+      {
+        number: "04",
+        title: {
+          en: "Dispatch & Outflow",
+          id: "Pengiriman & Barang Keluar"
+        },
+        description: {
+          en: "Authorize cargo releases, print shipment tracking labels, and update stock records automatically.",
+          id: "Otorisasi pengeluaran barang, cetak label pelacakan pengiriman, dan perbarui catatan stok secara otomatis."
+        },
+        image: "/images/preview_video_bg.png"
+      }
+    ],
     features: [
       {
         title: {
-          en: "Predictive Queue Routing",
-          id: "Perutean Antrean Prediktif"
+          en: "Real-Time Stock Alerts",
+          id: "Peringatan Stok Real-Time"
         },
         description: {
-          en: "Route customers dynamically to counters with the lowest average transaction processing times.",
-          id: "Rute pelanggan secara dinamis ke loket dengan rata-rata waktu pemrosesan transaksi terendah."
-        },
-        icon: "Shuffle"
-      },
-      {
-        title: {
-          en: "Multi-Channel Wait Alerts",
-          id: "Pemberitahuan Tunggu Multi-Saluran"
-        },
-        description: {
-          en: "Keep visitors relaxed with real-time queue positions sent via WhatsApp, SMS, and dashboard screens.",
-          id: "Biarkan pengunjung rileks dengan posisi antrean real-time yang dikirim via WhatsApp, SMS, dan layar dasbor."
+          en: "Automatically trigger reorder alerts when inventory levels drop below critical safety stock thresholds.",
+          id: "Picu peringatan pemesanan ulang secara otomatis saat tingkat inventaris turun di bawah ambang batas stok aman kritis."
         },
         icon: "Bell"
-      }
-    ],
-    benefits: [
-      {
-        title: {
-          en: "Reduced Wait Times",
-          id: "Pengurangan Waktu Tunggu"
-        },
-        description: {
-          en: "Improve visitor satisfaction ratings by lowering perceived and actual waiting times up to 40%.",
-          id: "Tingkatkan peringkat kepuasan pengunjung dengan menurunkan persepsi dan waktu tunggu aktual hingga 40%."
-        },
-        icon: "Clock"
-      }
-    ]
-  },
-  {
-    slug: "protectqube",
-    category: "iot",
-    title: {
-      en: "Smart IoT Tracking & Cold Chain Telemetry Monitoring",
-      id: "Pelacakan IoT Cerdas & Pemantauan Telemetri Rantai Dingin"
-    },
-    tagline: {
-      en: "IoT Systems",
-      id: "Sistem IoT"
-    },
-    badge: {
-      en: "ProtectQube Smart Sensor Hub",
-      id: "Hub Sensor Cerdas ProtectQube"
-    },
-    description: {
-      en: "IoT tracking and monitoring system for assets, vehicles, and cold chain logistics equipment with real-time wireless telemetry updates.",
-      id: "Sistem pelacakan dan pemantauan IoT untuk aset, kendaraan, dan logistik rantai dingin dengan pembaruan nirkabel real-time."
-    },
-    heroImage: "/images/usecase_main.png",
-    telemetrySim: [
-      {
-        label: { en: "Internal Temperature", id: "Suhu Internal" },
-        value: "-18.4 °C",
-        status: "success"
-      },
-      {
-        label: { en: "Battery Capacity", id: "Kapasitas Baterai" },
-        value: "94 %",
-        status: "success"
-      },
-      {
-        label: { en: "Humidity Level", id: "Tingkat Kelembaban" },
-        value: "42 %",
-        status: "success"
-      },
-      {
-        label: { en: "GPS Connectivity", id: "Konektivitas GPS" },
-        value: "Excellent",
-        status: "success"
-      },
-      {
-        label: { en: "Compressor Vibration", id: "Getaran Kompresor" },
-        value: "Normal",
-        status: "success"
-      }
-    ],
-    features: [
-      {
-        title: {
-          en: "End-to-End Cold Chain Telemetry",
-          id: "Telemetri Rantai Dingin End-to-End"
-        },
-        description: {
-          en: "Continuously record ambient temperatures from -40°C to +80°C with medical-grade precision.",
-          id: "Catat suhu sekitar terus-menerus dari -40°C hingga +80°C dengan presisi tingkat medis."
-        },
-        icon: "Thermometer"
       },
       {
         title: {
-          en: "Shock & Tilt Geo-Alerts",
-          id: "Peringatan Guncangan & Kemiringan GPS"
+          en: "Automated Serial & Barcode Tracking",
+          id: "Pelacakan Barcode & Serial Otomatis"
         },
         description: {
-          en: "Receive instant notifications when valuable cargo experiences extreme vibrations or dynamic tilt.",
-          id: "Terima notifikasi instan ketika kargo berharga mengalami getaran ekstrem atau kemiringan dinamis."
-        },
-        icon: "AlertTriangle"
-      },
-      {
-        title: {
-          en: "Dual cellular fallback connection",
-          id: "Koneksi Cadangan Seluler Ganda"
-        },
-        description: {
-          en: "Maintains connectivity using automatic roaming cellular cards, ensuring data storage in dead zones.",
-          id: "Menjaga konektivitas menggunakan kartu seluler roaming otomatis, memastikan penyimpanan data di zona mati."
-        },
-        icon: "Wifi"
-      }
-    ],
-    benefits: [
-      {
-        title: {
-          en: "Minimize Cargo Damage",
-          id: "Minimalkan Kerusakan Kargo"
-        },
-        description: {
-          en: "Prevent cold chain compliance failures and claim distributions using early alerts system.",
-          id: "Cegah kegagalan kepatuhan rantai dingin dan klaim distribusi menggunakan sistem peringatan dini."
-        },
-        icon: "CheckSquare"
-      },
-      {
-        title: {
-          en: "Easy Wireless Setup",
-          id: "Pemasangan Nirkabel Mudah"
-        },
-        description: {
-          en: "Magnetic mount enclosure with 5-year ultra-low energy battery lifespan requires no system wiring.",
-          id: "Wadah dudukan magnetik dengan masa pakai baterai hemat energi 5 tahun tidak memerlukan kabel sistem."
-        },
-        icon: "Zap"
-      }
-    ]
-  },
-  {
-    slug: "sensor-monitoring",
-    category: "iot",
-    title: {
-      en: "Advanced Industrial Telemetry & Machine Sensor Monitoring",
-      id: "Telemetri Industri Tingkat Lanjut & Pemantauan Sensor Mesin"
-    },
-    tagline: {
-      en: "IoT Systems",
-      id: "Sistem IoT"
-    },
-    badge: {
-      en: "Smart Multi-Sensor Terminal",
-      id: "Terminal Multi-Sensor Cerdas"
-    },
-    description: {
-      en: "Advanced sensor technology for environmental monitoring, industrial machine utilization tracking, and predictive vibration alerts.",
-      id: "Teknologi sensor canggih untuk pemantauan lingkungan, pelacakan utilitas mesin industri, dan peringatan getaran prediktif."
-    },
-    heroImage: "/images/usecase_main.png",
-    telemetrySim: [
-      {
-        label: { en: "Machine Temperature", id: "Suhu Mesin" },
-        value: "68.2 °C",
-        status: "success"
-      },
-      {
-        label: { en: "Power Load Current", id: "Arus Beban Daya" },
-        value: "14.8 A",
-        status: "success"
-      },
-      {
-        label: { en: "Acoustic Frequency", id: "Frekuensi Akustik" },
-        value: "420 Hz",
-        status: "success"
-      },
-      {
-        label: { en: "Oil Pressure Sensor", id: "Sensor Tekanan Oli" },
-        value: "4.2 bar",
-        status: "success"
-      }
-    ],
-    features: [
-      {
-        title: {
-          en: "Multi-Sensor Bus Support",
-          id: "Dukungan Bus Multi-Sensor"
-        },
-        description: {
-          en: "Interface directly with Modbus, RS485, and analog inputs to consolidate industrial sensors.",
-          id: "Hubungkan langsung dengan Modbus, RS485, dan input analog untuk menyatukan sensor industri."
+          en: "Scan and track device serial numbers throughout receiving, staging, warehouse, and repair steps.",
+          id: "Pindai dan lacak nomor seri perangkat di setiap tahap penerimaan, staging, gudang, dan perbaikan."
         },
         icon: "Sliders"
       }
@@ -607,14 +481,399 @@ export const PRODUCTS_DATA: ProductItem[] = [
     benefits: [
       {
         title: {
-          en: "Prevent Downtime",
-          id: "Mencegah Waktu Henti"
+          en: "Optimize Operational Efficiency",
+          id: "Optimalkan Efisiensi Operasional"
         },
         description: {
-          en: "Schedule repairs before machines break using advanced AI anomaly detection algorithms.",
-          id: "Jadwalkan perbaikan sebelum mesin rusak menggunakan algoritma deteksi anomali AI yang canggih."
+          en: "Reduce inventory discrepancies, automate stock workflows, and accelerate repair cycle times.",
+          id: "Kurangi ketidakcocokan inventaris, otomatiskan alur kerja stok, dan percepat waktu siklus perbaikan."
         },
         icon: "Activity"
+      }
+    ]
+  },
+  {
+    slug: "surveillance-ai-atm",
+    category: "iot",
+    title: {
+      en: "AI ATM Security Surveillance System",
+      id: "Sistem Pengawasan Keamanan AI ATM"
+    },
+    tagline: {
+      en: "AIoT Systems",
+      id: "Sistem AIoT"
+    },
+    badge: {
+      en: "AI ATM Security",
+      id: "Keamanan AI ATM"
+    },
+    description: {
+      en: "Protects ATM terminals using AI computer vision, detecting physical vandalism, card skimming devices, and suspicious loitering in real time.",
+      id: "Melindungi terminal ATM menggunakan computer vision AI, mendeteksi vandalisme fisik, alat skimming kartu, dan perilaku mencurigakan secara real-time."
+    },
+    heroImage: "https://images.unsplash.com/photo-1590247813693-5541d1c609fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+    telemetrySim: [
+      {
+        label: { en: "Vibration Level", id: "Tingkat Getaran" },
+        value: "0.02 G",
+        status: "success"
+      },
+      {
+        label: { en: "Camera Status", id: "Status Kamera" },
+        value: "Active",
+        status: "success"
+      },
+      {
+        label: { en: "Facial Recognition", id: "Pengenalan Wajah" },
+        value: "Active",
+        status: "success"
+      },
+      {
+        label: { en: "Skimming Sensor", id: "Sensor Skimming" },
+        value: "OK",
+        status: "success"
+      }
+    ],
+    features: [
+      {
+        title: {
+          en: "Skimming Detection",
+          id: "Deteksi Skimming"
+        },
+        description: {
+          en: "Detect unauthorized overlays or card slot tampering instantly using AI-powered edge analytics.",
+          id: "Deteksi secara instan penutup ilegal atau perusakan slot kartu menggunakan analitik edge bertenaga AI."
+        },
+        icon: "Shield"
+      },
+      {
+        title: {
+          en: "Vandalism Alerts",
+          id: "Peringatan Vandalisme"
+        },
+        description: {
+          en: "Trigger instant alarms and notify security teams if physical impact or shake is detected.",
+          id: "Picu alarm instan dan peringatkan tim keamanan jika guncangan atau benturan fisik terdeteksi."
+        },
+        icon: "AlertTriangle"
+      }
+    ],
+    benefits: [
+      {
+        title: {
+          en: "Prevent Asset Damage",
+          id: "Cegah Kerusakan Aset"
+        },
+        description: {
+          en: "Predict ATM physical tampering and vandalism with up to 99% accuracy.",
+          id: "Prediksi sabotase fisik dan vandalisme ATM dengan tingkat akurasi hingga 99%."
+        },
+        icon: "CheckSquare"
+      }
+    ]
+  },
+  {
+    slug: "hse",
+    category: "iot",
+    title: {
+      en: "Industrial HSE Compliance & Smart Safety Checking",
+      id: "Kepatuhan K3 Industri & Pemeriksaan Keamanan Cerdas"
+    },
+    tagline: {
+      en: "AIoT Systems",
+      id: "Sistem AIoT"
+    },
+    badge: {
+      en: "HSE Factory Safety",
+      id: "K3 Pabrik Pintar"
+    },
+    description: {
+      en: "Automates factory safety checks and HSE compliance using AI cameras to detect personal protective equipment (PPE) like helmets, vests, and safety zone violations.",
+      id: "Mengotomatiskan pemeriksaan keselamatan pabrik dan kepatuhan K3 menggunakan kamera AI untuk mendeteksi alat pelindung diri (APD) seperti helm, rompi, dan pelanggaran zona aman."
+    },
+    heroImage: "https://images.unsplash.com/photo-1585771724684-38269d6639fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+    telemetrySim: [
+      {
+        label: { en: "Helmet Compliance", id: "Kepatuhan Helm" },
+        value: "100 %",
+        status: "success"
+      },
+      {
+        label: { en: "Vest Compliance", id: "Kepatuhan Rompi" },
+        value: "98 %",
+        status: "success"
+      },
+      {
+        label: { en: "Hazard Zone Status", id: "Status Zona Bahaya" },
+        value: "Clear",
+        status: "success"
+      }
+    ],
+    features: [
+      {
+        title: {
+          en: "PPE Verification",
+          id: "Verifikasi APD"
+        },
+        description: {
+          en: "Perform automated real-time checks on workers for helmets, safety boots, and reflective vests.",
+          id: "Lakukan pemeriksaan real-time otomatis pada pekerja untuk memastikan helm, sepatu keselamatan, dan rompi."
+        },
+        icon: "CheckCircle"
+      },
+      {
+        title: {
+          en: "Danger Zone Breaches",
+          id: "Pelanggaran Zona Bahaya"
+        },
+        description: {
+          en: "Alert factory coordinators immediately if unauthorized personnel enter restricted safety zones.",
+          id: "Beri peringatan segera kepada koordinator pabrik jika personel tidak sah memasuki zona keselamatan terbatas."
+        },
+        icon: "AlertTriangle"
+      }
+    ],
+    benefits: [
+      {
+        title: {
+          en: "Zero Accident Operations",
+          id: "Operasi Zero Accident"
+        },
+        description: {
+          en: "Reduce safety violations and human errors in production areas by up to 95%.",
+          id: "Kurangi pelanggaran keselamatan dan kesalahan manusia di area produksi hingga 95%."
+        },
+        icon: "Zap"
+      }
+    ]
+  },
+  {
+    slug: "smart-monitoring",
+    category: "iot",
+    title: {
+      en: "Advanced AI Smart Monitoring & CCTV Analytics",
+      id: "Pemantauan Cerdas AI & Analitik CCTV Tingkat Lanjut"
+    },
+    tagline: {
+      en: "AIoT Systems",
+      id: "Sistem AIoT"
+    },
+    badge: {
+      en: "Smart CCTV Monitoring",
+      id: "Pemantauan CCTV Pintar"
+    },
+    description: {
+      en: "Turns standard surveillance cameras into smart endpoints using AI algorithms to detect objects, analyze crowd density, and trigger automatic alerts.",
+      id: "Mengubah kamera pengawas standar menjadi perangkat cerdas menggunakan algoritma AI untuk mendeteksi objek, menganalisis kepadatan kerumunan, dan memicu peringatan otomatis."
+    },
+    heroImage: "https://images.unsplash.com/photo-1568952433726-3896e3881c65?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+    telemetrySim: [
+      {
+        label: { en: "Live FPS", id: "FPS Langsung" },
+        value: "30 fps",
+        status: "success"
+      },
+      {
+        label: { en: "Active Channels", id: "Saluran Aktif" },
+        value: "24 channels",
+        status: "success"
+      },
+      {
+        label: { en: "Object Detection Status", id: "Deteksi Objek" },
+        value: "Active",
+        status: "success"
+      }
+    ],
+    features: [
+      {
+        title: {
+          en: "Object Tracking",
+          id: "Pelacakan Objek"
+        },
+        description: {
+          en: "Recognize vehicles, people, and packages with low latency on existing cameras.",
+          id: "Kenali kendaraan, orang, dan paket dengan latensi rendah pada kamera yang ada."
+        },
+        icon: "Sliders"
+      },
+      {
+        title: {
+          en: "Crowd Density Analytics",
+          id: "Analitik Kepadatan Kerumunan"
+        },
+        description: {
+          en: "Analyze congestion, queue build-ups, or loitering patterns in monitored perimeters.",
+          id: "Analisis penumpukan, antrean, atau pola kerumunan di perimeter yang diawasi."
+        },
+        icon: "Activity"
+      }
+    ],
+    benefits: [
+      {
+        title: {
+          en: "24/7 Automation",
+          id: "Otomatisasi 24/7"
+        },
+        description: {
+          en: "Minimize manual monitoring hours while increasing security response speed.",
+          id: "Minimalkan jam pemantauan manual sekaligus tingkatkan kecepatan respons keamanan."
+        },
+        icon: "Clock"
+      }
+    ]
+  },
+  {
+    slug: "voiceguard",
+    category: "iot",
+    title: {
+      en: "VoiceGuard NLP Fraud Detection & Speech-to-Text Analytics",
+      id: "Deteksi Fraud Wicara & Analitik Speech-to-Text VoiceGuard"
+    },
+    tagline: {
+      en: "AIoT Systems",
+      id: "Sistem AIoT"
+    },
+    badge: {
+      en: "NLP Speech Analytics",
+      id: "Analitik Suara NLP"
+    },
+    description: {
+      en: "Leverages natural language processing (NLP) and speech-to-text algorithms to detect verbal fraud, check script compliance, and alert operators of suspicious transactions.",
+      id: "Memanfaatkan pemrosesan bahasa alami (NLP) dan algoritma speech-to-text untuk mendeteksi penipuan verbal, memeriksa kepatuhan skrip, dan memperingatkan operator tentang transaksi mencurigakan."
+    },
+    heroImage: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+    telemetrySim: [
+      {
+        label: { en: "Audio Stream Link", id: "Saluran Audio" },
+        value: "Active",
+        status: "success"
+      },
+      {
+        label: { en: "Word Error Rate", id: "Tingkat Kesalahan Kata" },
+        value: "2.4 %",
+        status: "success"
+      },
+      {
+        label: { en: "Phrase Matcher Status", id: "Status Pencocokan Frasa" },
+        value: "Active",
+        status: "success"
+      }
+    ],
+    features: [
+      {
+        title: {
+          en: "Speech-to-Text",
+          id: "Speech-to-Text"
+        },
+        description: {
+          en: "Transcribe audio calls and conversations instantly into searchable text for QA audit.",
+          id: "Transkripsikan panggilan audio dan percakapan secara instan menjadi teks yang dapat dicari untuk audit QA."
+        },
+        icon: "FileText"
+      },
+      {
+        title: {
+          en: "Verbal Fraud Scan",
+          id: "Pemindaian Penipuan Verbal"
+        },
+        description: {
+          en: "Detect fraud patterns, compliance gaps, and forbidden phrases automatically.",
+          id: "Deteksi pola penipuan, celah kepatuhan, dan frasa terlarang secara otomatis."
+        },
+        icon: "Lock"
+      }
+    ],
+    benefits: [
+      {
+        title: {
+          en: "Risk Prevention",
+          id: "Pencegahan Risiko"
+        },
+        description: {
+          en: "Prevent compliance risks and phone frauds in call centers and front desks.",
+          id: "Cegah risiko kepatuhan dan penipuan telepon di pusat panggilan dan meja depan."
+        },
+        icon: "Shield"
+      }
+    ]
+  },
+  {
+    slug: "sensor-node",
+    category: "iot",
+    title: {
+      en: "Smart Sensor Node Security Smartbox",
+      id: "Smartbox Keamanan Sensor Node Cerdas"
+    },
+    tagline: {
+      en: "AIoT Systems",
+      id: "Sistem AIoT"
+    },
+    badge: {
+      en: "Physical Sensor Node",
+      id: "Sensor Node Fisik"
+    },
+    description: {
+      en: "A rugged security smartbox integrating physical sensor nodes like motion, heat, vibration, door contact, and humidity detectors for remote critical assets protection.",
+      id: "Smartbox keamanan kokoh yang mengintegrasikan sensor fisik seperti gerakan, suhu, getaran, kontak pintu, dan kelembaban untuk perlindungan aset kritis jarak jauh."
+    },
+    heroImage: "https://images.unsplash.com/photo-1518770660439-4636190af475?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+    telemetrySim: [
+      {
+        label: { en: "Door Status", id: "Status Pintu" },
+        value: "Locked",
+        status: "success"
+      },
+      {
+        label: { en: "Vibration G-Force", id: "G-Force Getaran" },
+        value: "0.01 g",
+        status: "success"
+      },
+      {
+        label: { en: "Ambient Humidity", id: "Kelembaban Sekitar" },
+        value: "48 %",
+        status: "success"
+      },
+      {
+        label: { en: "Heat Index", id: "Indeks Panas" },
+        value: "24.5 °C",
+        status: "success"
+      }
+    ],
+    features: [
+      {
+        title: {
+          en: "Multi-Sensor Grid",
+          id: "Jaringan Multi-Sensor"
+        },
+        description: {
+          en: "Connect physical sensors for heat, smoke, door locks, and water leakage.",
+          id: "Hubungkan sensor fisik untuk suhu, asap, kunci pintu, dan kebocoran air."
+        },
+        icon: "Wifi"
+      },
+      {
+        title: {
+          en: "Battery Backup",
+          id: "Baterai Cadangan"
+        },
+        description: {
+          en: "Internal battery backup ensuring continuous tracking for up to 5 years.",
+          id: "Cadangan baterai internal memastikan pelacakan berkelanjutan hingga 5 tahun."
+        },
+        icon: "Zap"
+      }
+    ],
+    benefits: [
+      {
+        title: {
+          en: "Remote Security",
+          id: "Keamanan Jarak Jauh"
+        },
+        description: {
+          en: "Secure unattended depots, bank vaults, and logistics kiosks without local power lines.",
+          id: "Amankan depo tanpa penjaga, brankas bank, dan kios logistik tanpa kabel daya lokal."
+        },
+        icon: "CheckSquare"
       }
     ]
   },
@@ -745,7 +1004,7 @@ export const PRODUCTS_DATA: ProductItem[] = [
       },
       {
         name: { en: "Connectivity", id: "Konektivitas" },
-        value: { en: "4G LTE IoT SIM Card, WiFi Fallback", id: "Kartu SIM IoT 4G LTE, WiFi Fallback" }
+        value: { en: "4G LTE AIoT SIM Card, WiFi Fallback", id: "Kartu SIM AIoT 4G LTE, WiFi Fallback" }
       },
       {
         name: { en: "Battery Capacity", id: "Kapasitas Baterai" },

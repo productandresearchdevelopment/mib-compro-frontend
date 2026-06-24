@@ -32,6 +32,7 @@ export default function NewsDetailPage(props: Props) {
   const locale = params.locale;
   const slug = params.slug;
   const t = useTranslations("news");
+  const tFooter = useTranslations("footer");
 
   // Retrieve current article
   const article = useMemo(() => {
@@ -51,7 +52,7 @@ export default function NewsDetailPage(props: Props) {
     if (!article) return [];
     return NEWS_DATA
       .filter(item => item.id !== article.id)
-      .slice(0, 5);
+      .slice(0, 6);
   }, [article]);
 
   // Handle Copy Link
@@ -232,7 +233,7 @@ export default function NewsDetailPage(props: Props) {
               <div className="w-full lg:w-[340px] xl:w-[360px] lg:sticky lg:top-24 flex flex-col gap-6 shrink-0">
                 
                 {/* Recommended Articles Card */}
-                <div className="bg-white border border-slate-100 rounded-3xl p-6 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col gap-5">
+                <div className="bg-white border rounded-2xl p-6 transition-all duration-300 flex flex-col gap-5">
                   <h4 className="text-lg font-bold text-[#100420] tracking-tight border-b border-slate-100 pb-3">
                     {locale === "id" ? "Artikel Rekomendasi" : "Recommended Articles"}
                   </h4>
@@ -267,7 +268,7 @@ export default function NewsDetailPage(props: Props) {
                 </div>
 
                 {/* Follow Us / Ikuti Kami Card */}
-                <div className="bg-primary rounded-3xl p-6 shadow-md flex flex-col items-center justify-center text-center text-white relative overflow-hidden">
+                {/* <div className="bg-primary rounded-3xl p-6 shadow-md flex flex-col items-center justify-center text-center text-white relative overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary to-primary/90 z-0" />
                   
                   <div className="relative z-10 flex flex-col items-center w-full">
@@ -309,7 +310,7 @@ export default function NewsDetailPage(props: Props) {
                       </a>
                     </div>
                   </div>
-                </div>
+                </div> */}
 
               </div>
 
@@ -361,7 +362,12 @@ export default function NewsDetailPage(props: Props) {
         </section>
       </main>
 
-      <Footer showCta={true} />
+      <Footer
+        showCta={true}
+        ctaTitle={tFooter("cta.insightTitle")}
+        ctaButtonText={tFooter("cta.insightButton")}
+        ctaButtonHref="/contact"
+      />
     </div>
   );
 }

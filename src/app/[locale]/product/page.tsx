@@ -20,7 +20,7 @@ import { PRODUCTS_DATA, ProductItem } from "@/data/productsData";
 
 const solutionNames: Record<string, { en: string; id: string }> = {
   fsm: { en: "Field Service Management", id: "Manajemen Operasi Lapangan" },
-  aiot: { en: "AIoT & Connected IoT", id: "Kecerdasan Buatan & IoT" },
+  aiot: { en: "AIoT Systems", id: "Sistem AIoT" },
   "asset-tracking": { en: "Asset Tracking", id: "Pelacakan Aset" },
   analytics: { en: "Reporting & Analytics", id: "Pelaporan & Analitik" },
   manufacturing: { en: "Smart Factory", id: "Pabrik Pintar" },
@@ -34,11 +34,17 @@ const getRelatedSolutions = (slug: string) => {
     case "qifess":
       return ["fsm", "analytics"];
     case "simq":
+      return ["logistics", "manufacturing", "analytics"];
+    case "surveillance-ai-atm":
+      return ["banking", "aiot"];
+    case "hse":
+      return ["manufacturing", "aiot"];
+    case "smart-monitoring":
+      return ["aiot", "analytics"];
+    case "voiceguard":
       return ["banking", "analytics"];
-    case "protectqube":
-      return ["asset-tracking", "logistics", "manufacturing"];
-    case "sensor-monitoring":
-      return ["aiot", "manufacturing", "energy-industry"];
+    case "sensor-node":
+      return ["asset-tracking", "aiot"];
     case "edc":
     case "soundbox":
     case "mhu":
@@ -121,12 +127,8 @@ function ProductCategoryShowcase({
       case "qifess":
         return "https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080";
       case "simq":
-        return "https://images.unsplash.com/photo-1563013544-824ae1d704d3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080";
-      // IoT
-      case "protectqube":
-        return "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080";
-      case "sensor-monitoring":
-        return "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080";
+        return "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080";
+      // AIoT overrides (fallback to defaultImage)
       default:
         return defaultImage;
     }
@@ -138,7 +140,7 @@ function ProductCategoryShowcase({
       id={id}
       className={`relative h-[200vh] ${sectionBg}`}
     >
-      <div className="sticky top-0 h-[100dvh] flex flex-col justify-center py-6 overflow-hidden">
+      <div className="sticky top-0 h-[100dvh] flex flex-col justify-start pt-12 md:pt-16 pb-4 overflow-hidden">
         {/* Header Block */}
         <div className="max-w-7xl mx-auto px-6 w-full mb-8 space-y-3 shrink-0 z-10">
           {/* Badge */}
@@ -214,6 +216,7 @@ function ProductCategoryShowcase({
 export default function ProductsPage() {
   const locale = useLocale();
   const t = useTranslations("product");
+  const tFooter = useTranslations("footer");
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -227,50 +230,53 @@ export default function ProductsPage() {
 
   const tHardware = useTranslations("hardwareShowcase");
 
-  const hardwareProductsList = useMemo(() => [
-    {
-      slug: "padlock",
-      title: tHardware("items.padlock.title"),
-      description: tHardware("items.padlock.desc"),
-      heroImage: "https://images.unsplash.com/photo-1510519138101-570d1dca3d66?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
-    },
-    {
-      slug: "soundbox",
-      title: tHardware("items.soundbox.title"),
-      description: tHardware("items.soundbox.desc"),
-      heroImage: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
-    },
-    {
-      slug: "edc",
-      title: tHardware("items.edc.title"),
-      description: tHardware("items.edc.desc"),
-      heroImage: "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
-    },
-    {
-      slug: "mhu",
-      title: tHardware("items.counter.title"),
-      description: tHardware("items.counter.desc"),
-      heroImage: "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
-    },
-    {
-      slug: "pos",
-      title: tHardware("items.pos.title"),
-      description: tHardware("items.pos.desc"),
-      heroImage: "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
-    },
-    {
-      slug: "cctv",
-      title: tHardware("items.cctv.title"),
-      description: tHardware("items.cctv.desc"),
-      heroImage: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
-    },
-    {
-      slug: "cash-deposit",
-      title: tHardware("items.cash_deposit.title"),
-      description: tHardware("items.cash_deposit.desc"),
-      heroImage: "https://images.unsplash.com/photo-1621416894569-0f39ed31d247?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
-    }
-  ], [tHardware]);
+  const hardwareProductsList = useMemo(
+    () => [
+      {
+        slug: "padlock",
+        title: tHardware("items.padlock.title"),
+        description: tHardware("items.padlock.desc"),
+        heroImage: "/images/product/padlock.jpeg",
+      },
+      {
+        slug: "soundbox",
+        title: tHardware("items.soundbox.title"),
+        description: tHardware("items.soundbox.desc"),
+        heroImage: "/images/product/soundbox.jpeg",
+      },
+      {
+        slug: "edc",
+        title: tHardware("items.edc.title"),
+        description: tHardware("items.edc.desc"),
+        heroImage: "/images/product/edc.jpeg",
+      },
+      {
+        slug: "mhu",
+        title: tHardware("items.counter.title"),
+        description: tHardware("items.counter.desc"),
+        heroImage: "/images/product/mhu.jpeg",
+      },
+      {
+        slug: "pos",
+        title: tHardware("items.pos.title"),
+        description: tHardware("items.pos.desc"),
+        heroImage: "/images/product/pos.jpeg",
+      },
+      {
+        slug: "cctv",
+        title: tHardware("items.cctv.title"),
+        description: tHardware("items.cctv.desc"),
+        heroImage: "/images/product/cctv.jpeg",
+      },
+      {
+        slug: "cash-deposit",
+        title: tHardware("items.cash_deposit.title"),
+        description: tHardware("items.cash_deposit.desc"),
+        heroImage: "/images/product/cashdeposit.jpeg",
+      },
+    ],
+    [tHardware],
+  );
 
 
 
@@ -410,14 +416,14 @@ export default function ProductsPage() {
               {/* Top Section */}
               <div className="relative z-10">
                 <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.25em] text-emerald-400 uppercase">
-                  {locale === "id" ? "SISTEM IOT" : "IOT SYSTEMS"}
+                  {locale === "id" ? "SISTEM AIOT" : "AIOT SYSTEMS"}
                 </span>
               </div>
 
               {/* Bottom Section */}
               <div className="relative z-10 flex flex-col justify-end">
                 <h3 className="font-sans text-2xl sm:text-3xl font-bold text-white tracking-tight leading-tight transition-colors">
-                  {locale === "id" ? "Sistem IoT" : "IoT Systems"}
+                  {locale === "id" ? "Sistem AIoT" : "AIoT Systems"}
                 </h3>
                 <p className="text-slate-300/90 text-xs sm:text-sm font-sans leading-relaxed max-w-[280px] max-h-0 opacity-0 overflow-hidden group-hover:max-h-24 group-hover:opacity-100 group-hover:mt-2 transition-all duration-500 ease-in-out">
                   {locale === "id"
@@ -474,7 +480,7 @@ export default function ProductsPage() {
         {/* ================= IoT SYSTEMS SECTION (LIGHT BG) ================= */}
         <ProductCategoryShowcase
           id="iot"
-          badge={locale === "id" ? "SISTEM IOT" : "IOT SYSTEMS"}
+          badge={locale === "id" ? "SISTEM AIOT" : "AIOT SYSTEMS"}
           title={t("iotTitle")}
           description={t("iotDesc")}
           products={iotProducts}
@@ -506,7 +512,12 @@ export default function ProductsPage() {
 
       </main>
 
-      <Footer showCta={false} />
+      <Footer
+        showCta={true}
+        ctaTitle={tFooter("cta.productTitle")}
+        ctaButtonText={tFooter("cta.productButton")}
+        ctaButtonHref="/contact"
+      />
     </div>
   );
 }

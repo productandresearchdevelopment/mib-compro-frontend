@@ -179,7 +179,7 @@ function FsmSolutionLayout({ data, locale }: { data: SolutionItem; locale: strin
         </motion.div>
       </section>
 
-      {/* --- STATS OVERVIEW (Light slate backdrop) --- */}
+      {/* --- STATS OVERVIEW --- */}
       <section className="relative max-w-7xl mx-auto px-6 py-16 z-10 border-t border-b border-slate-200/60 bg-slate-50/50 rounded-[32px] my-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {data.stats.map((stat, idx) => (
@@ -264,7 +264,7 @@ function FsmSolutionLayout({ data, locale }: { data: SolutionItem; locale: strin
                       <h4 className="text-lg font-bold text-[#100420]">
                         {bullet.title[locale as "en" | "id"]}
                       </h4>
-                      <p className="text-sm text-slate-500 mt-1">
+                      <p className="text-sm text-slate-505 text-slate-500 mt-1">
                         {bullet.description[locale as "en" | "id"]}
                       </p>
                     </div>
@@ -274,7 +274,7 @@ function FsmSolutionLayout({ data, locale }: { data: SolutionItem; locale: strin
             </div>
           </div>
 
-          {/* Styled CSS iPhone Container (Light screen design inside!) */}
+          {/* Styled CSS iPhone Container */}
           <div className="lg:col-span-5 flex justify-center">
             <motion.div 
               className="w-[300px] h-[600px] rounded-[50px] border-[10px] border-[#1e293b] bg-slate-900 shadow-2xl relative overflow-hidden flex flex-col justify-between"
@@ -289,7 +289,7 @@ function FsmSolutionLayout({ data, locale }: { data: SolutionItem; locale: strin
                 <span className="w-10 h-[3px] rounded-full bg-slate-700 shrink-0" />
               </div>
 
-              {/* Mobile Screen Content (Crisp Light Theme App!) */}
+              {/* Mobile Screen Content */}
               <div className="flex-1 flex flex-col bg-slate-50 pt-8 overflow-y-auto overflow-x-hidden relative">
                 {/* Status Bar */}
                 <div className="px-6 py-2 flex justify-between items-center text-[10px] text-slate-400 border-b border-slate-100 bg-white">
@@ -358,7 +358,7 @@ function FsmSolutionLayout({ data, locale }: { data: SolutionItem; locale: strin
         </section>
       )}
 
-      {/* --- TOP CUSTOMERS / WIDGET 2 SECTION (LIGHT THEME) --- */}
+      {/* --- PERFORMANCE TRACKING SECTION --- */}
       {data.trackingZone && (
         <section className="relative max-w-7xl mx-auto px-6 py-24 z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center border-t border-slate-100">
           {/* Dashboard Visual Container */}
@@ -405,7 +405,7 @@ function FsmSolutionLayout({ data, locale }: { data: SolutionItem; locale: strin
                 </div>
               </div>
 
-              {/* Summary Stats footer */}
+              {/* Summary Stats */}
               <div className="grid grid-cols-2 gap-4 border-t border-slate-200 pt-4">
                 <div>
                   <span className="text-[10px] text-slate-400 uppercase tracking-wider font-bold">Dispatch Latency</span>
@@ -454,7 +454,7 @@ function FsmSolutionLayout({ data, locale }: { data: SolutionItem; locale: strin
         </section>
       )}
 
-      {/* --- WHO BENEFITS SLIDER SECTION (LIGHT THEME) --- */}
+      {/* --- WHO BENEFITS SLIDER SECTION --- */}
       {data.whoBenefits && (
         <section className="relative max-w-7xl mx-auto px-6 py-24 z-10 border-t border-slate-100 bg-slate-50/20 rounded-[32px] my-12">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 max-w-6xl mx-auto">
@@ -504,7 +504,7 @@ function FsmSolutionLayout({ data, locale }: { data: SolutionItem; locale: strin
                       <span className="text-xs text-primary font-bold uppercase tracking-wider block mb-2">Benefit Profile 0{index + 1}</span>
                       <h3 className="text-2xl md:text-4xl font-bold text-[#100420] mb-4">{slide.title[locale as "en" | "id"]}</h3>
                       <h5 className="text-base md:text-lg text-primary font-bold mb-6">{slide.subtitle[locale as "en" | "id"]}</h5>
-                      <p className="text-slate-505 text-slate-500 leading-relaxed text-base max-w-3xl">{slide.description[locale as "en" | "id"]}</p>
+                      <p className="text-slate-55 text-slate-500 leading-relaxed text-base max-w-3xl">{slide.description[locale as "en" | "id"]}</p>
                     </div>
 
                     <div className="lg:col-span-4 flex justify-center lg:justify-end">
@@ -531,6 +531,7 @@ function FsmSolutionLayout({ data, locale }: { data: SolutionItem; locale: strin
         </section>
       )}
 
+      {/* --- FEATURE INSIGHT --- */}
       {data.featureInsight && (
         <section className="relative max-w-7xl mx-auto px-6 py-24 z-10 border-t border-slate-100">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
@@ -553,7 +554,7 @@ function FsmSolutionLayout({ data, locale }: { data: SolutionItem; locale: strin
                         <HugeiconsIcon icon={PtIcon} className="w-5 h-5" />
                       </div>
                       <h4 className="text-lg font-bold text-[#100420] mb-2">{point.title[locale as "en" | "id"]}</h4>
-                      <p className="text-sm text-slate-505 text-slate-500 leading-relaxed">{point.description[locale as "en" | "id"]}</p>
+                      <p className="text-sm text-slate-55 text-slate-500 leading-relaxed">{point.description[locale as "en" | "id"]}</p>
                     </div>
                   );
                 })}
@@ -598,7 +599,7 @@ function FsmSolutionLayout({ data, locale }: { data: SolutionItem; locale: strin
         </section>
       )}
 
-      {/* --- CONTACT REQUEST CTA (Light background styled) --- */}
+      {/* --- CONTACT REQUEST CTA --- */}
       <section id="contact-sales" className="relative max-w-7xl mx-auto px-6 py-24 z-10">
         <div className="relative rounded-[40px] border border-slate-200 bg-slate-50/50 p-12 md:p-20 text-center overflow-hidden shadow-sm">
           <div className="absolute inset-0 bg-primary/[0.01] pointer-events-none" />
@@ -607,7 +608,7 @@ function FsmSolutionLayout({ data, locale }: { data: SolutionItem; locale: strin
           <h2 className="text-4xl md:text-6xl font-black text-[#100420] mb-6 leading-tight">
             Take control of your field operations.
           </h2>
-          <p className="text-slate-505 text-slate-500 text-lg md:text-xl max-w-3xl mx-auto mb-10 leading-relaxed">
+          <p className="text-slate-55 text-slate-500 text-lg md:text-xl max-w-3xl mx-auto mb-10 leading-relaxed">
             Ready to find out how our Field Service Management system can boost your efficiency up to 10x? Fill in your email and request a fully localized platform demo session.
           </p>
 
@@ -688,7 +689,7 @@ function StandardSolutionLayout({ data, locale }: { data: SolutionItem; locale: 
             {data.stats.map((stat, idx) => (
               <div key={idx} className="flex flex-col items-center text-center p-6 bg-white rounded-[32px] border border-slate-200 shadow-sm">
                 <h2 className="text-4xl md:text-5xl font-black text-primary mb-2 font-mono">{stat.value}</h2>
-                <p className="text-xs text-slate-500 uppercase tracking-wider font-bold">{stat.label[locale as "en" | "id"]}</p>
+                <p className="text-xs text-slate-505 uppercase tracking-wider font-bold">{stat.label[locale as "en" | "id"]}</p>
               </div>
             ))}
           </div>
@@ -699,7 +700,7 @@ function StandardSolutionLayout({ data, locale }: { data: SolutionItem; locale: 
       <section className="relative max-w-7xl mx-auto px-6 py-20 z-10">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-black tracking-tight text-[#100420] mb-4">{t("coreStrengths")}</h2>
-          <p className="text-slate-505 text-slate-500 text-sm">
+          <p className="text-slate-55 text-slate-500 text-sm">
             Discover the primary operational capabilities and strategic advantages delivered by this solution.
           </p>
         </div>
@@ -736,7 +737,7 @@ function StandardSolutionLayout({ data, locale }: { data: SolutionItem; locale: 
             <input 
               type="email" 
               placeholder="Enter your email address"
-              className="w-full px-5 py-3 rounded-xl bg-white border border-slate-350 border-slate-300 text-[#100420] focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors text-sm shadow-sm"
+              className="w-full px-5 py-3 rounded-xl bg-white border border-slate-300 text-[#100420] focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors text-sm shadow-sm"
             />
             <button className="bg-primary hover:bg-primary/95 text-white px-6 py-3 rounded-xl font-bold text-sm shrink-0 transition-colors shadow-sm">
               Get Started
@@ -755,6 +756,7 @@ export default function SolutionDetailPage(props: {
   params: Promise<{ locale: string; slug: string }>;
 }) {
   const { locale, slug } = React.use(props.params);
+  const tFooter = useTranslations("footer");
 
   // Search local database for the matching slug
   const solution = useMemo(() => {
@@ -778,7 +780,12 @@ export default function SolutionDetailPage(props: {
         )}
       </main>
 
-      <Footer />
+      <Footer
+        showCta={true}
+        ctaTitle={tFooter("cta.solutionTitle")}
+        ctaButtonText={tFooter("cta.solutionButton")}
+        ctaButtonHref="/contact"
+      />
     </div>
   );
 }

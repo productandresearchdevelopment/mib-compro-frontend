@@ -37,11 +37,11 @@ export default function CompanyMegaMenu({
       icon: "Building01Icon",
       href: `${baseHref}/company`
     },
-    {
-      name: locale === "id" ? "Karir" : "Careers",
-      icon: "Briefcase01Icon",
-      href: `${baseHref}/careers`
-    },
+    // {
+    //   name: locale === "id" ? "Karir" : "Careers",
+    //   icon: "Briefcase01Icon",
+    //   href: `${baseHref}/careers`
+    // },
     {
       name: locale === "id" ? "Insight Terbaru" : "Insight",
       icon: "NewspaperIcon",
@@ -143,7 +143,7 @@ export default function CompanyMegaMenu({
                 className="object-cover transition-transform duration-700 group-hover/news:scale-105"
               />
               {/* Dark gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+              <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent"></div>
 
               <div className="relative z-10 flex items-end justify-between gap-4 w-full">
                 <p className="text-[15px] font-semibold text-white leading-snug max-w-[320px] line-clamp-2">

@@ -49,6 +49,7 @@ export default function ProductDetailPage(props: { params: Promise<{ locale: str
   const slug = params.slug;
 
   const t = useTranslations("product");
+  const tFooter = useTranslations("footer");
 
   // Find product in static seed
   const product = PRODUCTS_DATA.find((p) => p.slug === slug);
@@ -86,23 +87,38 @@ export default function ProductDetailPage(props: { params: Promise<{ locale: str
     const interval = setInterval(() => {
       setSimulatedValues((prev) => {
         const next = { ...prev };
-        if (slug === "protectqube") {
-          if (next["Internal Temperature"]) {
-            const temp = (parseFloat(next["Internal Temperature"]) + (Math.random() * 0.6 - 0.3)).toFixed(1);
-            next["Internal Temperature"] = `${temp} °C`;
+        if (slug === "surveillance-ai-atm") {
+          if (next["Vibration Level"]) {
+            const val = (0.01 + Math.random() * 0.03).toFixed(2);
+            next["Vibration Level"] = `${val} G`;
           }
-          if (next["Humidity Level"]) {
-            const hum = Math.min(100, Math.max(0, Math.round(parseFloat(next["Humidity Level"]) + (Math.random() * 4 - 2))));
-            next["Humidity Level"] = `${hum} %`;
+        } else if (slug === "sensor-node") {
+          if (next["Heat Index"]) {
+            const temp = (parseFloat(next["Heat Index"]) + (Math.random() * 0.6 - 0.3)).toFixed(1);
+            next["Heat Index"] = `${temp} °C`;
           }
-        } else if (slug === "sensor-monitoring") {
-          if (next["Machine Temperature"]) {
-            const temp = (parseFloat(next["Machine Temperature"]) + (Math.random() * 1.2 - 0.6)).toFixed(1);
-            next["Machine Temperature"] = `${temp} °C`;
+          if (next["Ambient Humidity"]) {
+            const hum = Math.min(100, Math.max(0, Math.round(parseFloat(next["Ambient Humidity"]) + (Math.random() * 4 - 2))));
+            next["Ambient Humidity"] = `${hum} %`;
           }
-          if (next["Power Load Current"]) {
-            const current = (parseFloat(next["Power Load Current"]) + (Math.random() * 0.4 - 0.2)).toFixed(1);
-            next["Power Load Current"] = `${current} A`;
+          if (next["Vibration G-Force"]) {
+            const val = (0.01 + Math.random() * 0.01).toFixed(2);
+            next["Vibration G-Force"] = `${val} g`;
+          }
+        } else if (slug === "hse") {
+          if (next["Vest Compliance"]) {
+            const val = Math.min(100, Math.max(90, Math.round(parseFloat(next["Vest Compliance"]) + (Math.random() * 2 - 1))));
+            next["Vest Compliance"] = `${val} %`;
+          }
+        } else if (slug === "smart-monitoring") {
+          if (next["Live FPS"]) {
+            const val = Math.round(29 + Math.random() * 2);
+            next["Live FPS"] = `${val} fps`;
+          }
+        } else if (slug === "voiceguard") {
+          if (next["Word Error Rate"]) {
+            const val = (2.0 + Math.random() * 0.8).toFixed(1);
+            next["Word Error Rate"] = `${val} %`;
           }
         }
         return next;
@@ -126,6 +142,8 @@ export default function ProductDetailPage(props: { params: Promise<{ locale: str
       </div>
     );
   }
+
+  const isSimq = product.slug === "simq";
 
   // Animation variants
   const fadeInVariants = {
@@ -363,57 +381,74 @@ export default function ProductDetailPage(props: { params: Promise<{ locale: str
                     <div className="absolute inset-0 pt-8 pb-4 px-4 bg-slate-50 flex flex-col gap-4 overflow-y-auto no-scrollbar">
                       {/* Nav header */}
                       <div className="flex items-center justify-between border-b border-slate-100 pb-3 mt-2">
-                        <span className="text-[10px] font-bold text-[#100420] tracking-wider">QIFESS MOBILE</span>
-                        <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center text-primary text-[8px] font-black">PM</div>
+                        <span className="text-[10px] font-bold text-[#100420] tracking-wider">{product.slug === "simq" ? "SIMQ WAREHOUSE" : "QIFESS MOBILE"}</span>
+                        <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center text-primary text-[8px] font-black">{product.slug === "simq" ? "SQ" : "PM"}</div>
                       </div>
 
                       {/* Search box */}
                       <div className="bg-white border border-slate-200 rounded-lg p-2 flex items-center shadow-xs">
                         <div className="w-3 h-3 rounded-full border border-slate-400 mr-2" />
-                        <span className="text-[9px] text-slate-400">Search task tickets...</span>
+                        <span className="text-[9px] text-slate-400">{product.slug === "simq" ? "Search inventory stock..." : "Search task tickets..."}</span>
                       </div>
 
                       {/* Ticket header title */}
                       <div className="flex justify-between items-center text-[10px] font-bold text-slate-500">
-                        <span>ONGOING TICKET</span>
-                        <span>2 Total</span>
+                        <span>{product.slug === "simq" ? "INCOMING ITEMS" : "ONGOING TICKET"}</span>
+                        <span>{product.slug === "simq" ? "3 Items" : "2 Total"}</span>
                       </div>
 
                       {/* Ticket cards */}
-                      <div className="bg-white border border-slate-150 rounded-xl p-3 flex flex-col gap-2.5 shadow-sm border-l-4 border-l-orange-500">
+                      <div className={`bg-white border border-slate-150 rounded-xl p-3 flex flex-col gap-2.5 shadow-sm border-l-4 ${product.slug === "simq" ? "border-l-emerald-500" : "border-l-orange-500"}`}>
                         <div className="flex justify-between items-center">
-                          <span className="text-[9px] font-black text-slate-800">TKT-20268571</span>
-                          <span className="px-2 py-0.5 text-[8px] rounded bg-orange-100 text-orange-700 font-extrabold">ARRIVED</span>
+                          <span className="text-[9px] font-black text-slate-800">{product.slug === "simq" ? "ITM-98213" : "TKT-20268571"}</span>
+                          <span className={`px-2 py-0.5 text-[8px] rounded font-extrabold ${product.slug === "simq" ? "bg-emerald-100 text-emerald-700" : "bg-orange-100 text-orange-700"}`}>{product.slug === "simq" ? "STAGED" : "ARRIVED"}</span>
                         </div>
                         <div className="flex flex-col gap-1 text-[9px] text-slate-600">
-                          <span className="font-bold text-slate-800">Site ISP Inspection</span>
-                          <span>Ruby Summarecon TD 19</span>
+                          <span className="font-bold text-slate-800">{product.slug === "simq" ? "EDC Verifone X990" : "Site ISP Inspection"}</span>
+                          <span>{product.slug === "simq" ? "Qty: 15 units - Repair Center" : "Ruby Summarecon TD 19"}</span>
                         </div>
                         <div className="flex items-center justify-between pt-2 border-t border-slate-100 text-[8px] text-slate-400">
-                          <span>Engineer: Gogon Santoso</span>
-                          <span className="text-primary font-bold">View Detail</span>
+                          <span>{product.slug === "simq" ? "PIC: Budi Hartono" : "Engineer: Gogon Santoso"}</span>
+                          <span className="text-primary font-bold">{product.slug === "simq" ? "View Stock" : "View Detail"}</span>
                         </div>
                       </div>
 
-                      <div className="bg-white border border-slate-150 rounded-xl p-3 flex flex-col gap-2.5 shadow-sm border-l-4 border-l-blue-500">
+                      <div className={`bg-white border border-slate-150 rounded-xl p-3 flex flex-col gap-2.5 shadow-sm border-l-4 ${product.slug === "simq" ? "border-l-amber-500" : "border-l-blue-500"}`}>
                         <div className="flex justify-between items-center">
-                          <span className="text-[9px] font-black text-slate-800">TKT-20269714</span>
-                          <span className="px-2 py-0.5 text-[8px] rounded bg-blue-100 text-blue-700 font-extrabold">HANDLING</span>
+                          <span className="text-[9px] font-black text-slate-800">{product.slug === "simq" ? "ITM-98215" : "TKT-20269714"}</span>
+                          <span className={`px-2 py-0.5 text-[8px] rounded font-extrabold ${product.slug === "simq" ? "bg-amber-100 text-amber-700" : "bg-blue-100 text-blue-700"}`}>{product.slug === "simq" ? "REPAIRING" : "HANDLING"}</span>
                         </div>
                         <div className="flex flex-col gap-1 text-[9px] text-slate-600">
-                          <span className="font-bold text-slate-800">Field Maintenance EDC</span>
-                          <span>Tebing Tinggi Irian Supermarket</span>
+                          <span className="font-bold text-slate-800">{product.slug === "simq" ? "Soundbox MIB S2" : "Field Maintenance EDC"}</span>
+                          <span>{product.slug === "simq" ? "Faulty Audio Board Replacement" : "Tebing Tinggi Irian Supermarket"}</span>
                         </div>
                         <div className="flex items-center justify-between pt-2 border-t border-slate-100 text-[8px] text-slate-400">
-                          <span>Engineer: Saputra</span>
-                          <span className="text-primary font-bold">View Detail</span>
+                          <span>{product.slug === "simq" ? "Tech: Agus Prasetyo" : "Engineer: Saputra"}</span>
+                          <span className="text-primary font-bold">{product.slug === "simq" ? "View Ticket" : "View Detail"}</span>
                         </div>
                       </div>
+
+                      {product.slug === "simq" && (
+                         <div className="bg-white border border-slate-150 rounded-xl p-3 flex flex-col gap-2.5 shadow-sm border-l-4 border-l-blue-500">
+                           <div className="flex justify-between items-center">
+                             <span className="text-[9px] font-black text-slate-800">ITM-98218</span>
+                             <span className="px-2 py-0.5 text-[8px] rounded bg-blue-100 text-blue-700 font-extrabold">IN TRANSIT</span>
+                           </div>
+                           <div className="flex flex-col gap-1 text-[9px] text-slate-600">
+                             <span className="font-bold text-slate-800">ATM Cash Roller Parts</span>
+                             <span>Qty: 50 pcs - Dispatching to Depot</span>
+                           </div>
+                           <div className="flex items-center justify-between pt-2 border-t border-slate-100 text-[8px] text-slate-400">
+                             <span>Courier: Sicepat Express</span>
+                             <span className="text-primary font-bold">Track</span>
+                           </div>
+                         </div>
+                       )}
 
                       {/* Floating bottom action button */}
                       <div className="mt-auto py-2">
                         <button className="w-full py-2.5 rounded-lg bg-primary text-white text-[10px] font-bold shadow-md shadow-primary/20">
-                          Update Progress
+                          {product.slug === "simq" ? "Scan Barcode / QR" : "Update Progress"}
                         </button>
                       </div>
                     </div>
@@ -788,7 +823,12 @@ export default function ProductDetailPage(props: { params: Promise<{ locale: str
 
       </main>
 
-      <Footer />
+      <Footer
+        showCta={true}
+        ctaTitle={tFooter("cta.productTitle")}
+        ctaButtonText={tFooter("cta.productButton")}
+        ctaButtonHref="/contact"
+      />
     </div>
   );
 }

@@ -10,7 +10,7 @@
   },
   "hero": {
     "title": "Menjembatani Inovasi dengan Kecerdasan Dunia Nyata",
-    "subtitle": "Kami menyediakan solusi perangkat lunak dan IoT terintegrasi yang membantu bisnis menyederhanakan proses, meningkatkan efisiensi, dan membuat keputusan berbasis data secara real-time.",
+    "subtitle": "Kami mengintegrasikan teknologi, infrastruktur, dan sumber daya manusia untuk menghadirkan solusi menyeluruh di bidang perangkat lunak, perangkat keras, layanan terkelola, dan operasional cerdas.",
     "exploreSolutions": "Jelajahi Solusi",
     "viewProduct": "Lihat Produk"
   },
@@ -51,7 +51,7 @@
   },
   "products": {
     "title": "Solusi yang Didukung oleh Produk Kami",
-    "subtitle": "Dari sistem perangkat lunak cerdas hingga perangkat IoT, produk kami dirancang untuk memecahkan tantangan operasional nyata.",
+    "subtitle": "Dari sistem perangkat lunak cerdas hingga perangkat AIoT, produk kami dirancang untuk memecahkan tantangan operasional nyata.",
     "fsm": {
       "title": "Field Service Management",
       "description": "Solusi komprehensif yang menyederhanakan operasi, mengoptimalkan alokasi sumber daya, dan meningkatkan kepuasan pelanggan melalui otomatisasi cerdas.",
@@ -60,8 +60,8 @@
       "tryDemo": "Coba Demo"
     },
     "iot": {
-      "title": "Solusi IoT",
-      "description": "Solusi IoT end-to-end untuk lingkungan multi-industri dengan pemantauan real-time, analitik, dan kemampuan respons otomatis.",
+      "title": "Solusi AIoT",
+      "description": "Solusi AIoT end-to-end untuk lingkungan multi-industri dengan pemantauan real-time, analitik, dan kemampuan respons otomatis.",
       "features": ["Pemantauan 24/7", "Alert Real-time", "Manajemen Perangkat", "Deteksi AI"],
       "learnMore": "Pelajari Lebih",
       "tryDemo": "Coba Demo"
@@ -143,6 +143,15 @@
   "footer": {
     "cta": {
       "title": "Siap untuk Memulai?",
+      "contactTitle": "Mari Bangun Sesuatu yang Luar Biasa Bersama",
+      "companyTitle": "Mari Bangun Masa Depan Bersama",
+      "companyButton": "Bicara dengan Kami",
+      "insightTitle": "Tetap Terinformasi, Tetap Terdepan",
+      "insightButton": "Hubungi Kami",
+      "productTitle": "Siap Mentransformasi Operasional Anda?",
+      "productButton": "Hubungi Kami",
+      "solutionTitle": "Temukan Solusi yang Tepat untuk Bisnis Anda",
+      "solutionButton": "Hubungi Kami",
       "button": "Mari Bicara dengan Kami"
     }
   },
@@ -175,14 +184,14 @@
   "product": {
     "badge": "Produk oleh Mitra Inovasi Bisnis",
     "heroTitle": "Satu Ekosistem. Banyak Solusi. Dirancang untuk Operasi Lebih Cerdas.",
-    "heroSubtitle": "Dari platform perangkat lunak yang tangguh hingga sistem IoT real-time dan perangkat keras yang andal — produk kami dirancang untuk bekerja bersama, membantu Anda mengelola, memantau, dan mengembangkan operasi Anda dengan mulus.",
+    "heroSubtitle": "Dari platform perangkat lunak yang tangguh hingga sistem AIoT real-time dan perangkat keras yang andal — produk kami dirancang untuk bekerja bersama, membantu Anda mengelola, memantau, dan mengembangkan operasi Anda dengan mulus.",
     "exploreMore": "Jelajahi Lebih Banyak",
     "exploreSoftware": "Jelajahi Perangkat Lunak",
-    "exploreIot": "Jelajahi Sistem IoT",
+    "exploreIot": "Jelajahi Sistem AIoT",
     "exploreHardware": "Jelajahi Perangkat Keras",
     "softwareTitle": "Perangkat Lunak Tangguh yang Dirancang untuk Kinerja",
     "softwareDesc": "Platform perangkat lunak skalabel yang membantu Anda mengelola operasi, tim, dan data dengan mudah dan akurat.",
-    "iotTitle": "Sistem IoT Cerdas untuk Wawasan Real-Time",
+    "iotTitle": "Sistem AIoT Cerdas untuk Wawasan Real-Time",
     "iotDesc": "Perangkat dan sensor terhubung yang memantau, melacak, dan mengirimkan data secara real-time — di mana saja, kapan saja.",
     "hardwareTitle": "Perangkat Keras Andal yang Dapat Anda Andalkan",
     "hardwareDesc": "Perangkat keras berkualitas tinggi yang dirancang untuk mendukung operasional Anda di lapangan dan di kantor.",

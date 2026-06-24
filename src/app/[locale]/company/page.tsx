@@ -49,8 +49,8 @@ export default function CompanyPage() {
       {/* Footer with high-converting CTA */}
       <Footer
         showCta={true}
-        ctaTitle={tFooter("cta.title")}
-        ctaButtonText={tFooter("cta.button")}
+        ctaTitle={tFooter("cta.companyTitle")}
+        ctaButtonText={tFooter("cta.companyButton")}
         ctaButtonHref="/contact"
       />
     </div>
