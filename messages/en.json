@@ -11,6 +11,16 @@
   "hero": {
     "title": "Bridging Innovation with Real-World Intelligence",
     "subtitle": "We integrate technology, infrastructure, and people to deliver end-to-end solutions across software, hardware, managed services, and intelligent operations.",
+    "slide2_title": "Advanced AIoT Solutions & Intelligent Systems",
+    "slide2_subtitle": "Deploy advanced, smart AIoT solutions integrated with AI Surveillance for active security monitoring, AI HSE for automated PPE compliance, and Voice Guard voice fraud prevention.",
+    "slide_energy_title": "Energy & Utilities Smart Monitoring",
+    "slide_energy_subtitle": "Smart real-time energy monitoring systems to optimize power consumption efficiency, generator operation status, and UPS backup system analytics.",
+    "slide3_title": "Smart Software & Enterprise Solutions",
+    "slide3_subtitle": "Development of custom intelligent enterprise software for process automation, robust API integrations, and scaling workflow efficiency across operations.",
+    "slide4_title": "Comprehensive Managed Services & Support",
+    "slide4_subtitle": "Ensure absolute system reliability with our nationwide network of over 500+ field engineers, 188 service points, 27 logistics warehouses, and 10 repair centers supporting your deployments across Indonesia.",
+    "slide1_title": "Smart Field Operations & Logistics",
+    "slide1_subtitle": "Optimize field operations and logistics scheduling using Smart Field Service (FSM), real-time technician dispatching, job tracking, and automated task workflow integrations.",
     "exploreSolutions": "Explore Solutions",
     "viewProduct": "View Product"
   },

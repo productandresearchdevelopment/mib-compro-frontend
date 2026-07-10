@@ -11,6 +11,16 @@
   "hero": {
     "title": "Menjembatani Inovasi dengan Kecerdasan Dunia Nyata",
     "subtitle": "Kami mengintegrasikan teknologi, infrastruktur, dan sumber daya manusia untuk menghadirkan solusi menyeluruh di bidang perangkat lunak, perangkat keras, layanan terkelola, dan operasional cerdas.",
+    "slide2_title": "Solusi AIoT Canggih & Sistem Keamanan Cerdas",
+    "slide2_subtitle": "Implementasi solusi AIoT pintar terintegrasi dengan AI Surveillance untuk pengawasan keamanan aktif, AI HSE untuk deteksi kepatuhan APD otomatis, serta Voice Guard untuk pencegahan fraud suara.",
+    "slide_energy_title": "Pemantauan Energi Cerdas & Efisiensi Utilitas",
+    "slide_energy_subtitle": "Pemantauan energi cerdas secara real-time untuk optimalisasi efisiensi konsumsi listrik, pemantauan status genset, dan analisis keandalan perangkat UPS secara presisi.",
+    "slide3_title": "Solusi Perangkat Lunak & Sistem Enterprise Cerdas",
+    "slide3_subtitle": "Pengembangan platform perangkat lunak inovatif untuk otomatisasi alur kerja operasional, integrasi API sistem, dan peningkatan efisiensi proses bisnis Anda secara skalabel.",
+    "slide4_title": "Layanan Terkelola Menyeluruh & Jaringan Dukungan Nasional",
+    "slide4_subtitle": "Dukungan operasional nasional terpercaya dengan jaminan keandalan sistem yang diperkuat oleh 500+ field engineers, 188 service points, 27 gudang logistik, dan 10 service repair center di seluruh Indonesia.",
+    "slide1_title": "Operasional Lapangan Cerdas & Manajemen Logistik",
+    "slide1_subtitle": "Optimalkan koordinasi tim lapangan dan manajemen logistik secara presisi menggunakan sistem FSM, penjadwalan dinamis, pelacakan tugas real-time, dan dispatching teknisi otomatis.",
     "exploreSolutions": "Jelajahi Solusi",
     "viewProduct": "Lihat Produk"
   },
@@ -336,7 +346,7 @@
   },
   "servicesShowcase": {
       "badge": "MIB MANAGED OPERATIONS",
-      "title": "Layanan Operasional & Managed Services Lapangan",
+      "title": "Layanan Operasional & Managed Services",
       "subtitle": "Dari penyediaan tenaga ahli, staging perangkat kasir, pengiriman terkelola, pemeliharaan ATM, hingga operasi terkelola ujung-ke-ujung.",
       "readDetails": "Selengkapnya",
       "items": {

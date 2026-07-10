@@ -1,9 +1,22 @@
 import type React from "react";
 import type { Metadata } from "next";
-import { GeistSans } from "geist/font/sans";
+import { Space_Grotesk, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { CookiesProvider } from "next-client-cookies/server";
 import Script from "next/script";
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-display",
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "MIB - Partner in Innovation",
@@ -18,7 +31,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html className={GeistSans.variable} suppressHydrationWarning>
+    <html className={`${plusJakarta.variable} ${spaceGrotesk.variable}`} suppressHydrationWarning>
       <body>
         <CookiesProvider>{children}</CookiesProvider>
 

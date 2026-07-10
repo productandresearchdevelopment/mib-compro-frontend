@@ -3,6 +3,7 @@
 import React, { useMemo } from "react";
 import { useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
+import ParallaxImage from "@/components/effects/ParallaxImage";
 
 interface ServiceItem {
   key: string;
@@ -96,7 +97,7 @@ export default function ServicesShowcase() {
               {t("badge")}
             </span>
           </div>
-          <h2 className="text-3xl md:text-[40px] font-semibold tracking-tight text-slate-900 leading-tight">
+          <h2 className="text-3xl md:text-[40px] font-black tracking-tight text-slate-900 leading-tight font-display uppercase">
             {t("title")}
           </h2>
           <p className="text-slate-500 text-base md:text-lg leading-relaxed max-w-4xl">
@@ -112,10 +113,12 @@ export default function ServicesShowcase() {
                 key={item.key}
                 className="group relative flex flex-col justify-end overflow-hidden rounded-xl border border-slate-100 shadow-2xl transition-all duration-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] hover:scale-[1.01] cursor-pointer h-[320px] lg:h-[400px]"
               >
-                <img
+                <ParallaxImage
                   src={item.image}
                   alt={t(`items.${item.key}.title`)}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="absolute inset-0 w-full h-full"
+                  imgClassName="transition-transform duration-700 group-hover:scale-105"
+                  speed={25}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent pointer-events-none z-10" />
                 <div className="flex flex-col p-6 md:p-8 z-20 text-white relative w-full">
@@ -146,10 +149,12 @@ export default function ServicesShowcase() {
                 key={item.key}
                 className="group relative flex flex-col justify-end overflow-hidden rounded-xl border border-slate-100 shadow-2xl transition-all duration-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] hover:scale-[1.01] cursor-pointer h-[400px] lg:h-[480px]"
               >
-                <img
+                <ParallaxImage
                   src={item.image}
                   alt={t(`items.${item.key}.title`)}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="absolute inset-0 w-full h-full"
+                  imgClassName="transition-transform duration-700 group-hover:scale-105"
+                  speed={35}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent pointer-events-none z-10" />
                 <div className="flex flex-col p-8 md:p-10 z-20 text-white relative w-full">
@@ -183,10 +188,12 @@ export default function ServicesShowcase() {
                 key={item.key}
                 className="group relative flex flex-col justify-end overflow-hidden rounded-xl border border-slate-100 shadow-2xl transition-all duration-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] hover:scale-[1.01] cursor-pointer h-[320px] lg:h-[400px]"
               >
-                <img
+                <ParallaxImage
                   src={item.image}
                   alt={t(`items.${item.key}.title`)}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="absolute inset-0 w-full h-full"
+                  imgClassName="transition-transform duration-700 group-hover:scale-105"
+                  speed={25}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent pointer-events-none z-10" />
                 <div className="flex flex-col p-6 md:p-8 z-20 text-white relative w-full">

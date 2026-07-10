@@ -1,351 +1,260 @@
 "use client";
 
-import React from "react";
-import {
-  Activity,
-  Map as MapIcon,
-  MessageCircle,
-  Cpu,
-  Server,
-  Code,
-} from "lucide-react";
-import DottedMap from "dotted-map";
-import { Area, AreaChart, CartesianGrid } from "recharts";
-import {
-  type ChartConfig,
-  ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent,
-} from "@/components/ui/chart";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { Cpu, Code, Server } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 
-// --- DOTTED MAP SETTINGS ---
-const map = new DottedMap({ height: 55, grid: "diagonal" });
-const points = map.getPoints();
-
-const svgOptions = {
-  backgroundColor: "transparent",
-  color: "#cbd5e1",
-  radius: 0.15,
-};
-
-const Map = () => {
-  const viewBox = `0 0 120 60`;
+// ── Word-by-word mask reveal ──────────────────────────────────────────────────
+function WordReveal({ text, className = "" }: { text: string; className?: string }) {
+  const words = text.split(" ");
+  const container = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.08 } },
+  };
+  const item = {
+    hidden: { y: "110%", rotate: 2 },
+    visible: { y: 0, rotate: 0, transition: { duration: 0.75, ease: [0.16, 1, 0.3, 1] } },
+  };
   return (
-    <svg
-      viewBox={viewBox}
-      style={{ background: svgOptions.backgroundColor }}
-      className="w-full h-auto text-slate-350 dark:text-slate-600"
+    <motion.span
+      variants={container}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-40px" }}
+      className={`inline-flex flex-wrap gap-x-[0.25em] gap-y-1 ${className}`}
     >
-      {points.map((point, index) => (
-        <circle
-          key={index}
-          cx={point.x}
-          cy={point.y}
-          r={svgOptions.radius}
-          fill="currentColor"
-        />
+      {words.map((word, i) => (
+        <span key={i} className="overflow-hidden inline-block pb-1">
+          <motion.span variants={item} className="inline-block">{word}</motion.span>
+        </span>
       ))}
-    </svg>
+    </motion.span>
   );
-};
+}
 
-// --- CHART SETTINGS ---
-const chartConfig = {
-  desktop: {
-    label: "Desktop",
-    color: "#2563eb",
+// ── Pillar definitions ────────────────────────────────────────────────────────
+const PILLARS = [
+  {
+    number: "01",
+    badgeKey: "aiotBadge",
+    titleKey: "aiotTitle",
+    descKey: "aiotDesc",
+    href: "pillars/aiot-hardware",
+    Icon: Cpu,
+    logo: { src: "/images/logo-protectcube.png", alt: "ProtectQube", width: 140, height: 48 },
+    // Relevant: AI/surveillance/cameras
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=900",
+    imageAlt: "AIoT Surveillance Technology",
+    accentFrom: "from-primary-600/20",
   },
-  mobile: {
-    label: "Mobile",
-    color: "#f22929", // Red to match MIB primary palette beautifully
+  {
+    number: "02",
+    badgeKey: "softwareBadge",
+    titleKey: "softwareSub",
+    descKey: "softwareDesc",
+    href: "pillars/software",
+    Icon: Code,
+    logo: { src: "/images/logo-qifess.png", alt: "QIFESS", width: 140, height: 48 },
+    // Relevant: developer / enterprise software
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=900",
+    imageAlt: "Enterprise Software Development",
+    accentFrom: "from-blue-600/20",
   },
-} satisfies ChartConfig;
-
-const chartData = [
-  { month: "May", desktop: 56, mobile: 224 },
-  { month: "June", desktop: 56, mobile: 224 },
-  { month: "January", desktop: 126, mobile: 252 },
-  { month: "February", desktop: 205, mobile: 410 },
-  { month: "March", desktop: 200, mobile: 126 },
-  { month: "April", desktop: 400, mobile: 800 },
+  {
+    number: "03",
+    badgeKey: "servicesBadge",
+    titleKey: "servicesTitle",
+    descKey: "servicesDesc",
+    href: "pillars/services",
+    Icon: Server,
+    logo: null,
+    // Relevant: NOC / operations team
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=900",
+    imageAlt: "Managed Services Operations",
+    accentFrom: "from-emerald-600/20",
+  },
 ];
 
-const MonitoringChart = () => {
-  return (
-    <ChartContainer
-      className="h-48 md:h-56 w-full"
-      config={chartConfig}
-    >
-      <AreaChart
-        accessibilityLayer
-        data={chartData}
-        margin={{
-          left: 0,
-          right: 0,
-          top: 0,
-          bottom: 0,
-        }}
-      >
-        <defs>
-          <linearGradient id="fillDesktop" x1="0" y1="0" x2="0" y2="1">
-            <stop
-              offset="0%"
-              stopColor="var(--color-desktop)"
-              stopOpacity={0.4}
-            />
-            <stop
-              offset="55%"
-              stopColor="var(--color-desktop)"
-              stopOpacity={0.0}
-            />
-          </linearGradient>
-          <linearGradient id="fillMobile" x1="0" y1="0" x2="0" y2="1">
-            <stop
-              offset="0%"
-              stopColor="var(--color-mobile)"
-              stopOpacity={0.4}
-            />
-            <stop
-              offset="55%"
-              stopColor="var(--color-mobile)"
-              stopOpacity={0.0}
-            />
-          </linearGradient>
-        </defs>
-        <CartesianGrid vertical={false} stroke="rgba(226, 232, 240, 0.3)" />
-        <ChartTooltip
-          active
-          cursor={false}
-          content={<ChartTooltipContent className="dark:bg-slate-900" />}
-        />
-        <Area
-          strokeWidth={2.5}
-          dataKey="mobile"
-          type="stepBefore"
-          fill="url(#fillMobile)"
-          stroke="var(--color-mobile)"
-          stackId="a"
-        />
-        <Area
-          strokeWidth={2.5}
-          dataKey="desktop"
-          type="stepBefore"
-          fill="url(#fillDesktop)"
-          stroke="var(--color-desktop)"
-          stackId="a"
-        />
-      </AreaChart>
-    </ChartContainer>
-  );
-};
+// ── Individual sticky pillar panel ───────────────────────────────────────────
+function PillarPanel({
+  pillar,
+  scrollProgress,
+  rangeIn,
+  zIndex,
+  locale,
+  t,
+}: {
+  pillar: (typeof PILLARS)[0];
+  scrollProgress: ReturnType<typeof useScroll>["scrollYProgress"];
+  rangeIn: [number, number];
+  zIndex: number;
+  locale: string;
+  t: (k: string) => string;
+}) {
+  const y = useTransform(scrollProgress, rangeIn, ["100%", "0%"]);
+  const opacity = useTransform(scrollProgress, rangeIn, [0, 1]);
+  const imgScale = useTransform(scrollProgress, rangeIn, [1.08, 1]);
 
+  return (
+    <div className="sticky top-0 h-screen w-full" style={{ zIndex }}>
+      <motion.div
+        style={{ y, opacity }}
+        className="absolute inset-0 bg-[#030712] flex flex-col lg:flex-row overflow-hidden"
+      >
+        {/* ── Left: Content ─────────────────────────────────────────────── */}
+        <div className="flex-1 flex flex-col justify-center px-8 md:px-14 lg:px-20 py-16 relative overflow-hidden">
+          {/* Watermark number */}
+          <span className="absolute -right-6 bottom-6 text-[220px] font-black text-white/[0.025] leading-none select-none pointer-events-none font-display">
+            {pillar.number}
+          </span>
+
+          {/* Eyebrow */}
+          <motion.div
+            initial={{ opacity: 0, x: -16 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="flex items-center gap-3 mb-5"
+          >
+            <div className="h-px w-8 bg-primary-500" />
+            <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-primary-500 font-mono flex items-center gap-2">
+              <pillar.Icon size={11} />
+              {t(pillar.badgeKey)}
+            </span>
+          </motion.div>
+
+          {/* Large dim number */}
+          <div className="text-8xl md:text-[110px] font-black text-primary-500/10 font-display leading-none mb-3 select-none">
+            {pillar.number}
+          </div>
+
+          {/* Logo */}
+          <div className="h-9 flex items-center mb-5">
+            {pillar.logo ? (
+              <Image src={pillar.logo.src} alt={pillar.logo.alt} width={pillar.logo.width} height={pillar.logo.height} className="object-contain max-h-8 brightness-0 invert opacity-70" />
+            ) : (
+              <div className="flex items-center gap-2">
+                <Server size={16} className="text-primary-500" />
+                <span className="text-white font-bold text-sm font-display tracking-tight">services</span>
+              </div>
+            )}
+          </div>
+
+          {/* Title — word-by-word */}
+          <h3 className="text-3xl md:text-4xl xl:text-[52px] font-black leading-[1.1] mb-5 font-display uppercase tracking-tight">
+            <WordReveal text={t(pillar.titleKey)} className="text-white" />
+          </h3>
+
+          {/* Description */}
+          <motion.p
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.35 }}
+            className="text-slate-400 text-sm md:text-base leading-relaxed max-w-sm mb-8"
+          >
+            {t(pillar.descKey)}
+          </motion.p>
+
+          {/* CTA */}
+          <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.5 }}>
+            <Link
+              href={`/${locale}/${pillar.href}`}
+              className="group inline-flex items-center gap-2 text-white/50 hover:text-primary-400 text-sm font-semibold transition-colors duration-300"
+            >
+              <span>Explore Pillar</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-0.5">
+                <line x1="7" y1="17" x2="17" y2="7" /><polyline points="7 7 17 7 17 17" />
+              </svg>
+            </Link>
+          </motion.div>
+        </div>
+
+        {/* ── Right: Real image ──────────────────────────────────────────── */}
+        <div className="hidden lg:block lg:w-[48%] xl:w-[50%] relative overflow-hidden border-l border-white/8 shrink-0">
+          <motion.div
+            style={{ scale: imgScale }}
+            className="absolute inset-0"
+          >
+            <img
+              src={pillar.image}
+              alt={pillar.imageAlt}
+              className="w-full h-full object-cover grayscale-[30%] brightness-[0.7] contrast-[1.1]"
+            />
+          </motion.div>
+          {/* Overlay gradient */}
+          <div className={`absolute inset-0 bg-gradient-to-r ${pillar.accentFrom} to-transparent`} />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#030712]/60 via-transparent to-[#030712]/20" />
+          {/* Bottom line */}
+          <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-primary-500/60 via-primary-500/20 to-transparent" />
+        </div>
+
+        {/* Top separator line */}
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/8 to-transparent" />
+      </motion.div>
+    </div>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
 export default function Features() {
   const t = useTranslations("features");
   const locale = useLocale();
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"],
+  });
+
+  // Heading fades out as scroll begins
+  const headingOpacity = useTransform(scrollYProgress, [0, 0.12], [1, 0]);
+  const headingY = useTransform(scrollYProgress, [0, 0.15], [0, -50]);
+
+  const panelRanges: [number, number][] = [
+    [0, 0],       // Pillar 01: always visible from start
+    [0.2, 0.42],  // Pillar 02: slides in at ~20% scroll
+    [0.55, 0.75], // Pillar 03: slides in at ~55% scroll
+  ];
 
   return (
+    // overflow: clip is crucial — allows sticky children to work while preventing
+    // content from painting outside section bounds (unlike overflow: hidden which breaks sticky)
     <section
       id="solution"
-      className="px-4 py-16 md:py-32 bg-white border-t border-slate-100"
+      ref={containerRef}
+      className="relative bg-[#030712] h-[300vh]"
+      style={{ overflow: "clip" }}
     >
-      {/* Header / Intro section to keep high visual elegance and brand identification */}
-      <div className="max-w-7xl mx-auto mb-16">
-        <div className="flex flex-col lg:flex-row justify-between items-start gap-8">
-          <h2 className="text-4xl md:text-5xl lg:text-[48px] font-semibold tracking-tight text-slate-900 leading-[1.3] lg:max-w-[680px]">
-            {t("title")}
-          </h2>
-          <p className="text-lg text-slate-500 font-medium leading-[1.8] lg:max-w-[550px]">
-            {t("subtitle")}
-          </p>
+      {/* Floating scroll hint label */}
+      <motion.div
+        style={{ opacity: headingOpacity, y: headingY }}
+        className="absolute top-10 left-0 right-0 z-50 pointer-events-none flex justify-center"
+      >
+        <div className="flex items-center gap-4 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
+          <div className="h-px w-8 bg-primary-500" />
+          <span className="text-primary-500 text-xs font-bold uppercase tracking-[0.25em] font-mono">
+            Our Core Pillars — Scroll to Explore
+          </span>
+          <div className="h-px w-8 bg-primary-500" />
         </div>
-      </div>
+      </motion.div>
 
-      {/* Main grid containing the exact requested layout structure, styled to max-w-7xl size */}
-      <div className="mx-auto grid max-w-7xl border border-slate-200 rounded-3xl overflow-hidden shadow-xl shadow-slate-100/50 bg-white grid-cols-1 lg:grid-cols-3">
-        
-        {/* COLUMN 1: AIoT & HARDWARE (protectQube) */}
-        <Link
-          href={`/${locale}/pillars/aiot-hardware`}
-          className="group flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-slate-200 hover:bg-slate-50/40 transition-all duration-305 cursor-pointer animate-fade-in"
-        >
-          <div className="p-8 sm:p-12">
-            <span className="text-slate-500 font-semibold flex items-center gap-2 text-sm bg-slate-50 border border-slate-100 w-max px-3 py-1.5 rounded-full transition-transform group-hover:scale-[1.03] duration-300">
-              <Cpu className="size-4 text-primary-600 transition-transform group-hover:rotate-6 group-hover:scale-110 duration-300" />
-              {t("aiotBadge")}
-            </span>
-
-            <div className="mt-6">
-              <div className="h-16 flex items-center">
-                <Image
-                  src="/images/logo-protectcube.png"
-                  alt="protectQube Logo"
-                  width={150}
-                  height={56}
-                  className="object-contain max-h-12"
-                />
-              </div>
-              <p className="mt-4 text-2xl font-bold text-slate-900 tracking-tight leading-tight">
-                {t("aiotTitle")}
-              </p>
-              <p className="mt-3 text-slate-500 text-sm leading-relaxed">
-                {t("aiotDesc")}
-              </p>
-            </div>
-          </div>
-
-          <div
-            aria-hidden
-            className="relative border-t border-slate-100 pt-6 bg-slate-50/30 overflow-hidden"
-          >
-            <div className="absolute inset-0 z-10 m-auto size-fit">
-              <div className="rounded-xl bg-white dark:bg-slate-900 relative z-[2] flex size-fit w-fit items-center gap-2 border border-slate-200 px-3 py-1 text-xs font-semibold text-slate-850 shadow-md shadow-black/5">
-                <span className="text-lg">🇮🇩</span> {t("lastConnection")}
-              </div>
-              <div className="rounded-xl bg-white dark:bg-slate-950 absolute inset-2 -bottom-2 mx-auto border border-slate-200 px-3 py-4 text-xs font-medium shadow-md shadow-black/5 z-[1]"></div>
-            </div>
-
-            <div className="relative overflow-hidden opacity-90 px-6 py-4">
-              <div className="[background-image:radial-gradient(var(--tw-gradient-stops))] z-1 to-white absolute inset-0 from-transparent to-90%"></div>
-              <Map />
-            </div>
-          </div>
-        </Link>
-
-        {/* COLUMN 2: SOFTWARE (QIFESS Chart) */}
-        <Link
-          href={`/${locale}/pillars/software`}
-          className="group flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-slate-200 hover:bg-slate-50/40 transition-all duration-305 cursor-pointer animate-fade-in"
-        >
-          <div className="p-8 sm:p-12">
-            <span className="text-slate-500 font-semibold flex items-center gap-2 text-sm bg-slate-50 border border-slate-100 w-max px-3 py-1.5 rounded-full transition-transform group-hover:scale-[1.03] duration-300">
-              <Code className="size-4 text-primary-600 transition-transform group-hover:scale-110 duration-300" />
-              {t("softwareBadge")}
-            </span>
-
-            <div className="mt-6">
-              <div className="h-16 flex items-center">
-                <Image
-                  src="/images/logo-qifess.png"
-                  alt="QIFESS Logo"
-                  width={150}
-                  height={56}
-                  className="object-contain max-h-12"
-                />
-              </div>
-              <p className="mt-4 text-2xl font-bold text-slate-900 tracking-tight leading-tight">
-                {t("softwareSub")}
-              </p>
-              <p className="mt-3 text-slate-500 text-sm leading-relaxed">
-                {t("softwareDesc")}
-              </p>
-            </div>
-          </div>
-
-          <div
-            aria-hidden
-            className="relative border-t border-slate-100 pt-6 bg-slate-50/30 overflow-hidden"
-          >
-            <div className="h-48 md:h-56 w-full flex items-end">
-              <MonitoringChart />
-            </div>
-          </div>
-        </Link>
-
-        {/* COLUMN 3: SERVICES (Managed Services) */}
-        <Link
-          href={`/${locale}/pillars/services`}
-          className="group flex flex-col justify-between border-b lg:border-b-0 hover:bg-slate-50/40 transition-all duration-305 cursor-pointer animate-fade-in"
-        >
-          <div className="p-8 sm:p-12">
-            <span className="text-slate-500 font-semibold flex items-center gap-2 text-sm bg-slate-50 border border-slate-100 w-max px-3 py-1.5 rounded-full transition-transform group-hover:scale-[1.03] duration-300">
-              <Server className="size-4 text-primary-600 transition-transform group-hover:-translate-y-0.5 duration-300" />
-              {t("servicesBadge")}
-            </span>
-
-            <div className="mt-6">
-              <div className="h-16 flex items-center">
-                <div className="flex items-center gap-2 select-none">
-                  <svg
-                    viewBox="0 0 24 24"
-                    className="size-7 transition-transform duration-300 group-hover:scale-110"
-                    fill="none"
-                  >
-                    <defs>
-                      <linearGradient id="servicesGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#f22929" />
-                        <stop offset="100%" stopColor="#ef4444" />
-                      </linearGradient>
-                    </defs>
-                    <path
-                      d="M12 2L2 7l10 5 10-5-10-5z"
-                      stroke="url(#servicesGrad)"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M2 12l10 5 10-5"
-                      stroke="url(#servicesGrad)"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M2 17l10 5 10-5"
-                      stroke="url(#servicesGrad)"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                  <span className="text-[22px] font-extrabold tracking-tight text-slate-900 font-sans leading-none">
-                    services
-                  </span>
-                </div>
-              </div>
-              <p className="mt-4 text-2xl font-bold text-slate-900 tracking-tight leading-tight">
-                {t("servicesTitle")}
-              </p>
-              <p className="mt-3 text-slate-500 text-sm leading-relaxed">
-                {t("servicesDesc")}
-              </p>
-            </div>
-          </div>
-
-          <div
-            aria-hidden
-            className="relative border-t border-slate-100 p-6 sm:p-8 bg-slate-50/30"
-          >
-            <div className="flex flex-col gap-4 bg-white p-5 rounded-2xl border border-slate-200/80 shadow-md transition-shadow group-hover:shadow-lg duration-300">
-              <div>
-                <div className="flex items-center gap-2">
-                  <span className="flex justify-center items-center size-5 rounded-full border border-slate-200">
-                    <span className="size-2 rounded-full bg-primary-600 animate-pulse" />
-                  </span>
-                  <span className="text-slate-400 text-[9px] font-bold tracking-wider uppercase">
-                    {t("clientDispatchBadge")}
-                  </span>
-                </div>
-                <div className="rounded-xl bg-slate-50 mt-1.5 w-[90%] border border-slate-100 p-2.5 text-xs text-slate-700 font-medium">
-                  {t("clientMessage")}
-                </div>
-              </div>
-
-              <div>
-                <div className="rounded-xl ml-auto w-[90%] bg-primary-600 p-2.5 text-xs text-white shadow-md shadow-red-500/10 font-medium">
-                  {t("engineerMessage")}
-                </div>
-                <span className="text-slate-400 block text-right text-[9px] font-semibold mt-1">
-                  {t("resolvedStatus")}
-                </span>
-              </div>
-            </div>
-          </div>
-        </Link>
-      </div>
+      {/* Stacked sticky panels */}
+      {PILLARS.map((pillar, i) => (
+        <PillarPanel
+          key={pillar.number}
+          pillar={pillar}
+          scrollProgress={scrollYProgress}
+          rangeIn={panelRanges[i]}
+          zIndex={10 + i * 10}
+          locale={locale}
+          t={t}
+        />
+      ))}
     </section>
   );
 }

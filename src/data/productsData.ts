@@ -1120,5 +1120,250 @@ export const PRODUCTS_DATA: ProductItem[] = [
         icon: "Activity"
       }
     ]
+  },
+  {
+    slug: "aisino",
+    category: "hardware",
+    title: {
+      en: "Smart Soundbox Audio Payment Verification",
+      id: "Verifikasi Pembayaran Suara Soundbox Pintar"
+    },
+    tagline: {
+      en: "Instant Voice Verification",
+      id: "Verifikasi Suara Instan"
+    },
+    badge: {
+      en: "Aisino Soundbox",
+      id: "Aisino Soundbox"
+    },
+    description: {
+      en: "High-volume smart Soundbox designed for instant voice payment receipts, reducing merchant transaction verification friction.",
+      id: "Soundbox pintar volume tinggi yang dirancang untuk tanda terima pembayaran suara instan, mengurangi gesekan verifikasi transaksi merchant."
+    },
+    heroImage: "/images/usecase_logistics.png",
+    features: [
+      {
+        title: { en: "Voice Broadcast", id: "Siaran Suara" },
+        description: { en: "Clear and loud audio confirmations for all transactions.", id: "Konfirmasi audio yang jelas dan keras untuk semua transaksi." },
+        icon: "Volume2"
+      }
+    ],
+    benefits: [
+      {
+        title: { en: "Zero Fraud", id: "Nol Penipuan" },
+        description: { en: "Prevent fake payment screenshot scams with immediate audio verification.", id: "Cegah penipuan tangkapan layar pembayaran palsu dengan verifikasi audio langsung." },
+        icon: "Shield"
+      }
+    ]
+  },
+  {
+    slug: "sunmi",
+    category: "hardware",
+    title: {
+      en: "Sunmi Smart POS & EDC Terminal System",
+      id: "Sistem Terminal POS & EDC Pintar Sunmi"
+    },
+    tagline: {
+      en: "Enterprise Smart POS",
+      id: "Smart POS Perusahaan"
+    },
+    badge: {
+      en: "Sunmi POS",
+      id: "Sunmi POS"
+    },
+    description: {
+      en: "Next-generation Android-based POS and mobile EDC terminals with unified payment integration capabilities.",
+      id: "Terminal POS berbasis Android generasi terbaru dan EDC seluler dengan kemampuan integrasi pembayaran terpadu."
+    },
+    heroImage: "/images/usecase_logistics.png",
+    features: [
+      {
+        title: { en: "Dual Screen Support", id: "Dukungan Layar Ganda" },
+        description: { en: "Display transactions clearly to both merchants and customers.", id: "Tampilkan transaksi dengan jelas untuk merchant dan pelanggan." },
+        icon: "Tv"
+      }
+    ],
+    benefits: [
+      {
+        title: { en: "Unified Payment", id: "Pembayaran Terpadu" },
+        description: { en: "Accept card sweeps, dynamic QR codes, and digital wallets.", id: "Terima gesekan kartu, kode QR dinamis, dan dompet digital." },
+        icon: "CreditCard"
+      }
+    ]
+  },
+  {
+    slug: "telpo",
+    category: "hardware",
+    title: {
+      en: "Telpo Biometric & Smart Desktop POS",
+      id: "Terminal POS Meja Pintar & Biometrik Telpo"
+    },
+    tagline: {
+      en: "Biometric POS Terminal",
+      id: "Terminal POS Biometrik"
+    },
+    badge: {
+      en: "Telpo POS",
+      id: "Telpo POS"
+    },
+    description: {
+      en: "Smart desktop and mobile payment devices supporting face recognition, biometric verification, and thermal printing.",
+      id: "Perangkat pembayaran meja dan seluler pintar yang mendukung pengenalan wajah, verifikasi biometrik, dan cetak termal."
+    },
+    heroImage: "/images/usecase_logistics.png",
+    features: [
+      {
+        title: { en: "Biometric Verification", id: "Verifikasi Biometrik" },
+        description: { en: "Ensure high-security access controls and transaction logs.", id: "Pastikan kontrol akses dan log transaksi berkeamanan tinggi." },
+        icon: "Fingerprint"
+      }
+    ],
+    benefits: [
+      {
+        title: { en: "Versatile Formats", id: "Format Serbaguna" },
+        description: { en: "Fits any retail shop floor or cashier counter setup.", id: "Cocok untuk ritel apa pun atau pengaturan meja kasir." },
+        icon: "Layout"
+      }
+    ]
+  },
+  {
+    slug: "masterwork",
+    category: "hardware",
+    title: {
+      en: "Masterwork Cash Deposit & Recycling Machines",
+      id: "Mesin Cash Deposit & Daur Ulang Masterwork"
+    },
+    tagline: {
+      en: "Cash Deposit Solutions",
+      id: "Solusi Cash Deposit"
+    },
+    badge: {
+      en: "Masterwork CDM",
+      id: "CDM Masterwork"
+    },
+    description: {
+      en: "Heavy-duty cash deposit and recycling terminals to optimize high-volume branch operations and secure deposits.",
+      id: "Terminal CDM dan daur ulang uang berat untuk mengoptimalkan operasional kantor cabang volume tinggi dan mengamankan deposit."
+    },
+    heroImage: "/images/usecase_logistics.png",
+    features: [
+      {
+        title: { en: "Banknote Validation", id: "Validasi Uang Kertas" },
+        description: { en: "Employs high-grade CIS sensors to validate banknotes.", id: "Menggunakan sensor CIS tingkat tinggi untuk memvalidasi uang kertas." },
+        icon: "Coins"
+      }
+    ],
+    benefits: [
+      {
+        title: { en: "High Security", id: "Keamanan Tinggi" },
+        description: { en: "Reinforced vault walls to prevent physical breaches.", id: "Dinding brankas diperkuat untuk mencegah pembobolan fisik." },
+        icon: "Shield"
+      }
+    ]
+  },
+  {
+    slug: "gnd",
+    category: "hardware",
+    title: {
+      en: "GND Automated Cash Counter & Validator",
+      id: "Penghitung & Validator Uang Otomatis GND"
+    },
+    tagline: {
+      en: "High-Speed Cash Processing",
+      id: "Pemrosesan Uang Kecepatan Tinggi"
+    },
+    badge: {
+      en: "GND Counter",
+      id: "Penghitung GND"
+    },
+    description: {
+      en: "Automated high-speed banknote counting machines featuring counterfeit detection and sorting options.",
+      id: "Mesin penghitung uang kertas otomatis berkecepatan tinggi dengan deteksi uang palsu dan pilihan penyortiran."
+    },
+    heroImage: "/images/usecase_logistics.png",
+    features: [
+      {
+        title: { en: "Counterfeit Sensor", id: "Sensor Uang Palsu" },
+        description: { en: "UV and magnetic sensors to screen for counterfeit currency.", id: "Sensor UV dan magnetik untuk menyaring mata uang palsu." },
+        icon: "AlertTriangle"
+      }
+    ],
+    benefits: [
+      {
+        title: { en: "Processing Speed", id: "Kecepatan Pemrosesan" },
+        description: { en: "Process up to 1,200 banknotes per minute.", id: "Proses hingga 1.200 uang kertas per menit." },
+        icon: "Activity"
+      }
+    ]
+  },
+  {
+    slug: "transsion",
+    category: "hardware",
+    title: {
+      en: "Transsion Digital Campaigns & Ad Platform",
+      id: "Kampanye Digital & Platform Iklan Transsion"
+    },
+    tagline: {
+      en: "Targeted User Acquisitions",
+      id: "Akuisisi Pengguna Tertarget"
+    },
+    badge: {
+      en: "Transsion Ads",
+      id: "Iklan Transsion"
+    },
+    description: {
+      en: "Maximize brand visibility and conversions through targeted mobile CPC, CPI, and CPM ad campaigns powered by Transsion Holding.",
+      id: "Maksimalkan visibilitas merek dan konversi melalui kampanye iklan seluler CPC, CPI, dan CPM tertarget dari Transsion Holding."
+    },
+    heroImage: "/images/usecase_logistics.png",
+    features: [
+      {
+        title: { en: "Campaign Tracking", id: "Pelacakan Kampanye" },
+        description: { en: "Track clicks, installs, and impressions in real-time.", id: "Lacak klik, instalasi, dan tayangan secara real-time." },
+        icon: "BarChart2"
+      }
+    ],
+    benefits: [
+      {
+        title: { en: "High Engagement", id: "Keterlibatan Tinggi" },
+        description: { en: "Deliver ads to active users on Transsion mobile devices.", id: "Kirimkan iklan ke pengguna aktif di perangkat seluler Transsion." },
+        icon: "Users"
+      }
+    ]
+  },
+  {
+    slug: "willowmore",
+    category: "hardware",
+    title: {
+      en: "Willowmore Keyless Smartlock & Access Control",
+      id: "Smartlock Tanpa Kunci & Kontrol Akses Willowmore"
+    },
+    tagline: {
+      en: "Industrial Keyless Access",
+      id: "Akses Tanpa Kunci Industri"
+    },
+    badge: {
+      en: "Willowmore Smartlock",
+      id: "Smartlock Willowmore"
+    },
+    description: {
+      en: "Keyless smart padlock systems designed for remote infrastructure protection, utility access control, and telemetry tracking.",
+      id: "Sistem gembok pintar tanpa kunci yang dirancang untuk perlindungan infrastruktur jarak jauh, kontrol akses utilitas, dan pelacakan telemetri."
+    },
+    heroImage: "/images/usecase_logistics.png",
+    features: [
+      {
+        title: { en: "Keyless Access", id: "Akses Tanpa Kunci" },
+        description: { en: "Unlock padlocks securely via dynamic mobile app Bluetooth tokens.", id: "Buka kunci gembok dengan aman melalui token Bluetooth aplikasi seluler dinamis." },
+        icon: "Lock"
+      }
+    ],
+    benefits: [
+      {
+        title: { en: "Audit Trails", id: "Jalur Audit" },
+        description: { en: "Logs every access event and duration automatically.", id: "Catat setiap peristiwa dan durasi akses secara otomatis." },
+        icon: "Clock"
+      }
+    ]
   }
 ];
