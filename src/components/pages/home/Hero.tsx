@@ -8,6 +8,7 @@ import {
   useTransform,
   useMotionValueEvent,
   AnimatePresence,
+  Variants,
 } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useTranslations, useLocale } from "next-intl";
@@ -135,12 +136,12 @@ export default function Hero({ isLoaded = true }: { isLoaded?: boolean }) {
     const words = titleText.split(" ");
     const half = Math.ceil(words.length / 2);
 
-    const containerVariants = {
+    const containerVariants: Variants = {
       hidden: {},
       visible: { transition: { staggerChildren: 0.08 } },
     };
 
-    const itemVariants = {
+    const itemVariants: Variants = {
       hidden: { y: "120%", rotate: 4 },
       visible: {
         y: 0,

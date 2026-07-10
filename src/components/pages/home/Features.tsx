@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, Variants } from "framer-motion";
 import { Cpu, Code, Server } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
 import Image from "next/image";
@@ -10,11 +10,11 @@ import Link from "next/link";
 // ── Word-by-word mask reveal ──────────────────────────────────────────────────
 function WordReveal({ text, className = "" }: { text: string; className?: string }) {
   const words = text.split(" ");
-  const container = {
+  const container: Variants = {
     hidden: {},
     visible: { transition: { staggerChildren: 0.08 } },
   };
-  const item = {
+  const item: Variants = {
     hidden: { y: "110%", rotate: 2 },
     visible: { y: 0, rotate: 0, transition: { duration: 0.75, ease: [0.16, 1, 0.3, 1] } },
   };
