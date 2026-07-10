@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 
 interface PreloaderProps {
   onComplete: () => void;
@@ -33,7 +33,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
   }, []);
 
   // Framer Motion variants for letter-by-letter typing and color transition
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: {},
     visible: {
       transition: {
@@ -42,7 +42,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
     }
   };
 
-  const letterVariants = {
+  const letterVariants: Variants = {
     hidden: { 
       opacity: 0, 
       color: "#ffffff",
