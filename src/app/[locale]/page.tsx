@@ -150,7 +150,7 @@ export default function LandingPage() {
   }, [lenis, isLoaded]);
 
   return (
-    <div className="min-h-screen bg-[#030712]">
+    <div className="min-h-screen bg-[#030712]" style={{ overflowX: "clip" }}>
       <Preloader onComplete={() => setIsLoaded(true)} />
       <Navbar theme="dark" isLoaded={isLoaded} />
 
@@ -173,7 +173,7 @@ export default function LandingPage() {
 
         {/* ── MARQUEE 1 ────────────────────────── */}
         <SharpDivider dark />
-        <Reveal type="slash" margin="-40px">
+        <Reveal type="rise" margin="-40px">
           <ScrollMarquee
             text="INTELLIGENCE • INNOVATION • SECURITY • SCALABILITY"
             direction="left"
@@ -191,7 +191,7 @@ export default function LandingPage() {
 
         {/* ── MARQUEE 2 ────────────────────────── */}
         <SharpDivider dark />
-        <Reveal type="slash" margin="-40px">
+        <Reveal type="rise" margin="-40px">
           <ScrollMarquee
             text="MANAGED SERVICES • FIELD OPERATIONS • NATIONWIDE SLA SUPPORT"
             direction="right"

@@ -42,9 +42,9 @@ export default function Hero({ isLoaded = true }: { isLoaded?: boolean }) {
       id: "002",
       titleKey: "slide_energy_title", // Energy & Utilities Smart Monitoring
       subtitleKey: "slide_energy_subtitle",
-      // Worker inspecting electrical infrastructure / power lines
+      // Wide shot of electrical grid / power plant
       bgImage:
-        "https://images.unsplash.com/photo-1548613053-22087dd8edb8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1280",
+        "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1280",
     },
     {
       id: "003",
@@ -83,7 +83,9 @@ export default function Hero({ isLoaded = true }: { isLoaded?: boolean }) {
     if (idx !== activeIndex) setActiveIndex(idx);
   });
 
-  // ─── Auto-slide timer: loops 1→2→3→4→5→1 ───
+  const directionRef = useRef(1);
+
+  // ─── Auto-slide timer: ping-pong loop (1→5→1) ───
   useEffect(() => {
     if (!isLoaded) return;
 
@@ -91,21 +93,23 @@ export default function Hero({ isLoaded = true }: { isLoaded?: boolean }) {
       const currentScroll = window.scrollY;
       const heroEnd = 4.5 * window.innerHeight;
 
-      // Only auto-slide while hero is in view and user is not hovering
-      if (currentScroll > heroEnd || isHovered) return;
+      // Only auto-slide while hero is in view. Do NOT pause on hover.
+      if (currentScroll > heroEnd) return;
 
       if (!containerRef.current) return;
       const rect = containerRef.current.getBoundingClientRect();
       const containerTop = rect.top + window.scrollY;
 
-      const nextIdx = (activeIndex + 1) % 5;
-      // Loop back: when at last slide, scroll back to slide 1
+      if (activeIndex >= 4) directionRef.current = -1;
+      else if (activeIndex <= 0) directionRef.current = 1;
+
+      const nextIdx = activeIndex + directionRef.current;
       const scrollTarget = containerTop + window.innerHeight * nextIdx;
       window.scrollTo({ top: scrollTarget, behavior: "smooth" });
-    }, 5000);
+    }, 4000);
 
     return () => clearInterval(timer);
-  }, [activeIndex, isHovered, isLoaded]);
+  }, [activeIndex, isLoaded]);
 
   // ─── Per-panel background opacity & scale (5 panels) ───
   const bgOpacity = [
@@ -133,29 +137,24 @@ export default function Hero({ isLoaded = true }: { isLoaded?: boolean }) {
 
     const containerVariants = {
       hidden: {},
-      visible: { transition: { staggerChildren: 0.06 } },
-      exit: { transition: { staggerChildren: 0.03, staggerDirection: -1 as const } },
+      visible: { transition: { staggerChildren: 0.08 } },
     };
 
     const itemVariants = {
-      hidden: { y: "115%", rotate: 2 },
+      hidden: { y: "120%", rotate: 4 },
       visible: {
         y: 0,
         rotate: 0,
-        transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
-      },
-      exit: {
-        y: "-115%",
-        transition: { duration: 0.4, ease: [0.76, 0, 0.24, 1] },
+        transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] },
       },
     };
 
     return (
       <motion.div
+        key={id} // Force re-mount on slide change to trigger initial animations
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        exit="exit"
         className="flex flex-wrap justify-center items-center gap-x-4 gap-y-2"
       >
         <span className="overflow-hidden inline-block py-2 select-none mr-1">
@@ -167,7 +166,12 @@ export default function Hero({ isLoaded = true }: { isLoaded?: boolean }) {
           </motion.span>
         </span>
         <span className="overflow-hidden inline-block py-2 select-none mr-2 text-white/25 font-display font-bold text-2xl md:text-4xl">
-          <motion.span variants={itemVariants} className="inline-block">/</motion.span>
+          <motion.span
+            variants={itemVariants}
+            className="inline-block"
+          >
+            /
+          </motion.span>
         </span>
         {words.map((word, index) => (
           <span key={`word-${index}`} className="overflow-hidden inline-block py-2">

@@ -106,6 +106,16 @@ export default function Preloader({ onComplete }: PreloaderProps) {
                 </motion.span>
               ))}
             </motion.div>
+
+            {/* Subtitle */}
+            <motion.div
+              initial={{ opacity: 0, y: 10, filter: "blur(4px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" }}
+              className="text-white text-xs sm:text-sm md:text-base font-medium tracking-[0.3em] uppercase mt-3 opacity-80"
+            >
+              Partner in Innovation
+            </motion.div>
           </div>
         </motion.div>
       )}

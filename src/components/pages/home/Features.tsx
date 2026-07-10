@@ -45,9 +45,9 @@ const PILLARS = [
     href: "pillars/aiot-hardware",
     Icon: Cpu,
     logo: { src: "/images/logo-protectcube.png", alt: "ProtectQube", width: 140, height: 48 },
-    // Relevant: AI/surveillance/cameras
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=900",
-    imageAlt: "AIoT Surveillance Technology",
+    // Relevant: High-tech / IoT / Cybersecurity
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=900",
+    imageAlt: "High-tech IoT and Security Systems",
     accentFrom: "from-primary-600/20",
   },
   {
@@ -58,9 +58,9 @@ const PILLARS = [
     href: "pillars/software",
     Icon: Code,
     logo: { src: "/images/logo-qifess.png", alt: "QIFESS", width: 140, height: 48 },
-    // Relevant: developer / enterprise software
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=900",
-    imageAlt: "Enterprise Software Development",
+    // Relevant: Field technician working
+    image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=900",
+    imageAlt: "Field Technician Working",
     accentFrom: "from-blue-600/20",
   },
   {
@@ -71,9 +71,9 @@ const PILLARS = [
     href: "pillars/services",
     Icon: Server,
     logo: null,
-    // Relevant: NOC / operations team
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=900",
-    imageAlt: "Managed Services Operations",
+    // Relevant: Customer support / technical helpdesk (wide shot)
+    image: "https://images.unsplash.com/photo-1556740714-a8395b3bf30f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=900",
+    imageAlt: "Customer Support Wide Shot",
     accentFrom: "from-emerald-600/20",
   },
 ];
