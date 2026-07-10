@@ -131,7 +131,7 @@ export default function HardwareShowcaseSection() {
       className="relative h-[250vh] bg-white"
     >
       {/* h-[100dvh] container carefully configured to ensure zero clipping on laptop screens */}
-      <div className="sticky top-0 h-[100dvh] flex flex-col justify-center py-6 overflow-hidden">
+      <div className="sticky top-0 h-[100dvh] flex flex-col justify-center py-6 overflow-clip">
         {/* Header Block: aligned to match ServicesShowcase format exactly */}
         <div className="max-w-7xl mx-auto px-6 w-full mb-10 space-y-5 shrink-0 z-10">
           {/* Badge at the top */}
@@ -163,7 +163,7 @@ export default function HardwareShowcaseSection() {
             <Link
               key={hardware.id}
               href={hardware.href}
-              className="w-[80vw] sm:w-[320px] md:w-[340px] lg:w-[360px] h-[480px] flex flex-col justify-end group shrink-0 rounded-3xl border border-slate-100 shadow-2xl relative overflow-hidden transition-all duration-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] hover:scale-[1.01] cursor-pointer"
+              className="w-[80vw] sm:w-[320px] md:w-[340px] lg:w-[360px] h-[400px] xl:h-[480px] flex flex-col justify-end group shrink-0 rounded-3xl border border-slate-100 shadow-2xl relative overflow-hidden transition-all duration-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] hover:scale-[1.01] cursor-pointer"
             >
               {/* Visual Area: crisp absolute background image */}
               <img

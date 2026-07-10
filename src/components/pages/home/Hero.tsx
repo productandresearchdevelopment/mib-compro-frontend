@@ -157,14 +157,6 @@ export default function Hero({ isLoaded = true }: { isLoaded?: boolean }) {
         animate="visible"
         className="flex flex-wrap justify-center items-center gap-x-4 gap-y-2"
       >
-        <span className="overflow-hidden inline-block py-2 select-none mr-1">
-          <motion.span
-            variants={itemVariants}
-            className="inline-block font-display font-bold text-3xl sm:text-4xl md:text-5xl text-primary-500 tracking-wider"
-          >
-            {id}
-          </motion.span>
-        </span>
         <span className="overflow-hidden inline-block py-2 select-none mr-2 text-white/25 font-display font-bold text-2xl md:text-4xl">
           <motion.span
             variants={itemVariants}

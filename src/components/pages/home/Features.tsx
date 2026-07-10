@@ -127,7 +127,7 @@ function PillarPanel({
           </motion.div>
 
           {/* Large dim number */}
-          <div className="text-8xl md:text-[110px] font-black text-primary-500/10 font-display leading-none mb-3 select-none">
+          <div className="text-8xl md:text-[110px] font-black text-primary-500/50 font-display leading-none mb-3 select-none">
             {pillar.number}
           </div>
 

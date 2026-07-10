@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { useTranslations } from "next-intl";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, Variants } from "framer-motion";
 import { useLenis } from "lenis/react";
 
 import Hero from "@/components/pages/home/Hero";
@@ -43,7 +43,7 @@ function Reveal({
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: margin as any });
 
-  const variants: Record<RevealType, { hidden: object; show: object }> = {
+  const variants: Record<RevealType, Variants> = {
     punch: {
       hidden: { y: 80, opacity: 0 },
       show: {
@@ -181,12 +181,10 @@ export default function LandingPage() {
           />
         </Reveal>
 
-        {/* ── 4. HARDWARE SHOWCASE ────────────── */}
+        {/* ── 4. HARDWARE SHOWCASE ────────────── (no Reveal wrapper — sticky scroll) */}
         <SharpDivider dark={false} />
-        <div className="bg-white">
-          <Reveal type="zoom" margin="-80px">
-            <HardwareShowcaseSection />
-          </Reveal>
+        <div className="bg-white relative z-10">
+          <HardwareShowcaseSection />
         </div>
 
         {/* ── MARQUEE 2 ────────────────────────── */}
