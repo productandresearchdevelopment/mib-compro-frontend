@@ -32,7 +32,8 @@ const getIconComponent = (name: string) => {
   if (name === "Eye") return FreeIcons.ViewIcon || FreeIcons.EyeIcon;
   if (name === "Cpu") return FreeIcons.CpuIcon;
   if (name === "Shield") return FreeIcons.ShieldIcon;
-  if (name === "Thermometer") return (FreeIcons as any).TemperatureIcon || (FreeIcons as any).TemperatureCelsiusIcon || FreeIcons.PackageIcon;
+  if (name === "Volume2") return (FreeIcons as any)["VolumeHighIcon"] || (FreeIcons as any)["VolumeUpIcon"] || FreeIcons.Notification01Icon || FreeIcons.PackageIcon;
+  if (name === "Thermometer") return (FreeIcons as any)["TemperatureIcon"] || (FreeIcons as any)["TemperatureCelsiusIcon"] || FreeIcons.PackageIcon;
   
   return FreeIcons.PackageIcon;
 };
@@ -627,6 +628,8 @@ function FsmSolutionLayout({ data, locale }: { data: SolutionItem; locale: strin
     </div>
   );
 }
+
+
 
 // -------------------------------------------------------------
 // STANDARD COMPONENT FOR FALLBACK SOLUTION (LIGHT THEME)

@@ -32,16 +32,16 @@ export const NEWS_DATA: NewsItem[] = [
     readTimeID: "5 menit baca",
     image: "/images/news_thumb.png",
     title: {
-      en: "PT Qualita Indonesia Introduces IoT-Based Energy Monitoring Dashboard for Business Energy Efficiency in Indonesia",
-      id: "PT Qualita Indonesia Perkenalkan Energy Monitoring Dashboard Berbasis IoT untuk Efisiensi Energi Bisnis di Indonesia"
+      en: "PT Mitra Inovasi Bisnis Introduces IoT-Based Energy Monitoring Dashboard for Business Energy Efficiency in Indonesia",
+      id: "PT Mitra Inovasi Bisnis Perkenalkan Energy Monitoring Dashboard Berbasis IoT untuk Efisiensi Energi Bisnis di Indonesia"
     },
     description: {
-      en: "PT Qualita Indonesia officially introduced the Energy Monitoring Dashboard, an IoT-based solution within the protectQube platform designed to help industries and businesses monitor energy consumption in real-time, detect waste, and optimize operational efficiency to reduce carbon emissions and save energy costs.",
-      id: "PT Qualita Indonesia resmi memperkenalkan Energy Monitoring Dashboard, solusi berbasis IoT dalam platform protectQube yang dirancang untuk membantu industri dan bisnis memantau konsumsi energi secara real-time, mendeteksi pemborosan, dan mengoptimalkan efisiensi operasional guna menekan emisi karbon serta menghemat biaya energi."
+      en: "PT Mitra Inovasi Bisnis officially introduced the Energy Monitoring Dashboard, an IoT-based solution within the protectQube platform designed to help industries and businesses monitor energy consumption in real-time, detect waste, and optimize operational efficiency to reduce carbon emissions and save energy costs.",
+      id: "PT Mitra Inovasi Bisnis resmi memperkenalkan Energy Monitoring Dashboard, solusi berbasis IoT dalam platform protectQube yang dirancang untuk membantu industri dan bisnis memantau konsumsi energi secara real-time, mendeteksi pemborosan, dan mengoptimalkan efisiensi operasional guna menekan emisi karbon serta menghemat biaya energi."
     },
     content: {
       en: `
-        <p><strong>Jakarta, 19 April 2026</strong> — In an era where operational efficiency and environmental sustainability are top business priorities, PT Qualita Indonesia has officially launched its newest breakthrough: the <strong>IoT-based Energy Monitoring Dashboard</strong>. Integrated directly into their flagship smart platform, <strong>protectQube</strong>, this solution is set to help businesses and industrial operations across Indonesia gain complete visibility over their power consumption.</p>
+        <p><strong>Jakarta, 19 April 2026</strong> — In an era where operational efficiency and environmental sustainability are top business priorities, PT Mitra Inovasi Bisnis has officially launched its newest breakthrough: the <strong>IoT-based Energy Monitoring Dashboard</strong>. Integrated directly into their flagship smart platform, <strong>protectQube</strong>, this solution is set to help businesses and industrial operations across Indonesia gain complete visibility over their power consumption.</p>
         
         <h3>The Challenge of Business Energy Consumption</h3>
         <p>Many large-scale enterprises, office buildings, and manufacturing plants struggle with unexpected peaks in electricity usage and hidden operational inefficiencies. Without real-time insights, identifying which machinery or systems are consuming excessive power is almost impossible. The Energy Monitoring Dashboard directly addresses this pain point by collecting granular consumption data through smart sensors and present it in an intuitive, actionable visual layout.</p>
@@ -56,7 +56,7 @@ export const NEWS_DATA: NewsItem[] = [
         
         <blockquote>
           "We want to empower Indonesian enterprises to run not just faster and more efficiently, but also greener. This dashboard is our answer to proactive cost management and meaningful carbon footprint reduction."
-          <cite>— PT Qualita Indonesia Management Team</cite>
+          <cite>— PT Mitra Inovasi Bisnis Management Team</cite>
         </blockquote>
         
         <h3>Measurable Commercial Benefits</h3>
@@ -64,7 +64,7 @@ export const NEWS_DATA: NewsItem[] = [
         <p>The IoT-based Energy Monitoring Dashboard is now available for enterprise deployments, offering custom hardware telemetry integration tailored to multi-industry environments including banking, logistics, and heavy manufacturing.</p>
       `,
       id: `
-        <p><strong>Jakarta, 19 April 2026</strong> — Dalam era di mana efisiensi operasional dan keberlanjutan lingkungan menjadi prioritas utama bisnis, PT Qualita Indonesia secara resmi meluncurkan terobosan terbarunya: <strong>Energy Monitoring Dashboard berbasis IoT</strong>. Terintegrasi langsung ke dalam platform cerdas unggulan mereka, <strong>protectQube</strong>, solusi ini dirancang untuk membantu bisnis dan operasi industri di seluruh Indonesia mendapatkan visibilitas penuh atas konsumsi daya mereka.</p>
+        <p><strong>Jakarta, 19 April 2026</strong> — Dalam era di mana efisiensi operasional dan keberlanjutan lingkungan menjadi prioritas utama bisnis, PT Mitra Inovasi Bisnis secara resmi meluncurkan terobosan terbarunya: <strong>Energy Monitoring Dashboard berbasis IoT</strong>. Terintegrasi langsung ke dalam platform cerdas unggulan mereka, <strong>protectQube</strong>, solusi ini dirancang untuk membantu bisnis dan operasi industri di seluruh Indonesia mendapatkan visibilitas penuh atas konsumsi daya mereka.</p>
         
         <h3>Tantangan Konsumsi Energi Bisnis</h3>
         <p>Banyak perusahaan skala besar, gedung perkantoran, dan pabrik manufaktur menghadapi lonjakan biaya listrik yang tidak terduga dan inefisiensi operasional yang tersembunyi. Tanpa wawasan real-time, mengidentifikasi mesin atau sistem mana yang mengonsumsi daya berlebih sangatlah sulit. Energy Monitoring Dashboard secara langsung menjawab tantangan ini dengan mengumpulkan data konsumsi secara mendalam melalui sensor pintar dan menyajikannya dalam tata letak visual yang intuitif.</p>
@@ -79,7 +79,7 @@ export const NEWS_DATA: NewsItem[] = [
         
         <blockquote>
           "Kami ingin memberdayakan perusahaan-perusahaan di Indonesia untuk berjalan tidak hanya lebih cepat dan efisien, tetapi juga lebih ramah lingkungan. Dashboard ini adalah jawaban kami untuk manajemen biaya yang proaktif dan pengurangan jejak karbon yang bermakna."
-          <cite>— Tim Manajemen PT Qualita Indonesia</cite>
+          <cite>— Tim Manajemen PT Mitra Inovasi Bisnis</cite>
         </blockquote>
         
         <h3>Manfaat Komersial yang Terukur</h3>

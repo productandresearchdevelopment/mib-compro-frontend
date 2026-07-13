@@ -11,6 +11,16 @@
   "hero": {
     "title": "Bridging Innovation with Real-World Intelligence",
     "subtitle": "We integrate technology, infrastructure, and people to deliver end-to-end solutions across software, hardware, managed services, and intelligent operations.",
+    "slide2_title": "Advanced AIoT Solutions & Intelligent Systems",
+    "slide2_subtitle": "Deploy advanced, smart AIoT solutions integrated with AI Surveillance for active security monitoring, AI HSE for automated PPE compliance, and Voice Guard voice fraud prevention.",
+    "slide_energy_title": "Energy & Utilities Smart Monitoring",
+    "slide_energy_subtitle": "Smart real-time energy monitoring systems to optimize power consumption efficiency, generator operation status, and UPS backup system analytics.",
+    "slide3_title": "Smart Software & Enterprise Solutions",
+    "slide3_subtitle": "Development of custom intelligent enterprise software for process automation, robust API integrations, and scaling workflow efficiency across operations.",
+    "slide4_title": "Comprehensive Managed Services & Support",
+    "slide4_subtitle": "Ensure absolute system reliability with our nationwide network of over 500+ field engineers, 188 service points, 27 logistics warehouses, and 10 repair centers supporting your deployments across Indonesia.",
+    "slide1_title": "Smart Field Operations & Logistics",
+    "slide1_subtitle": "Optimize field operations and logistics scheduling using Smart Field Service (FSM), real-time technician dispatching, job tracking, and automated task workflow integrations.",
     "exploreSolutions": "Explore Solutions",
     "viewProduct": "View Product"
   },
@@ -224,11 +234,12 @@
     "standardSubtitle": "Empowering your business with scalable technical tools, seamless integration, and expert support."
   },
   "features": {
+    "badge": "Core Pillars",
     "title": "Three Core Pillars of MIB Business",
     "subtitle": "Supporting digital transformation through dynamic smart hardware, advanced software systems, and managed operations.",
     "aiotBadge": "AIoT & HARDWARE",
     "aiotTitle": "Advanced Smart Security Systems & Edge IoT Integration.",
-    "aiotDesc": "Providing state-of-the-art hardware: Payment Soundboxes, Cash Counting Machines, EDCs, POS systems, Smart Security Padlocks, and Computer Vision analytics.",
+    "aiotDesc": "From Computer Vision, Smart Security, IoT Monitoring, to Payment Solutions such as Payment Soundboxes, EDCs, POS machines, and other premium business devices.",
     "lastConnection": "Last connection from Jakarta, ID",
     "servicesBadge": "SERVICES",
     "servicesHeader": "MIB Managed Operations",
@@ -242,8 +253,8 @@
     "slaDesc": "Ensuring round-the-clock systems uptime and outstanding operational reliability without compromise.",
     "softwareBadge": "SOFTWARE & PLATFORM",
     "softwareHeader": "QIFESS",
-    "softwareSub": "Field Service Management",
-    "softwareDesc": "Instantly coordinate field technicians, monitor ticket pipelines, track staging flows, and analyze team metrics."
+    "softwareSub": "Business Productivity Suite",
+    "softwareDesc": "Manage the entire business ecosystem—ranging from operations, field service, digital campaigns, assets, customers, to real-time data-driven insights."
   },
   "qifess": {
     "badge": "SOFTWARE & PLATFORM SYSTEM",

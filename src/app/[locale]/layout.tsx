@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import Providers from "@/components/providers";
 import SmoothScroll from "@/components/providers/SmoothScroll";
+import CursorFollower from "@/components/effects/CursorFollower";
 
 type Props = {
   children: React.ReactNode;
@@ -28,6 +29,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
       <SmoothScroll>
+        <CursorFollower />
         <Providers>{children}</Providers>
       </SmoothScroll>
     </NextIntlClientProvider>

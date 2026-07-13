@@ -1,9 +1,27 @@
 import type React from "react";
 import type { Metadata } from "next";
-import { GeistSans } from "geist/font/sans";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { CookiesProvider } from "next-client-cookies/server";
 import Script from "next/script";
+
+const geistSans = Geist({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+});
+
+const geistDisplay = Geist({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+});
+
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "MIB - Partner in Innovation",
@@ -18,7 +36,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html className={GeistSans.variable} suppressHydrationWarning>
+    <html className={`${geistSans.variable} ${geistDisplay.variable} ${geistMono.variable}`} suppressHydrationWarning>
       <body>
         <CookiesProvider>{children}</CookiesProvider>
 

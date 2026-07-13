@@ -23,7 +23,7 @@ export interface CarouselItem {
 
 export interface SolutionItem {
   slug: string;
-  layoutTemplate: "fsm" | "standard" | "manufacturing";
+  layoutTemplate: "fsm" | "standard" | "manufacturing" | "banking";
   title: LocalizedText;
   badge: LocalizedText;
   description: LocalizedText;
@@ -368,10 +368,10 @@ export const SOLUTIONS_DATA: SolutionItem[] = [
       id: "Sistem Teknologi Aman & Kecepatan Tinggi untuk Operasional Perbankan"
     },
     description: {
-      en: "Enhance transaction processing speeds, maximize data security compliance, and automate resource coordination across branch counter networks.",
-      id: "Tingkatkan kecepatan pemrosesan transaksi, maksimalkan kepatuhan keamanan data, dan otomatisasi koordinasi sumber daya di seluruh jaringan loket kantor cabang."
+      en: "Safeguard assets and accelerate transaction throughput by deploying rugged IoT hardware, smart security padlock systems, and connected checkout terminals.",
+      id: "Lindungi aset dan akselerasi kecepatan transaksi dengan menyebarkan perangkat keras IoT kokoh, sistem gembok pengaman pintar, dan terminal pembayaran terintegrasi."
     },
-    heroImage: "/images/usecase_main.png",
+    heroImage: "/images/usecase_banking.png",
     stats: [
       {
         value: "99.99%",
@@ -381,35 +381,86 @@ export const SOLUTIONS_DATA: SolutionItem[] = [
         }
       },
       {
-        value: "40%",
+        value: "< 0.5s",
         label: {
-          en: "Queue Time Reduction",
-          id: "Pengurangan Waktu Antrean"
+          en: "Terminal Network Latency",
+          id: "Latensi Jaringan Terminal"
+        }
+      },
+      {
+        value: "15K+",
+        label: {
+          en: "Monitored Banking Endpoints",
+          id: "Titik Ujung Perbankan Terpantau"
         }
       }
     ],
     coreStrengths: [
       {
         title: {
-          en: "Transaction Monitoring",
-          id: "Pemantauan Transaksi"
+          en: "ATM Smart Lock Access",
+          id: "Kontrol Akses Gembok Pintar ATM"
         },
         description: {
-          en: "Continuous audit trails, transaction validation, and fraud detection flags across counter networks.",
-          id: "Jalur audit berkelanjutan, validasi transaksi, dan tanda deteksi penipuan di seluruh jaringan loket."
+          en: "Dual-factor authenticated Bluetooth lock cylinders with automated electronic key dispatching and real-time open/close audit trails.",
+          id: "Silinder kunci Bluetooth dengan autentikasi ganda, pengiriman kunci elektronik otomatis, dan rekaman audit pembukaan/penutupan real-time."
         },
         icon: "Shield"
       },
       {
         title: {
-          en: "Integrated Queue Terminals",
-          id: "Terminal Antrean Terpadu"
+          en: "ATM Perimeter CCTV AI",
+          id: "CCTV AI & Pengawasan ATM"
         },
         description: {
-          en: "Route VIP visitors and standard clients dynamically to maximize tellers utilization rates.",
-          id: "Rute pengunjung VIP dan klien standar secara dinamis untuk memaksimalkan tingkat pemanfaatan teller."
+          en: "Edge AI camera video analytics to instantly detect camera masking, device skimming, and physical vandalism attempts.",
+          id: "Analitik video kamera Edge AI untuk mendeteksi penutupan kamera, skimming perangkat, dan upaya vandalisme fisik secara instan."
         },
-        icon: "Users"
+        icon: "Eye"
+      },
+      {
+        title: {
+          en: "Safe Environmental Telemetry",
+          id: "Telemetri Brankas & Lingkungan"
+        },
+        description: {
+          en: "Robust industrial IoT multi-sensors monitoring real-time safe door states, temperatures, and structural vibration anomalies.",
+          id: "Multi-sensor IoT industri kokoh yang memantau status pintu brankas, suhu, dan anomali getaran struktural secara real-time."
+        },
+        icon: "Cpu"
+      },
+      {
+        title: {
+          en: "Secure EDC Provisioning",
+          id: "Penyediaan Terminal EDC Aman"
+        },
+        description: {
+          en: "PCI-DSS compliant remote device provisioning and dynamic secure Key Loading (RKL) with automated health status telemetry.",
+          id: "Penyediaan perangkat jarak jauh yang sesuai standar PCI-DSS dan pemuatan kunci transaksi aman (RKL) dinamis dengan telemetri kesehatan otomatis."
+        },
+        icon: "Smartphone"
+      },
+      {
+        title: {
+          en: "Intelligent POS Systems",
+          id: "Sistem Terminal POS Cerdas"
+        },
+        description: {
+          en: "Offline-first local checkout queueing, unified cloud inventory synchronization, and digital receipt tracking platforms.",
+          id: "Antrean pembayaran lokal luring-terlebih-dahulu (offline-first), sinkronisasi inventaris awan terpadu, dan platform pelacakan resi digital."
+        },
+        icon: "Activity"
+      },
+      {
+        title: {
+          en: "Voice QR Code Soundbox",
+          id: "Soundbox Konfirmasi Suara QR"
+        },
+        description: {
+          en: "Dynamic QR displays and instant audio payment confirmations to protect merchant transactions and prevent teller queue fraud.",
+          id: "Tampilan QR dinamis dan konfirmasi pembayaran suara instan untuk melindungi transaksi merchant dan mencegah penipuan antrean kasir."
+        },
+        icon: "Volume2"
       }
     ]
   },
@@ -737,6 +788,84 @@ export const SOLUTIONS_DATA: SolutionItem[] = [
           id: "Buat widget khusus untuk memantau metrik aktif dan menghitung SLA tugas secara real-time."
         },
         icon: "BarChart"
+      }
+    ]
+  },
+  {
+    slug: "retail",
+    layoutTemplate: "standard",
+    badge: {
+      en: "Retail Solutions",
+      id: "Solusi Ritel"
+    },
+    title: {
+      en: "Integrated Retail Payment & POS Terminal Systems",
+      id: "Sistem Terminal POS & Pembayaran Ritel Terintegrasi"
+    },
+    description: {
+      en: "Modernize retail environments with unified Point-of-Sale (POS) systems, smooth payment integration, and shop floor analytics.",
+      id: "Modernisasi lingkungan ritel dengan sistem Point-of-Sale (POS) terpadu, integrasi pembayaran yang lancar, dan analitik toko."
+    },
+    heroImage: "/images/usecase_logistics.png",
+    stats: [
+      {
+        value: "99.98%",
+        label: {
+          en: "Terminal Uptime",
+          id: "Waktu Aktif Terminal"
+        }
+      }
+    ],
+    coreStrengths: [
+      {
+        title: {
+          en: "Integrated POS Systems",
+          id: "Sistem POS Terintegrasi"
+        },
+        description: {
+          en: "Optimize sales operations and inventory tracking with advanced Point-of-Sale.",
+          id: "Optimalkan operasi penjualan dan pelacakan inventaris dengan Point-of-Sale canggih."
+        },
+        icon: "Cpu"
+      }
+    ]
+  },
+  {
+    slug: "advertising",
+    layoutTemplate: "standard",
+    badge: {
+      en: "Advertising Solutions",
+      id: "Solusi Periklanan"
+    },
+    title: {
+      en: "Digital Advertising & High-Yield Mobile Ad Campaigns",
+      id: "Iklan Digital & Kampanye Iklan Seluler Berkinerja Tinggi"
+    },
+    description: {
+      en: "Maximize user acquisitions and revenue with targeted CPC, CPI, and CPM ad campaigns.",
+      id: "Maksimalkan akuisisi pengguna dan pendapatan dengan kampanye iklan CPC, CPI, dan CPM tertarget."
+    },
+    heroImage: "/images/usecase_logistics.png",
+    stats: [
+      {
+        value: "4.5x",
+        label: {
+          en: "Higher ROI Average",
+          id: "Rata-rata ROI Lebih Tinggi"
+        }
+      }
+    ],
+    coreStrengths: [
+      {
+        title: {
+          en: "Targeted Campaigns",
+          id: "Kampanye Tertarget"
+        },
+        description: {
+          en: "Deliver highly relevant ads using CPC, CPI, and CPM pricing models.",
+          id: "Kirimkan iklan yang sangat relevan menggunakan model harga CPC, CPI, dan CPM."
+        },
+        icon: "Zap"
       }
     ]
   }

@@ -148,8 +148,8 @@ export default function CompanyMegaMenu({
               <div className="relative z-10 flex items-end justify-between gap-4 w-full">
                 <p className="text-[15px] font-semibold text-white leading-snug max-w-[320px] line-clamp-2">
                   {locale === "id"
-                    ? "PT Qualita Indonesia Perkenalkan Energy Monitoring Dashboard Berbasis IoT"
-                    : "PT Qualita Indonesia Introduces IoT-Based Energy Monitoring Dashboard"}
+                    ? "PT Mitra Inovasi Bisnis Perkenalkan Energy Monitoring Dashboard Berbasis IoT"
+                    : "PT Mitra Inovasi Bisnis Introduces IoT-Based Energy Monitoring Dashboard"}
                 </p>
                 <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center text-slate-900 group-hover/news:scale-110 transition-transform shrink-0">
                   <HugeiconsIcon

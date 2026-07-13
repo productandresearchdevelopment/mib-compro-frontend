@@ -3,13 +3,44 @@
 import React from "react";
 import { Zap, Cpu, Lock, Sparkles } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function QifessSection() {
   const tQifess = useTranslations("qifess");
+  const sectionRef = React.useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"]
+  });
+
+  const yUpper = useTransform(scrollYProgress, [0, 1], [-30, 35]);
+  const yBack = useTransform(scrollYProgress, [0, 1], [15, -15]);
 
   return (
-    <section className="py-16 md:py-32 bg-white">
-      <div className="mx-auto max-w-7xl space-y-16 px-6">
+    <section className="py-16 md:py-32 bg-white relative overflow-hidden">
+      {/* Background Grid Pattern (Ichibot.id style - subtle light-red technical grid) */}
+      <div
+        className="absolute inset-0 z-0 pointer-events-none opacity-50"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, rgba(239, 68, 68, 0.04) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(239, 68, 68, 0.04) 1px, transparent 1px)
+          `,
+          backgroundSize: "32px 32px",
+        }}
+      />
+      <div className="mx-auto max-w-7xl space-y-16 px-6 relative z-10">
         {/* Header Block matching provided structure but sized perfectly */}
         <div className="flex flex-col lg:flex-row justify-between items-start gap-8">
           <h2 className="text-3xl md:text-[40px] font-semibold tracking-tight text-slate-900 leading-tight lg:max-w-[680px]">
@@ -21,26 +52,29 @@ export default function QifessSection() {
         </div>
 
         {/* Central Mockup graphic - Exact layout from your code block */}
-        <div className="relative rounded-3xl p-3 md:-mx-8 lg:col-span-3">
-          <div className="aspect-2/1 relative rounded-2xl overflow-hidden border border-slate-200 shadow-lg">
-            <div className="bg-linear-to-t z-1 from-white absolute inset-0 to-transparent pointer-events-none"></div>
+        <div ref={sectionRef} className="relative rounded-3xl p-3 md:-mx-8 lg:col-span-3">
+          <div className="aspect-2/1 relative rounded-2xl overflow-hidden border border-slate-200 shadow-lg bg-slate-50/50">
+            <div className="bg-linear-to-t z-20 absolute inset-0 from-white to-transparent pointer-events-none"></div>
             
-            <img 
+            <motion.img 
               src="https://tailark.com/_next/image?url=%2Fmail-upper.png&w=3840&q=75" 
+              style={isMobile ? undefined : { y: yUpper }}
               className="absolute inset-0 z-10 w-full h-full object-cover" 
-              alt="payments illustration dark" 
+              alt="payments illustration upper" 
             />
             
-            <img 
+            <motion.img 
               src="https://tailark.com/_next/image?url=%2Fmail-back.png&w=3840&q=75" 
+              style={isMobile ? undefined : { y: yBack }}
               className="hidden dark:block absolute inset-0 w-full h-full object-cover" 
-              alt="payments illustration dark" 
+              alt="payments illustration dark back" 
             />
             
-            <img 
+            <motion.img 
               src="https://tailark.com/_next/image?url=%2Fmail-back-light.png&w=3840&q=75" 
+              style={isMobile ? undefined : { y: yBack }}
               className="dark:hidden absolute inset-0 w-full h-full object-cover" 
-              alt="payments illustration light" 
+              alt="payments illustration light back" 
             />
           </div>
         </div>

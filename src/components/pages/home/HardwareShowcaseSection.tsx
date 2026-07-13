@@ -22,6 +22,7 @@ export default function HardwareShowcaseSection() {
   const [scrollContainer, setScrollContainer] = useState<HTMLElement | null>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const [scrollRange, setScrollRange] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   // Framer motion scroll configuration for the horizontal hardware showcase
   const { scrollYProgress } = useScroll({
@@ -33,6 +34,12 @@ export default function HardwareShowcaseSection() {
   const xTranslation = useTransform(scrollYProgress, [0, 1], [0, -scrollRange]);
 
   useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    
     const calculateRange = () => {
       if (!trackRef.current) return;
 
@@ -68,6 +75,7 @@ export default function HardwareShowcaseSection() {
     window.addEventListener("resize", calculateRange);
     return () => {
       clearTimeout(timer);
+      window.removeEventListener("resize", checkMobile);
       window.removeEventListener("resize", calculateRange);
     };
   }, []);
@@ -85,7 +93,7 @@ export default function HardwareShowcaseSection() {
       title: tHardware("items.soundbox.title"),
       description: tHardware("items.soundbox.desc"),
       href: `/${locale}/product/soundbox?hideBack=true`,
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      image: "https://images.unsplash.com/photo-1556740714-a8395b3bf30f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
     },
     {
       id: "edc",
@@ -126,14 +134,42 @@ export default function HardwareShowcaseSection() {
 
   return (
     <section
-      ref={setScrollContainer}
+      ref={isMobile ? undefined : setScrollContainer}
       id="hardware-showcase"
-      className="relative h-[250vh] bg-white"
+      className={`relative bg-white ${isMobile ? "h-auto py-12" : "h-[250vh]"}`}
     >
+      {/* Background Grid Pattern (Ichibot.id style - subtle light-red technical grid) */}
+      <div
+        className="absolute inset-0 z-0 pointer-events-none opacity-50"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, rgba(239, 68, 68, 0.04) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(239, 68, 68, 0.04) 1px, transparent 1px)
+          `,
+          backgroundSize: "32px 32px",
+        }}
+      />
+      {isMobile && (
+        <style dangerouslySetInnerHTML={{ __html: `
+          .scrollbar-none::-webkit-scrollbar {
+            display: none;
+          }
+          .scrollbar-none {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+          }
+        `}} />
+      )}
       {/* h-[100dvh] container carefully configured to ensure zero clipping on laptop screens */}
-      <div className="sticky top-0 h-[100dvh] flex flex-col justify-center py-6 overflow-hidden">
+      <div className={isMobile ? "flex flex-col w-full overflow-hidden relative z-10" : "sticky top-0 h-[100dvh] flex flex-col justify-center py-6 overflow-clip z-10"}>
         {/* Header Block: aligned to match ServicesShowcase format exactly */}
-        <div className="max-w-7xl mx-auto px-6 w-full mb-10 space-y-5 shrink-0 z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="max-w-7xl mx-auto px-6 w-full mb-10 space-y-5 shrink-0 z-10"
+        >
           {/* Badge at the top */}
           <div className="flex items-center gap-2 select-none">
             <span className="w-2.5 h-2.5 bg-primary rounded-[2px]" />
@@ -151,19 +187,27 @@ export default function HardwareShowcaseSection() {
           <p className="text-slate-500 text-base md:text-lg leading-relaxed max-w-4xl">
             {tHardware("subtitle")}
           </p>
-        </div>
+        </motion.div>
 
         {/* Scrolling Panel Track - Perfectly proportioned and aligned to avoid cuts */}
         <motion.div
           ref={trackRef}
-          style={{ x: xTranslation }}
-          className="flex gap-8 px-6 md:px-0 md:ml-[calc(max(1.5rem,(100vw-80rem)/2+1.5rem))] w-[max-content]"
+          style={isMobile ? undefined : { x: xTranslation }}
+          className={
+            isMobile
+              ? "flex gap-6 px-6 overflow-x-auto snap-x snap-mandatory w-full scrollbar-none pb-6"
+              : "flex gap-8 px-6 md:px-0 md:ml-[calc(max(1.5rem,(100vw-80rem)/2+1.5rem))] w-[max-content]"
+          }
         >
           {hardwareItems.map((hardware) => (
             <Link
               key={hardware.id}
               href={hardware.href}
-              className="w-[80vw] sm:w-[320px] md:w-[340px] lg:w-[360px] h-[480px] flex flex-col justify-end group shrink-0 rounded-3xl border border-slate-100 shadow-2xl relative overflow-hidden transition-all duration-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] hover:scale-[1.01] cursor-pointer"
+              className={`flex flex-col justify-end group shrink-0 rounded-3xl border border-slate-100 shadow-2xl relative overflow-hidden transition-all duration-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] hover:scale-[1.01] cursor-pointer ${
+                isMobile
+                  ? "w-[80vw] h-[360px] snap-align-start"
+                  : "w-[80vw] sm:w-[320px] md:w-[340px] lg:w-[360px] h-[400px] xl:h-[480px]"
+              }`}
             >
               {/* Visual Area: crisp absolute background image */}
               <img

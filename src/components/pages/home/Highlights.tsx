@@ -30,8 +30,19 @@ export default function Highlights() {
   if (!leftItem || !rightItem) return null;
 
   return (
-    <section className="bg-white py-20 md:py-32 font-sans overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 w-full space-y-16 md:space-y-24">
+    <section className="bg-white py-20 md:py-32 font-sans overflow-hidden relative">
+      {/* Background Grid Pattern (Ichibot.id style - subtle light-red technical grid) */}
+      <div
+        className="absolute inset-0 z-0 pointer-events-none opacity-50"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, rgba(239, 68, 68, 0.04) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(239, 68, 68, 0.04) 1px, transparent 1px)
+          `,
+          backgroundSize: "32px 32px",
+        }}
+      />
+      <div className="max-w-7xl mx-auto px-6 w-full space-y-16 md:space-y-24 relative z-10">
         {/* ----------------- CTA Section ----------------- */}
         <div className="text-center">
           <h2 className="text-4xl sm:text-5xl md:text-[54px] font-bold text-slate-900 tracking-[-1.5px] leading-[1.12] max-w-4xl mx-auto mb-10 select-none">
