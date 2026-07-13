@@ -70,12 +70,12 @@ export default function ClientsSection() {
             {[...TRACK1_CLIENTS, ...TRACK1_CLIENTS].map((logo, idx) => (
               <div
                 key={`t1-${idx}`}
-                className="mx-6 flex-shrink-0 flex items-center justify-center w-[120px] h-[52px] grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100"
+                className="mx-6 flex-shrink-0 flex items-center justify-center w-[150px] h-[70px] grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100"
               >
                 <img
                   src={`/images/client/${logo}`}
                   alt={`Client ${idx + 1}`}
-                  className="max-h-[40px] max-w-[110px] w-auto object-contain"
+                  className="max-h-[52px] max-w-[140px] w-auto object-contain"
                   loading="lazy"
                 />
               </div>
@@ -89,12 +89,12 @@ export default function ClientsSection() {
             {[...TRACK2_CLIENTS, ...TRACK2_CLIENTS].map((logo, idx) => (
               <div
                 key={`t2-${idx}`}
-                className="mx-6 flex-shrink-0 flex items-center justify-center w-[120px] h-[52px] grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100"
+                className="mx-6 flex-shrink-0 flex items-center justify-center w-[150px] h-[70px] grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100"
               >
                 <img
                   src={`/images/client/${logo}`}
                   alt={`Client ${idx + 1}`}
-                  className="max-h-[40px] max-w-[110px] w-auto object-contain"
+                  className="max-h-[52px] max-w-[140px] w-auto object-contain"
                   loading="lazy"
                 />
               </div>

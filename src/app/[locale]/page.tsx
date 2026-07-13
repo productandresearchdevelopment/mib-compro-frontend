@@ -17,6 +17,12 @@ import HardwareShowcaseSection from "@/components/pages/home/HardwareShowcaseSec
 import ClientsSection from "@/components/pages/home/ClientsSection";
 import ScrollMarquee from "@/components/effects/ScrollMarquee";
 import Preloader from "@/components/effects/Preloader";
+import SolutionsGridSection from "@/components/pages/home/SolutionsGridSection";
+import CaseStudiesSection from "@/components/pages/home/CaseStudiesSection";
+import ServicesGridSection from "@/components/pages/home/ServicesGridSection";
+import ProjectExecutionSection from "@/components/pages/home/ProjectExecutionSection";
+import WorkflowSection from "@/components/pages/home/WorkflowSection";
+import NationalCoverageSection from "@/components/pages/home/NationalCoverageSection";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Reveal: sharp GSAP-style entrance with spring physics, no blur/gradient
@@ -45,17 +51,11 @@ function Reveal({
 
   const variants: Record<RevealType, Variants> = {
     punch: {
-      hidden: { y: 80, opacity: 0 },
+      hidden: { y: 60, opacity: 0 },
       show: {
         y: 0,
         opacity: 1,
-        transition: {
-          type: "spring",
-          stiffness: 90,
-          damping: 14,
-          mass: 0.8,
-          delay,
-        },
+        transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1], delay },
       },
     },
     slash: {
@@ -75,16 +75,11 @@ function Reveal({
       },
     },
     zoom: {
-      hidden: { scale: 0.94, opacity: 0 },
+      hidden: { scale: 0.96, opacity: 0 },
       show: {
         scale: 1,
         opacity: 1,
-        transition: {
-          type: "spring",
-          stiffness: 100,
-          damping: 16,
-          delay,
-        },
+        transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1], delay },
       },
     },
     "drift-left": {
@@ -122,12 +117,12 @@ function Reveal({
 // SharpDivider: bold animated horizontal rule — replaces gradient blurs
 // No blur — just a sharp expanding red accent line that punches in
 // ─────────────────────────────────────────────────────────────────────────────
-function SharpDivider({ dark = true }: { dark?: boolean }) {
+function SharpDivider() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-40px" });
 
   return (
-    <div ref={ref} className={`${dark ? "bg-[#030712]" : "bg-white"} overflow-hidden`}>
+    <div ref={ref} className="bg-white overflow-hidden">
       <motion.div
         initial={{ scaleX: 0, originX: 0 }}
         animate={inView ? { scaleX: 1 } : { scaleX: 0 }}
@@ -150,7 +145,7 @@ export default function LandingPage() {
   }, [lenis, isLoaded]);
 
   return (
-    <div className="min-h-screen bg-[#030712]" style={{ overflowX: "clip" }}>
+    <div className="min-h-screen bg-white" style={{ overflowX: "clip" }}>
       <Preloader onComplete={() => setIsLoaded(true)} />
       <Navbar theme="dark" isLoaded={isLoaded} />
 
@@ -160,70 +155,95 @@ export default function LandingPage() {
         <Hero isLoaded={isLoaded} />
 
         {/* ── 2. CLIENTS ──────────────────────── */}
-        <SharpDivider dark={false} />
+        <SharpDivider />
         <div className="bg-slate-50">
-          <Reveal type="punch" margin="-60px">
-            <ClientsSection />
-          </Reveal>
+          <ClientsSection />
         </div>
 
         {/* ── 3. THREE PILLARS ────────────────── (no Reveal wrapper — sticky scroll) */}
-        <SharpDivider dark />
+        <SharpDivider />
         <Features2 />
 
         {/* ── MARQUEE 1 ────────────────────────── */}
-        <SharpDivider dark />
-        <Reveal type="rise" margin="-40px">
-          <ScrollMarquee
-            text="INTELLIGENCE • INNOVATION • SECURITY • SCALABILITY"
-            direction="left"
-            speedMultiplier={1.5}
-          />
-        </Reveal>
+        <SharpDivider />
+        <ScrollMarquee
+          text="INTELLIGENCE • INNOVATION • SECURITY • SCALABILITY"
+          direction="left"
+          speedMultiplier={1.5}
+        />
 
-        {/* ── 4. HARDWARE SHOWCASE ────────────── (no Reveal wrapper — sticky scroll) */}
-        <SharpDivider dark={false} />
-        <div className="bg-white relative z-10">
-          <HardwareShowcaseSection />
-        </div>
+        {/* ── SOLUTIONS GRID ──────────────────── */}
+        <SharpDivider />
+        <SolutionsGridSection />
 
-        {/* ── MARQUEE 2 ────────────────────────── */}
-        <SharpDivider dark />
-        <Reveal type="rise" margin="-40px">
-          <ScrollMarquee
-            text="MANAGED SERVICES • FIELD OPERATIONS • NATIONWIDE SLA SUPPORT"
-            direction="right"
-            speedMultiplier={1.5}
-          />
-        </Reveal>
+        {/* ── SERVICES GRID ───────────────────── */}
+        <SharpDivider />
+        <ServicesGridSection />
 
-        {/* ── 5. PROTECT QUBE ─────────────────── */}
-        <SharpDivider dark />
-        <Reveal type="drift-left" margin="-80px">
-          <ProtectQubeSection />
-        </Reveal>
+        {/* ── CASE STUDIES GRID ───────────────── */}
+        <SharpDivider />
+        <CaseStudiesSection />
 
-        {/* ── 6. QIFESS SOFTWARE ──────────────── */}
-        <SharpDivider dark={false} />
-        <div className="bg-white">
-          <Reveal type="drift-right" margin="-80px">
-            <QifessSection />
-          </Reveal>
-        </div>
+        {/* ── PROJECT EXECUTION TIMELINE (commented out — replaced by WorkflowSection) ── */}
+        {/* <SharpDivider />
+        <ProjectExecutionSection /> */}
 
-        {/* ── 7. SERVICES SHOWCASE ────────────── */}
-        <SharpDivider dark={false} />
-        <Reveal type="punch" margin="-80px">
-          <ServicesShowcase />
-        </Reveal>
+        {/* ── WORKFLOW MILESTONE SECTION ───────── */}
+        <SharpDivider />
+        <WorkflowSection />
 
-        {/* ── 8. HIGHLIGHTS ──────────────────── */}
-        <SharpDivider dark={false} />
-        <div className="bg-white">
-          <Reveal type="rise" margin="-80px">
-            <Highlights />
-          </Reveal>
-        </div>
+        {/* ── NATIONAL COVERAGE ────────────────── */}
+        <SharpDivider />
+        <NationalCoverageSection />
+
+        {/* Hiding sections from Hardware Portfolio to Featured Insights per user request */}
+        {false && (
+          <>
+            {/* ── 4. HARDWARE SHOWCASE ────────────── */}
+            <SharpDivider />
+            <div className="bg-white relative z-10">
+              <HardwareShowcaseSection />
+            </div>
+
+            {/* ── MARQUEE 2 ────────────────────────── */}
+            <SharpDivider />
+            <Reveal type="rise" margin="-40px">
+              <ScrollMarquee
+                text="MANAGED SERVICES • FIELD OPERATIONS • NATIONWIDE SLA SUPPORT"
+                direction="right"
+                speedMultiplier={1.5}
+              />
+            </Reveal>
+
+            {/* ── 5. PROTECT QUBE ─────────────────── */}
+            <SharpDivider />
+            <Reveal type="drift-left" margin="-80px">
+              <ProtectQubeSection />
+            </Reveal>
+
+            {/* ── 6. QIFESS SOFTWARE ──────────────── */}
+            <SharpDivider />
+            <div className="bg-white">
+              <Reveal type="drift-right" margin="-80px">
+                <QifessSection />
+              </Reveal>
+            </div>
+
+            {/* ── 7. SERVICES SHOWCASE ────────────── */}
+            <SharpDivider />
+            <Reveal type="punch" margin="-80px">
+              <ServicesShowcase />
+            </Reveal>
+
+            {/* ── 8. HIGHLIGHTS ──────────────────── */}
+            <SharpDivider />
+            <div className="bg-white">
+              <Reveal type="rise" margin="-80px">
+                <Highlights />
+              </Reveal>
+            </div>
+          </>
+        )}
 
       </main>
 

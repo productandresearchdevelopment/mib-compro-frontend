@@ -1,20 +1,25 @@
 import type React from "react";
 import type { Metadata } from "next";
-import { Space_Grotesk, Plus_Jakarta_Sans } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { CookiesProvider } from "next-client-cookies/server";
 import Script from "next/script";
 
-const spaceGrotesk = Space_Grotesk({
+const geistSans = Geist({
   subsets: ["latin"],
-  variable: "--font-display",
-  weight: ["400", "500", "600", "700"],
+  variable: "--font-sans",
   display: "swap",
 });
 
-const plusJakarta = Plus_Jakarta_Sans({
+const geistDisplay = Geist({
   subsets: ["latin"],
-  variable: "--font-sans",
+  variable: "--font-display",
+  display: "swap",
+});
+
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
   display: "swap",
 });
 
@@ -31,7 +36,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html className={`${plusJakarta.variable} ${spaceGrotesk.variable}`} suppressHydrationWarning>
+    <html className={`${geistSans.variable} ${geistDisplay.variable} ${geistMono.variable}`} suppressHydrationWarning>
       <body>
         <CookiesProvider>{children}</CookiesProvider>
 

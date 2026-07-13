@@ -88,6 +88,17 @@ export default function ServicesShowcase() {
       id="services-showcase"
       className="py-20 md:py-32 bg-white relative overflow-hidden"
     >
+      {/* Background Grid Pattern (Ichibot.id style - subtle light-red technical grid) */}
+      <div
+        className="absolute inset-0 z-0 pointer-events-none opacity-50"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, rgba(239, 68, 68, 0.04) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(239, 68, 68, 0.04) 1px, transparent 1px)
+          `,
+          backgroundSize: "32px 32px",
+        }}
+      />
       <div className="max-w-7xl mx-auto px-6 w-full space-y-16 relative z-10">
         {/* Section Header */}
         <div className="max-w-7xl space-y-5">

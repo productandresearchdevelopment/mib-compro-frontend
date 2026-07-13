@@ -234,11 +234,12 @@
     "standardSubtitle": "Memberdayakan bisnis Anda dengan alat teknis yang skalabel, integrasi tanpa hambatan, dan dukungan ahli."
   },
   "features": {
+    "badge": "Pilar Utama",
     "title": "Tiga Pilar Utama Bisnis MIB",
     "subtitle": "Mendukung transformasi digital melalui integrasi perangkat keras pintar, sistem perangkat lunak canggih, dan layanan operasional terbaik.",
     "aiotBadge": "AIoT & HARDWARE",
     "aiotTitle": "Sistem Keamanan Cerdas & Integrasi IoT Terdepan.",
-    "aiotDesc": "Menyediakan perangkat keras premium: Soundbox pembayaran, Mesin Hitung Uang, EDC, Mesin POS, Gembok Pintar (Security Padlock), hingga solusi visual berbasis Computer Vision.",
+    "aiotDesc": "Mulai dari Computer Vision, Smart Security, IoT Monitoring, hingga Payment Solution seperti Soundbox Pembayaran, EDC, Mesin POS, dan perangkat bisnis premium lainnya.",
     "lastConnection": "Koneksi terakhir dari Jakarta, ID",
     "servicesBadge": "SERVICES",
     "servicesHeader": "MIB Managed Operations",
@@ -252,8 +253,8 @@
     "slaDesc": "Kami memastikan keandalan layanan operasional dan ketersediaan sistem sepanjang hari tanpa kompromi.",
     "softwareBadge": "SOFTWARE & PLATFORM",
     "softwareHeader": "QIFESS",
-    "softwareSub": "Field Service Management",
-    "softwareDesc": "Kelola teknisi lapangan, pantau status tiket, staging aset, dan analisis kinerja tim operasional secara instan."
+    "softwareSub": "Business Productivity Suite",
+    "softwareDesc": "mengelola seluruh ekosistem bisnis—mulai dari operasional, field service, digital campaign, aset, pelanggan, hingga insight berbasis data secara real-time"
   },
   "qifess": {
     "badge": "SISTEM PLATFORM PERANGKAT LUNAK",

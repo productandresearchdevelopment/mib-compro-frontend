@@ -90,12 +90,13 @@ export default function Navbar({
     { label: t("news"), key: "news", href: `${baseHref}/insights`, hasMega: false },
   ];
 
+  const isHomePage =
+    pathname === baseHref || pathname === `${baseHref}/` || pathname === "/";
+
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      const isHomePage =
-        pathname === baseHref || pathname === `${baseHref}/` || pathname === "/";
-      const threshold = isHomePage ? 2.85 * window.innerHeight : 50;
+      const threshold = isHomePage ? window.innerHeight - 80 : 50;
       setScrolled(currentScrollY > threshold);
 
       if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
@@ -110,9 +111,9 @@ export default function Navbar({
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [pathname, baseHref]);
+  }, [pathname, baseHref, isHomePage]);
 
-  const shouldBeWhite = scrolled;
+  const shouldBeWhite = !isHomePage || scrolled;
   const isTransparentDark = theme === "dark" && !shouldBeWhite;
 
   const scheduleClose = () => {
