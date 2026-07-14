@@ -17,7 +17,9 @@ import {
   Truck, 
   Factory, 
   Wrench, 
-  ArrowRight 
+  ArrowRight,
+  Video,
+  Lock
 } from "lucide-react";
 
 interface SolutionItem {
@@ -55,19 +57,19 @@ export default function SolutionsGridSection() {
           },
           icon: Camera,
           href: `${baseHref}/our-solution/aiot#surveillance`,
-          image: "https://images.unsplash.com/photo-1557597774-9d2736f5dfa6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=900",
+          image: "/images/product/ai_surveilance.png",
           gridClass: "md:col-span-2 h-[360px]"
         },
         {
           id: "hse",
-          name: { en: "AI HSE Safety Check", id: "AI HSE APD Otomatis" },
+          name: { en: "AI HSE", id: "AI HSE" },
           desc: { 
-            en: "Improve workplace safety with automatic PPE check and hazard notification systems.", 
-            id: "Keselamatan kerja terjamin dengan deteksi penggunaan APD dan hazard peringatan otomatis." 
+            en: "Improve workplace safety with PPE check and notification systems.", 
+            id: "Keselamatan kerja terjamin dengan deteksi penggunaan APD dan sistem peringatan." 
           },
           icon: Shield,
           href: `${baseHref}/our-solution/aiot#hse`,
-          image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=900",
+          image: "/images/product/ai_hse.png",
           gridClass: "md:col-span-1 h-[360px]"
         },
         {
@@ -79,12 +81,12 @@ export default function SolutionsGridSection() {
           },
           icon: Mic,
           href: `${baseHref}/our-solution/aiot#voice`,
-          image: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=900",
+          image: "/images/product/aivoice.png",
           gridClass: "md:col-span-1 h-[360px]"
         },
         {
           id: "smart-monitoring",
-          name: { en: "AI Smart Monitoring Dashboard", id: "Dasbor AI Smart Monitoring" },
+          name: { en: "AI Smart Monitoring", id: "AI Smart Monitoring" },
           desc: { 
             en: "Consolidated enterprise operations metrics, diagnostic telemetry, and asset control hubs.", 
             id: "Dasbor terpusat real-time untuk memantau performa jaringan, telemetri, dan kontrol seluruh aset." 

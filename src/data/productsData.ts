@@ -576,8 +576,8 @@ export const PRODUCTS_DATA: ProductItem[] = [
     slug: "hse",
     category: "iot",
     title: {
-      en: "Industrial HSE Compliance & Smart Safety Checking",
-      id: "Kepatuhan K3 Industri & Pemeriksaan Keamanan Cerdas"
+      en: "AI HSE",
+      id: "AI HSE"
     },
     tagline: {
       en: "AIoT Systems",
@@ -588,8 +588,8 @@ export const PRODUCTS_DATA: ProductItem[] = [
       id: "K3 Pabrik Pintar"
     },
     description: {
-      en: "Automates factory safety checks and HSE compliance using AI cameras to detect personal protective equipment (PPE) like helmets, vests, and safety zone violations.",
-      id: "Mengotomatiskan pemeriksaan keselamatan pabrik dan kepatuhan K3 menggunakan kamera AI untuk mendeteksi alat pelindung diri (APD) seperti helm, rompi, dan pelanggaran zona aman."
+      en: "Workplace safety checks and HSE compliance using AI cameras to detect personal protective equipment (PPE) like helmets, vests, and safety zone violations.",
+      id: "Pemeriksaan keselamatan pabrik dan kepatuhan K3 menggunakan kamera AI untuk mendeteksi alat pelindung diri (APD) seperti helm, rompi, dan pelanggaran zona aman."
     },
     heroImage: "https://images.unsplash.com/photo-1585771724684-38269d6639fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
     telemetrySim: [
