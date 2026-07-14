@@ -93,7 +93,7 @@ export default function SolutionsGridSection() {
           },
           icon: LayoutDashboard,
           href: `${baseHref}/our-solution/aiot#smart-monitoring`,
-          image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=900",
+          image: "/images/product/ai_smart.png",
           gridClass: "md:col-span-2 h-[360px]"
         }
       ]
@@ -111,7 +111,7 @@ export default function SolutionsGridSection() {
           },
           icon: Zap,
           href: `${baseHref}/our-solution/energy#electricity`,
-          image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=900",
+          image: "/images/product/energy.png",
           gridClass: "md:col-span-2 h-[360px]"
         },
         {
@@ -123,7 +123,7 @@ export default function SolutionsGridSection() {
           },
           icon: Cpu,
           href: `${baseHref}/our-solution/energy#genset`,
-          image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=900",
+          image: "/images/product/genset.png",
           gridClass: "md:col-span-1 h-[360px]"
         },
         {
@@ -135,7 +135,7 @@ export default function SolutionsGridSection() {
           },
           icon: BatteryCharging,
           href: `${baseHref}/our-solution/energy#ups`,
-          image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=900",
+          image: "/images/product/ups.png",
           gridClass: "md:col-span-3 h-[360px]"
         }
       ]
@@ -153,7 +153,7 @@ export default function SolutionsGridSection() {
           },
           icon: Landmark,
           href: `${baseHref}/our-solution/banking`,
-          image: "https://images.unsplash.com/photo-1501167786227-4cba60f6d58f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=900",
+          image: "/images/product/banking.png",
           gridClass: "md:col-span-1 h-[360px]"
         },
         {
@@ -165,7 +165,7 @@ export default function SolutionsGridSection() {
           },
           icon: Store,
           href: `${baseHref}/our-solution/retail`,
-          image: "https://images.unsplash.com/photo-1560750588-73207b1ef5b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=900",
+          image: "/images/product/retail.png",
           gridClass: "md:col-span-2 h-[360px]"
         },
         {
@@ -177,7 +177,7 @@ export default function SolutionsGridSection() {
           },
           icon: Truck,
           href: `${baseHref}/our-solution/logistics`,
-          image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=900",
+          image: "/images/product/logistik.png",
           gridClass: "md:col-span-1 h-[360px]"
         },
         {
@@ -189,7 +189,7 @@ export default function SolutionsGridSection() {
           },
           icon: Factory,
           href: `${baseHref}/our-solution/manufacturing`,
-          image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=900",
+          image: "/images/product/manufactur.png",
           gridClass: "md:col-span-1 h-[360px]"
         },
         {
@@ -201,7 +201,7 @@ export default function SolutionsGridSection() {
           },
           icon: Wrench,
           href: `${baseHref}/our-solution/fsm`,
-          image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=900",
+          image: "/images/product/field_Services.png",
           gridClass: "md:col-span-1 h-[360px]"
         }
       ]
