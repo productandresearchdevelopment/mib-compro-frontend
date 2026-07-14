@@ -121,14 +121,14 @@ export default function Footer({
                     icon={Mail01Icon}
                     className="w-6 h-6 text-white"
                   />
-                  <span className="text-white text-base">contact@mib.com</span>
+                  <span className="text-white text-base">contact@mitrainovasi.co.id</span>
                 </div>
                 <div className="flex items-center gap-2.5">
                   <HugeiconsIcon
                     icon={Mail01Icon}
                     className="w-6 h-6 text-white"
                   />
-                  <span className="text-white text-base">career@mib.com</span>
+                  <span className="text-white text-base">career@mitrainovasi.co.id</span>
                 </div>
               </div>
             </div>
