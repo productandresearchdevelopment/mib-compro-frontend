@@ -12,6 +12,7 @@ interface PanelItem {
   titleKey: string;
   subtitleKey: string;
   bgImage: string;
+  customFilterClass?: string;
 }
 
 export default function Hero({ isLoaded = true }: { isLoaded?: boolean }) {
@@ -27,13 +28,13 @@ export default function Hero({ isLoaded = true }: { isLoaded?: boolean }) {
       id: "001",
       titleKey: "slide2_title", // Advanced AIoT & Intelligent Systems
       subtitleKey: "slide2_subtitle",
-      bgImage: "https://images.unsplash.com/photo-1573164713988-8665fc963095?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1280",
+      bgImage: "/images/product/pqube-iot-logo.png",
     },
     {
       id: "002",
       titleKey: "slide_energy_title", // Energy & Utilities Smart Monitoring
       subtitleKey: "slide_energy_subtitle",
-      bgImage: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1280",
+      bgImage: "/images/product/pqube-energy-test.png",
     },
     {
       id: "003",
@@ -45,13 +46,14 @@ export default function Hero({ isLoaded = true }: { isLoaded?: boolean }) {
       id: "004",
       titleKey: "slide1_title", // Smart Field Operations & Logistics
       subtitleKey: "slide1_subtitle",
-      bgImage: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1280",
+      bgImage: "/images/product/logistik.png",
     },
     {
       id: "005",
       titleKey: "slide4_title", // Comprehensive Managed Services & Support
       subtitleKey: "slide4_subtitle",
-      bgImage: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1280",
+      bgImage: "/images/product/services.png",
+      customFilterClass: "grayscale-0 contrast-[1.0] brightness-[1.15]",
     },
   ];
 
@@ -141,11 +143,17 @@ export default function Hero({ isLoaded = true }: { isLoaded?: boolean }) {
                 scale: activeIndex === idx ? 1.03 : 1.0,
               }}
               transition={{ duration: 1.2, ease: "easeInOut" }}
-              className="absolute inset-0 bg-cover bg-center grayscale contrast-[1.2] brightness-[0.75]"
+              className={`absolute inset-0 bg-cover bg-center ${panel.customFilterClass || "grayscale contrast-[1.2] brightness-[0.75]"}`}
             />
           ))}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#030712]/90 via-[#030712]/20 to-[#030712]/70" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#030712]/50 via-transparent to-[#030712]/50" />
+          <div 
+            className="absolute inset-0 bg-gradient-to-t from-[#030712]/90 via-[#030712]/20 to-[#030712]/70 transition-opacity duration-500" 
+            style={{ opacity: activeIndex === 4 ? 0.35 : 1 }}
+          />
+          <div 
+            className="absolute inset-0 bg-gradient-to-r from-[#030712]/50 via-transparent to-[#030712]/50 transition-opacity duration-500" 
+            style={{ opacity: activeIndex === 4 ? 0.15 : 1 }}
+          />
         </div>
 
         {/* Panel content */}

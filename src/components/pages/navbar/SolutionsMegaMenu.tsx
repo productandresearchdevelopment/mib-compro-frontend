@@ -91,8 +91,8 @@ export default function SolutionsMegaMenu({
     {
       name: { en: "AI HSE", id: "AI HSE" },
       desc: { 
-        en: "Workplace safety with automatic PPE detection.", 
-        id: "Keselamatan kerja dengan deteksi APD otomatis." 
+        en: "Workplace safety with PPE detection.", 
+        id: "Keselamatan kerja dengan deteksi APD." 
       },
       icon: Shield,
       href: `${baseHref}/our-solution/aiot#hse`

@@ -141,21 +141,12 @@ export default function ProductsMegaMenu({
   ];
 
   const [activeCaseIdx, setActiveCaseIdx] = React.useState(0);
-  const [leftSlideIdx, setLeftSlideIdx] = React.useState(0);
 
   React.useEffect(() => {
     if (!isOpen) return;
     const timer = setInterval(() => {
       setActiveCaseIdx((prev) => (prev + 1) % CASE_STUDIES.length);
     }, 4500);
-    return () => clearInterval(timer);
-  }, [isOpen]);
-
-  React.useEffect(() => {
-    if (!isOpen) return;
-    const timer = setInterval(() => {
-      setLeftSlideIdx((prev) => (prev + 1) % 2);
-    }, 40000);
     return () => clearInterval(timer);
   }, [isOpen]);
 
@@ -177,153 +168,121 @@ export default function ProductsMegaMenu({
       >
         <div className="p-8 grid grid-cols-12 gap-8">
           {/* LEFT COLUMN: Main Products (col-span-7) */}
-          <div className="col-span-7 flex flex-col gap-5">
-            <div className="flex flex-col gap-1 border-b border-slate-100 pb-2.5">
-              <div className="flex items-center justify-between w-full">
-                <span className="text-[11px] font-extrabold tracking-widest text-slate-400 uppercase">
-                  {leftSlideIdx === 0 
-                    ? (locale === "id" ? "Produk Unggulan" : "Featured Products")
-                    : (locale === "id" ? "Produk Kemitraan" : "Partnership Products")}
-                </span>
-                {/* Dot indicators for left slider */}
-                <div className="flex gap-1.5 items-center">
-                  <button
-                    onClick={() => setLeftSlideIdx(0)}
-                    className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                      leftSlideIdx === 0 ? "w-4.5 bg-primary" : "w-1.5 bg-slate-200"
-                    }`}
-                    aria-label="View Featured Products"
-                  />
-                  <button
-                    onClick={() => setLeftSlideIdx(1)}
-                    className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                      leftSlideIdx === 1 ? "w-4.5 bg-primary" : "w-1.5 bg-slate-200"
-                    }`}
-                    aria-label="View Partnership Products"
-                  />
+          <div className="col-span-7 flex flex-col gap-4">
+            
+            {/* 1. FEATURED PRODUCTS (PRODUK UNGGULAN) */}
+            <div className="flex flex-col gap-1 border-b border-slate-100 pb-2">
+              <span className="text-[11px] font-extrabold tracking-widest text-slate-400 uppercase">
+                {locale === "id" ? "Produk Unggulan" : "Featured Products"}
+              </span>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4 w-full">
+              {/* Field Service Management Card (QIFESS) */}
+              <Link
+                href={`${baseHref}/product/qifess`}
+                className="group bg-slate-50/50 hover:bg-white border border-slate-100 hover:border-primary/20 hover:shadow-lg hover:shadow-slate-100/50 hover:-translate-y-0.5 rounded-2xl p-4.5 transition-all duration-300 flex flex-col justify-between cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary h-[160px]"
+                onClick={onClose}
+                aria-label="Learn more about QIFESS"
+              >
+                <div>
+                  <div className="flex items-center justify-between w-full mb-2">
+                    <div className="relative h-6 w-24">
+                      <Image
+                        src="/images/logo-qifess.png"
+                        alt="QIFESS Logo"
+                        fill
+                        className="object-contain object-left"
+                      />
+                    </div>
+                    <div className="w-7 h-7 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 group-hover:text-primary group-hover:border-primary/30 transition-all shrink-0">
+                      <HugeiconsIcon icon={ArrowUpRight01Icon} className="w-4 h-4" />
+                    </div>
+                  </div>
+                  <p className="text-[12.5px] text-slate-500 font-normal leading-relaxed mb-2 line-clamp-2">
+                    {locale === "id" 
+                      ? "Platform lengkap untuk mengelola operasi lapangan, tim, dan pelacakan aset secara real-time."
+                      : "All in one platform to manage field operations, dispatch teams, and track assets in real-time."}
+                  </p>
                 </div>
-              </div>
+                <span className="text-[11.5px] font-bold text-slate-900 group-hover:text-primary transition-colors duration-300 flex items-center gap-1 mt-auto">
+                  {locale === "id" ? "Selengkapnya" : "Learn More"} &rarr;
+                </span>
+              </Link>
+
+              {/* protectQube AI-based platform Card */}
+              <Link
+                href={`${baseHref}/product/surveillance-ai-atm`}
+                className="group bg-slate-50/50 hover:bg-white border border-slate-100 hover:border-primary/20 hover:shadow-lg hover:shadow-slate-100/50 hover:-translate-y-0.5 rounded-2xl p-4.5 transition-all duration-300 flex flex-col justify-between cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary h-[160px]"
+                onClick={onClose}
+                aria-label="Learn more about protectQube"
+              >
+                <div>
+                  <div className="flex items-center justify-between w-full mb-2">
+                    <div className="relative h-6.5 w-28">
+                      <Image
+                        src="/images/logo-protectcube.png"
+                        alt="protectQube Logo"
+                        fill
+                        className="object-contain object-left"
+                      />
+                    </div>
+                    <div className="w-7 h-7 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 group-hover:text-primary group-hover:border-primary/30 transition-all shrink-0">
+                      <HugeiconsIcon icon={ArrowUpRight01Icon} className="w-4 h-4" />
+                    </div>
+                  </div>
+                  <p className="text-[12.5px] text-slate-500 font-normal leading-relaxed mb-2 line-clamp-2">
+                    {locale === "id"
+                      ? "Solusi AIoT menyeluruh untuk berbagai industri dengan pemantauan real-time, analitik, dan kemampuan respons otomatis."
+                      : "End-to-end AIoT solutions for multi-industry environments with real-time monitoring, analytics, and automated response."}
+                  </p>
+                </div>
+                <span className="text-[11.5px] font-bold text-slate-900 group-hover:text-primary transition-colors duration-300 flex items-center gap-1 mt-auto">
+                  {locale === "id" ? "Selengkapnya" : "Learn More"} &rarr;
+                </span>
+              </Link>
             </div>
 
-            {/* Sliding Product Content */}
-            <div className="relative min-h-[285px] w-full">
-              <AnimatePresence mode="wait">
-                {leftSlideIdx === 0 ? (
-                  <motion.div
-                    key="featured"
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: 10 }}
-                    transition={{ duration: 0.4 }}
-                    className="grid grid-cols-2 gap-5 w-full absolute inset-x-0"
-                  >
-                    {/* Field Service Management Card (QIFESS) */}
-                    <Link
-                      href={`${baseHref}/product/qifess`}
-                      className="group bg-slate-50/50 hover:bg-white border border-slate-100 hover:border-primary/20 hover:shadow-lg hover:shadow-slate-100/50 hover:-translate-y-0.5 rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary h-[285px]"
-                      onClick={onClose}
-                      aria-label="Learn more about QIFESS"
-                    >
-                      <div>
-                        <div className="flex items-center justify-between w-full mb-4">
-                          <div className="relative h-7 w-28">
-                            <Image
-                              src="/images/logo-qifess.png"
-                              alt="QIFESS Logo"
-                              fill
-                              className="object-contain object-left"
-                            />
-                          </div>
-                          <div className="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 group-hover:text-primary group-hover:border-primary/30 transition-all shrink-0">
-                            <HugeiconsIcon icon={ArrowUpRight01Icon} className="w-4.5 h-4.5" />
-                          </div>
-                        </div>
-                        <p className="text-[13.5px] text-slate-500 font-normal leading-relaxed mb-6">
-                          {locale === "id" 
-                            ? "Platform lengkap untuk mengelola operasi lapangan, tim, dan pelacakan aset secara real-time."
-                            : "All in one platform to manage field operations, dispatch teams, and track assets in real-time."}
-                        </p>
-                      </div>
-                      <span className="text-[12.5px] font-bold text-slate-900 group-hover:text-primary transition-colors duration-300 flex items-center gap-1 mt-auto">
-                        {locale === "id" ? "Selengkapnya" : "Learn More"} &rarr;
-                      </span>
-                    </Link>
-
-                    {/* protectQube AI-based platform Card */}
-                    <Link
-                      href={`${baseHref}/product/surveillance-ai-atm`}
-                      className="group bg-slate-50/50 hover:bg-white border border-slate-100 hover:border-primary/20 hover:shadow-lg hover:shadow-slate-100/50 hover:-translate-y-0.5 rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary h-[285px]"
-                      onClick={onClose}
-                      aria-label="Learn more about protectQube"
-                    >
-                      <div>
-                        <div className="flex items-center justify-between w-full mb-4">
-                          <div className="relative h-8 w-36">
-                            <Image
-                              src="/images/logo-protectcube.png"
-                              alt="protectQube Logo"
-                              fill
-                              className="object-contain object-left"
-                            />
-                          </div>
-                          <div className="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 group-hover:text-primary group-hover:border-primary/30 transition-all shrink-0">
-                            <HugeiconsIcon icon={ArrowUpRight01Icon} className="w-4.5 h-4.5" />
-                          </div>
-                        </div>
-                        <p className="text-[13.5px] text-slate-500 font-normal leading-relaxed mb-6">
-                          {locale === "id"
-                            ? "Solusi AIoT menyeluruh untuk berbagai industri dengan pemantauan real-time, analitik, dan kemampuan respons otomatis untuk meningkatkan keandalan operasional."
-                            : "End-to-end AIoT solutions for multi-industry environments with real-time monitoring, analytics, and automated response capabilities to improve operational reliability."}
-                        </p>
-                      </div>
-                      <span className="text-[12.5px] font-bold text-slate-900 group-hover:text-primary transition-colors duration-300 flex items-center gap-1 mt-auto">
-                        {locale === "id" ? "Selengkapnya" : "Learn More"} &rarr;
-                      </span>
-                    </Link>
-                  </motion.div>
-                ) : (
-                  <motion.div
-                    key="partnership"
-                    initial={{ opacity: 0, x: 10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -10 }}
-                    transition={{ duration: 0.4 }}
-                    className="grid grid-cols-4 gap-3 w-full absolute inset-x-0"
-                  >
-                    {PARTNERSHIP_CARDS.map((item, idx) => (
-                      <Link
-                        key={idx}
-                        href={item.href}
-                        className="group bg-slate-50/50 hover:bg-white border border-slate-100 hover:border-primary/20 hover:shadow-md rounded-xl p-3.5 transition-all duration-200 flex flex-col justify-between cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary h-[135px]"
-                        onClick={onClose}
-                      >
-                        <div className="flex items-center justify-between w-full">
-                          <div className={`relative h-4.5 ${item.logoWidth}`}>
-                            <Image
-                              src={item.logo}
-                              alt={`${item.name} Logo`}
-                              fill
-                              className="object-contain object-left"
-                            />
-                          </div>
-                          <div className="w-5.5 h-5.5 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 group-hover:text-primary group-hover:border-primary/30 transition-all shrink-0">
-                            <HugeiconsIcon icon={ArrowUpRight01Icon} className="w-3 h-3" />
-                          </div>
-                        </div>
-                        
-                        <p className="text-slate-500 text-[9.5px] leading-snug font-normal mt-2.5 mb-1.5 flex-grow">
-                          {item.desc[locale as "en" | "id"]}
-                        </p>
-
-                        <span className="text-[9.5px] font-bold text-slate-900 group-hover:text-primary transition-colors duration-300 flex items-center gap-0.5 mt-auto">
-                          {locale === "id" ? "Selengkapnya" : "Learn More"} &rarr;
-                        </span>
-                      </Link>
-                    ))}
-                  </motion.div>
-                )}
-              </AnimatePresence>
+            {/* 2. PARTNERSHIP PRODUCTS (PRODUK KEMITRAAN) - Scrollable list */}
+            <div className="flex flex-col gap-1 border-b border-slate-100 pb-2 mt-2">
+              <span className="text-[11px] font-extrabold tracking-widest text-slate-400 uppercase">
+                {locale === "id" ? "Produk Kemitraan" : "Partnership Products"}
+              </span>
             </div>
+
+            <div className="grid grid-cols-3 gap-3 max-h-[175px] overflow-y-auto pr-1.5 custom-scrollbar">
+              {PARTNERSHIP_CARDS.map((item, idx) => (
+                <Link
+                  key={idx}
+                  href={item.href}
+                  className="group bg-slate-50/50 hover:bg-white border border-slate-100 hover:border-primary/20 hover:shadow-md rounded-xl p-3 transition-all duration-200 flex flex-col justify-between cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary h-[120px]"
+                  onClick={onClose}
+                >
+                  <div className="flex items-center justify-between w-full">
+                    <div className={`relative h-4 ${item.logoWidth}`}>
+                      <Image
+                        src={item.logo}
+                        alt={`${item.name} Logo`}
+                        fill
+                        className="object-contain object-left"
+                      />
+                    </div>
+                    <div className="w-5 h-5 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 group-hover:text-primary group-hover:border-primary/30 transition-all shrink-0">
+                      <HugeiconsIcon icon={ArrowUpRight01Icon} className="w-2.5 h-2.5" />
+                    </div>
+                  </div>
+                  
+                  <p className="text-slate-500 text-[9.5px] leading-snug font-normal mt-1.5 mb-1.5 flex-grow line-clamp-2">
+                    {item.desc[locale as "en" | "id"]}
+                  </p>
+
+                  <span className="text-[9.5px] font-bold text-slate-900 group-hover:text-primary transition-colors duration-300 flex items-center gap-0.5 mt-auto">
+                    {locale === "id" ? "Selengkapnya" : "Learn More"} &rarr;
+                  </span>
+                </Link>
+              ))}
+            </div>
+
           </div>
 
           {/* RIGHT COLUMN: Featured Case Studies (col-span-5) */}
@@ -348,7 +307,7 @@ export default function ProductsMegaMenu({
             </div>
 
             {/* Sliding Card Banner */}
-            <div className="relative aspect-[21/10] w-full rounded-2xl overflow-hidden shadow-md border border-slate-100">
+            <div className="relative aspect-[16/11] w-full rounded-2xl overflow-hidden shadow-md border border-slate-100">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeCaseIdx}
