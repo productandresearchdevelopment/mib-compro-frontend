@@ -203,7 +203,7 @@ export async function POST(req: NextRequest) {
 
       if (qifessApiUrl && qifessApiKey) {
         try {
-          const endpoint = `${qifessApiUrl.replace(/\/$/, "")}/producthub/public`;
+          const endpoint = `${qifessApiUrl.replace(/\/$/, "")}/producthub/oppo-seeker/public`;
           const qifessPayload = {
             client: company || "",
             company_id: "d33f2dec-2b78-4170-a6e8-3e181665c531",
