@@ -5,7 +5,7 @@ import path from "path";
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { name, email, company, phone, subject, message, recaptchaToken } = body;
+    const { name, email, company, phone, subject, message } = body;
 
     // Validate required fields
     if (!name || !email || !message) {
@@ -97,7 +97,7 @@ export async function POST(req: NextRequest) {
       html: `
         <div style="background-color: #0f172a; padding: 48px 24px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; min-height: 100%; display: block; margin: 0;">
           <div style="max-width: 560px; margin: 0 auto; background-color: #ffffff; border-radius: 20px; padding: 40px; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.15);">
-            
+
             <!-- Header Logo -->
             <div style="text-align: center; margin-bottom: 32px;">
               <img src="cid:miblogo" alt="PT. Mitra Inovasi Bisnis" style="height: 64px; width: auto; display: inline-block;" />
@@ -123,27 +123,25 @@ export async function POST(req: NextRequest) {
                 <span style="font-size: 15px; font-weight: 600;"><a href="mailto:${email}" style="color: #f22929; text-decoration: none;">${email}</a></span>
               </div>
 
-              ${
-                company
-                  ? `
+              ${company
+          ? `
               <div style="margin-bottom: 20px; border-bottom: 1px solid #f1f5f9; padding-bottom: 12px;">
                 <span style="font-size: 12px; font-weight: 600; color: #94a3b8; letter-spacing: 0.05em; display: block; margin-bottom: 4px;">Company</span>
                 <span style="font-size: 15px; font-weight: 600; color: #100420;">${company}</span>
               </div>
               `
-                  : ""
-              }
+          : ""
+        }
 
-              ${
-                phone
-                  ? `
+              ${phone
+          ? `
               <div style="margin-bottom: 20px; border-bottom: 1px solid #f1f5f9; padding-bottom: 12px;">
                 <span style="font-size: 12px; font-weight: 600; color: #94a3b8; letter-spacing: 0.05em; display: block; margin-bottom: 4px;">Phone</span>
                 <span style="font-size: 15px; font-weight: 600; color: #100420;">${phone}</span>
               </div>
               `
-                  : ""
-              }
+          : ""
+        }
 
               <div style="margin-bottom: 20px; border-bottom: 1px solid #f1f5f9; padding-bottom: 12px;">
                 <span style="font-size: 12px; font-weight: 600; color: #94a3b8; letter-spacing: 0.05em; display: block; margin-bottom: 4px;">Subject / Interested</span>
@@ -185,14 +183,55 @@ export async function POST(req: NextRequest) {
       ],
     };
 
-    // Send the email
     await transporter.sendMail(mailOptions);
 
+    const subjectMap: Record<string, string> = {
+      "Kemitraan / Kerja Sama": "Partnership / Collaboration",
+      "Demo Field Service Management (QIFESS)": "Field Service Management (QIFESS) Demo",
+      "Solusi Smart AIoT (Surveillance, HSE, Sensor Node)": "Smart AIoT Solutions (Surveillance, HSE, Sensor Node)",
+      "Pertanyaan Produk & Perangkat Keras": "Product & Hardware Inquiry",
+      "Karir / Pekerjaan": "Careers / Jobs",
+      "Pertanyaan Umum / Lainnya": "General Inquiry / Other",
+    };
+
+    const mappedSubject = subject ? (subjectMap[subject] || subject) : "";
+    const excludedCategories = ["Careers / Jobs", "General Inquiry / Other"];
+
+    if (mappedSubject && !excludedCategories.includes(mappedSubject)) {
+      const qifessApiUrl = process.env.QIFESS_API_URL;
+      const qifessApiKey = process.env.QIFESS_API_KEY;
+
+      if (qifessApiUrl && qifessApiKey) {
+        try {
+          const endpoint = `${qifessApiUrl.replace(/\/$/, "")}/producthub/public`;
+          const qifessPayload = {
+            client: company || "",
+            company_id: "d33f2dec-2b78-4170-a6e8-3e181665c531",
+            description: message || "",
+            name: mappedSubject,
+            notes: `Contact Details:\nName: ${name}\nEmail: ${email}\nPhone: ${phone || "-"}`,
+            source: "landing page mib",
+          };
+
+          await fetch(endpoint, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "X-API-KEY": qifessApiKey,
+            },
+            body: JSON.stringify(qifessPayload),
+          });
+        } catch {
+        }
+      }
+    }
+
     return NextResponse.json({ success: true, message: "Email sent successfully." });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Error sending contact email:", error);
+    const errorMessage = error instanceof Error ? error.message : "Failed to send email.";
     return NextResponse.json(
-      { error: error.message || "Failed to send email." },
+      { error: errorMessage },
       { status: 500 }
     );
   }

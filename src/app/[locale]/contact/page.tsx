@@ -11,15 +11,13 @@ import {
   Facebook01Icon,
   InstagramIcon,
   Linkedin02Icon,
-  ArrowUpRight01Icon,
   ArrowDown01Icon,
 } from "@hugeicons/core-free-icons";
 
-import Link from "next/link";
 import { useTranslations, useLocale } from "next-intl";
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
 
-interface InputFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {}
+type InputFieldProps = React.InputHTMLAttributes<HTMLInputElement>;
 
 function InputField({ className = "", ...props }: InputFieldProps) {
   return (
@@ -31,7 +29,7 @@ function InputField({ className = "", ...props }: InputFieldProps) {
           bg-transparent
           text-xl
           md:text-2xl
-          text-[var(--black)]
+          text-black
           placeholder:text-slate-400
           outline-none
           ${className}
@@ -41,7 +39,7 @@ function InputField({ className = "", ...props }: InputFieldProps) {
   );
 }
 
-interface TextareaFieldProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {}
+type TextareaFieldProps = React.TextareaHTMLAttributes<HTMLTextAreaElement>;
 
 function TextareaField({ className = "", ...props }: TextareaFieldProps) {
   return (
@@ -53,7 +51,7 @@ function TextareaField({ className = "", ...props }: TextareaFieldProps) {
           bg-transparent
           text-xl
           md:text-2xl
-          text-[var(--black)]
+          text-black
           placeholder:text-slate-400
           outline-none
           resize-none
@@ -83,25 +81,28 @@ export default function ContactPage() {
   const recaptchaRef = useRef<ReCAPTCHA>(null);
   const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
 
-  const subjects = locale === "id"
-    ? [
-        "Kemitraan / Kerja Sama",
-        "Demo Field Service Management (QIFESS)",
-        "Solusi Smart AIoT (Surveillance, HSE, Sensor Node)",
-        "Pertanyaan Produk & Perangkat Keras",
-        "Karir / Pekerjaan",
-        "Pertanyaan Umum / Lainnya"
-      ]
-    : [
-        "Partnership / Collaboration",
-        "Field Service Management (QIFESS) Demo",
-        "Smart AIoT Solutions (Surveillance, HSE, Sensor Node)",
-        "Product & Hardware Inquiry",
-        "Careers / Jobs",
-        "General Inquiry / Other"
-      ];
+  const subjects =
+    locale === "id"
+      ? [
+          "Kemitraan / Kerja Sama",
+          "Demo Field Service Management (QIFESS)",
+          "Solusi Smart AIoT (Surveillance, HSE, Sensor Node)",
+          "Pertanyaan Produk & Perangkat Keras",
+          "Karir / Pekerjaan",
+          "Pertanyaan Umum / Lainnya",
+        ]
+      : [
+          "Partnership / Collaboration",
+          "Field Service Management (QIFESS) Demo",
+          "Smart AIoT Solutions (Surveillance, HSE, Sensor Node)",
+          "Product & Hardware Inquiry",
+          "Careers / Jobs",
+          "General Inquiry / Other",
+        ];
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
@@ -109,11 +110,15 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+    if (
+      !formData.name.trim() ||
+      !formData.email.trim() ||
+      !formData.message.trim()
+    ) {
       showErrorToast(
         locale === "id"
           ? "Nama, email, dan pesan wajib diisi."
-          : "Name, email, and message are required."
+          : "Name, email, and message are required.",
       );
       return;
     }
@@ -138,7 +143,10 @@ export default function ContactPage() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ ...formData, recaptchaToken: recaptchaToken || "bypass" }),
+        body: JSON.stringify({
+          ...formData,
+          recaptchaToken: recaptchaToken || "bypass",
+        }),
       });
 
       if (!response.ok) {
@@ -150,7 +158,7 @@ export default function ContactPage() {
         locale === "id" ? "Pesan Terkirim!" : "Message Sent!",
         locale === "id"
           ? "Terima kasih atas pesan Anda. Kami akan menghubungi Anda segera."
-          : "Thank you for your message. We will get back to you shortly."
+          : "Thank you for your message. We will get back to you shortly.",
       );
 
       setFormData({
@@ -163,12 +171,12 @@ export default function ContactPage() {
       });
       recaptchaRef.current?.reset();
       setRecaptchaToken(null);
-    } catch (error: any) {
+    } catch (error: unknown) {
       showErrorToast(
-        error,
+        error instanceof Error ? error.message : String(error),
         locale === "id"
           ? "Gagal mengirim pesan. Silakan coba lagi."
-          : "Failed to send message. Please try again."
+          : "Failed to send message. Please try again.",
       );
     } finally {
       setIsSubmitting(false);
@@ -181,7 +189,6 @@ export default function ContactPage() {
 
       <main className="pt-32 pb-24 md:pt-40 md:pb-32">
         <div className="max-w-7xl mx-auto px-6 w-full flex flex-col gap-16 md:gap-20">
-          {/* Header Section */}
           <div className="flex flex-col md:flex-row justify-between items-start md:items-start gap-10">
             <div className="flex flex-col gap-4 md:gap-6">
               <div className="flex items-center gap-2 select-none">
@@ -192,12 +199,11 @@ export default function ContactPage() {
                 </span>
               </div>
 
-              <h1 className="text-3xl md:text-[40px] font-semibold text-[var(--black)] tracking-tight max-w-3xl leading-tight">
+              <h1 className="text-3xl md:text-[40px] font-semibold text-black tracking-tight max-w-3xl leading-tight">
                 {t("title")}
               </h1>
             </div>
 
-            {/* Social Media Vertical Icons */}
             <div className="flex flex-col items-center gap-4">
               <a
                 href="#"
@@ -222,10 +228,8 @@ export default function ContactPage() {
             </div>
           </div>
 
-          {/* Form Section */}
           <form onSubmit={handleSubmit} className="flex flex-col gap-12 w-full">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-              {/* Row 1 */}
               <InputField
                 type="text"
                 name="name"
@@ -244,7 +248,6 @@ export default function ContactPage() {
                 required
               />
 
-              {/* Row 2 */}
               <InputField
                 type="text"
                 name="company"
@@ -262,7 +265,6 @@ export default function ContactPage() {
               />
             </div>
 
-            {/* Row 3 - Subject / Dropdown */}
             <div
               className="border-b border-slate-300 pb-4 focus-within:border-primary transition-colors relative group flex items-center justify-between cursor-pointer select-none"
               onClick={() => setIsSubjectOpen(!isSubjectOpen)}
@@ -277,7 +279,7 @@ export default function ContactPage() {
                   bg-transparent
                   text-xl
                   md:text-2xl
-                  text-[var(--black)]
+                  text-black
                   placeholder:text-slate-400
                   outline-none
                   cursor-pointer
@@ -286,7 +288,7 @@ export default function ContactPage() {
 
               <HugeiconsIcon
                 icon={ArrowDown01Icon}
-                className={`w-6 h-6 text-[var(--black)] transition-transform duration-350 ${isSubjectOpen ? "rotate-180" : ""}`}
+                className={`w-6 h-6 text-black transition-transform duration-350 ${isSubjectOpen ? "rotate-180" : ""}`}
               />
 
               {isSubjectOpen && (
@@ -294,7 +296,7 @@ export default function ContactPage() {
                   {subjects.map((subj) => (
                     <div
                       key={subj}
-                      className="px-6 py-4 text-lg hover:bg-slate-50 text-[var(--black)] cursor-pointer transition-colors border-b border-slate-100 last:border-0"
+                      className="px-6 py-4 text-lg hover:bg-slate-50 text-black cursor-pointer transition-colors border-b border-slate-100 last:border-0"
                       onClick={(e) => {
                         e.stopPropagation();
                         setFormData({ ...formData, subject: subj });
@@ -340,7 +342,11 @@ export default function ContactPage() {
                 className="group h-auto bg-primary-600 hover:bg-[#d61e1e] text-white px-7 py-3 rounded-[12px] text-base font-medium shadow-lg shadow-red-500/20 transition-all duration-300 hover:scale-[1.03] cursor-pointer w-full sm:w-auto border border-transparent flex items-center justify-center gap-2 disabled:opacity-50"
               >
                 {isSubmitting ? (
-                  locale === "id" ? "Mengirim..." : "Sending..."
+                  locale === "id" ? (
+                    "Mengirim..."
+                  ) : (
+                    "Sending..."
+                  )
                 ) : (
                   <>
                     {t("form.submit")}

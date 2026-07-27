@@ -7,7 +7,6 @@ import { HugeiconsIcon } from "@hugeicons/react";
 import {
   Facebook01Icon,
   InstagramIcon,
-  TwitterIcon,
   Linkedin01Icon,
   WhatsappIcon,
   Mail01Icon,
@@ -47,7 +46,7 @@ export default function Footer({
         </svg>
       </div> */}
       {/* Right Abstract Visual Shape (Corner of the entire footer - Multi-layered Abstract Fluid Waves) */}
-      <div className="absolute right-0 top-0 h-[480px] w-[35%] hidden lg:block pointer-events-none select-none z-0">
+      <div className="absolute right-0 top-0 h-120 w-[35%] hidden lg:block pointer-events-none select-none z-0">
         <div className="relative w-full h-full">
           <svg
             viewBox="0 0 500 400"
@@ -74,12 +73,10 @@ export default function Footer({
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 pt-[100px] pb-10 flex flex-col items-center relative z-10">
-        {/* CTA Section */}
+      <div className="max-w-7xl mx-auto px-6 pt-25 pb-10 flex flex-col items-center relative z-10">
         {showCta && (
-          <div className="w-full flex flex-col lg:flex-row items-center justify-between py-[60px] mb-20">
-            {/* Left Content Area (Original floating layout) */}
-            <div className="flex flex-col items-start gap-[60px] max-w-[800px]">
+          <div className="w-full flex flex-col lg:flex-row items-center justify-between py-15 mb-20">
+            <div className="flex flex-col items-start gap-15 max-w-200">
               <h2 className="text-white text-5xl md:text-[72px] font-semibold leading-[1.2] tracking-tight">
                 {ctaTitle}
               </h2>
@@ -98,14 +95,14 @@ export default function Footer({
 
         <div className="w-full flex flex-col lg:flex-row items-start justify-between gap-16 lg:gap-52">
           <div className="flex flex-col gap-10 max-w-md">
-            <h3 className="text-white text-[32px] font-semibold leading-[40px]">
+            <h3 className="text-white text-[32px] font-semibold leading-10">
               PT. Mitra Inovasi Bisnis
             </h3>
 
             <div className="flex flex-col gap-8">
               <p className="text-white text-base leading-relaxed">
-                18 Office Park 16 Floor, Jl.TB Simatupang No.18, Jakarta Selatan -
-                Indonesia
+                18 Office Park 16 Floor, Jl.TB Simatupang No.18, Jakarta Selatan
+                - Indonesia
               </p>
 
               <div className="flex flex-col gap-4">
@@ -121,14 +118,9 @@ export default function Footer({
                     icon={Mail01Icon}
                     className="w-6 h-6 text-white"
                   />
-                  <span className="text-white text-base">contact@mitrainovasi.co.id</span>
-                </div>
-                <div className="flex items-center gap-2.5">
-                  <HugeiconsIcon
-                    icon={Mail01Icon}
-                    className="w-6 h-6 text-white"
-                  />
-                  <span className="text-white text-base">career@mitrainovasi.co.id</span>
+                  <span className="text-white text-base">
+                    contact@mitrainovasi.co.id
+                  </span>
                 </div>
               </div>
             </div>
@@ -158,7 +150,7 @@ export default function Footer({
 
           <div className="flex flex-1 justify-between gap-12 flex-wrap items-start">
             <div className="flex flex-col gap-10">
-              <h4 className="text-white text-xl font-semibold leading-[40px]">
+              <h4 className="text-white text-xl font-semibold leading-10">
                 Quick Links
               </h4>
               <div className="grid grid-cols-2 gap-x-12 gap-y-4">
@@ -214,7 +206,7 @@ export default function Footer({
             </div>
 
             <div className="flex flex-col gap-10">
-              <h4 className="text-white text-xl font-semibold leading-[40px]">
+              <h4 className="text-white text-xl font-semibold leading-10">
                 Certifications
               </h4>
               <div className="flex flex-col gap-4">
@@ -230,7 +222,6 @@ export default function Footer({
           </div>
         </div>
 
-        {/* Copyright & Legal Links */}
         <div className="w-full mt-24 pt-4 flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="text-white/80 text-base">
             © 2026 PT. Mitra Inovasi Bisnis. All rights reserved.
