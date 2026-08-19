@@ -41,6 +41,7 @@ export interface CareerItem {
 }
 
 export const CAREERS_DATA: CareerItem[] = [
+  /*
   {
     id: 1,
     slug: "product-manager",
@@ -285,4 +286,5 @@ export const CAREERS_DATA: CareerItem[] = [
       ]
     }
   }
+  */
 ];
