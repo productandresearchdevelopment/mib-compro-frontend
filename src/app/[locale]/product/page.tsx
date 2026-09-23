@@ -73,49 +73,39 @@ function ProductCategoryShowcase({
   theme,
   locale
 }: ProductCategoryShowcaseProps) {
-  const [scrollContainer, setScrollContainer] = useState<HTMLElement | null>(null);
-  const trackRef = useRef<HTMLDivElement>(null);
-  const [scrollRange, setScrollRange] = useState(0);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+  const [hasDragged, setHasDragged] = useState(false);
 
-  const { scrollYProgress } = useScroll({
-    target: scrollContainer ? { current: scrollContainer } : undefined,
-    offset: ["start start", "end end"]
-  });
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setIsDragging(true);
+    setHasDragged(false);
+    if (scrollRef.current) {
+      setStartX(e.pageX - scrollRef.current.offsetLeft);
+      setScrollLeft(scrollRef.current.scrollLeft);
+    }
+  };
 
-  const xTranslation = useTransform(scrollYProgress, [0, 1], [0, -scrollRange]);
+  const handleMouseLeave = () => {
+    setIsDragging(false);
+  };
 
-  useEffect(() => {
-    const calculateRange = () => {
-      if (!trackRef.current) return;
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
 
-      const originalTransform = trackRef.current.style.transform;
-      trackRef.current.style.transform = "none";
-
-      const rect = trackRef.current.getBoundingClientRect();
-      const trackWidth = rect.width;
-      const initialLeft = rect.left;
-      const viewportWidth = window.innerWidth;
-
-      trackRef.current.style.transform = originalTransform;
-
-      if (trackWidth + initialLeft <= viewportWidth) {
-        setScrollRange(0);
-        return;
-      }
-
-      const range = trackWidth + 2 * initialLeft - viewportWidth;
-      setScrollRange(range > 0 ? range : 0);
-    };
-
-    calculateRange();
-    const timer = setTimeout(calculateRange, 150);
-
-    window.addEventListener("resize", calculateRange);
-    return () => {
-      clearTimeout(timer);
-      window.removeEventListener("resize", calculateRange);
-    };
-  }, [products]);
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging || !scrollRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - scrollRef.current.offsetLeft;
+    const walk = (x - startX) * 2; // Scroll speed multiplier
+    if (Math.abs(walk) > 5) {
+      setHasDragged(true);
+    }
+    scrollRef.current.scrollLeft = scrollLeft - walk;
+  };
 
   const sectionBg = theme === "dark" ? "bg-[#100420]" : "bg-white";
   const textColor = theme === "dark" ? "text-white" : "text-[#100420]";
@@ -136,11 +126,10 @@ function ProductCategoryShowcase({
 
   return (
     <section
-      ref={setScrollContainer}
       id={id}
-      className={`relative h-[200vh] ${sectionBg}`}
+      className={`relative py-16 md:py-24 ${sectionBg}`}
     >
-      <div className="sticky top-0 h-[100dvh] flex flex-col justify-start pt-12 md:pt-16 pb-4 overflow-hidden">
+      <div className="flex flex-col justify-start overflow-hidden">
         {/* Header Block */}
         <div className="max-w-7xl mx-auto px-6 w-full mb-8 space-y-3 shrink-0 z-10">
           {/* Badge */}
@@ -163,10 +152,13 @@ function ProductCategoryShowcase({
         </div>
 
         {/* Scrolling Panel Track */}
-        <motion.div
-          ref={trackRef}
-          style={{ x: xTranslation }}
-          className="flex gap-8 px-6 md:px-0 md:ml-[calc(max(1.5rem,(100vw-80rem)/2+1.5rem))] w-[max-content]"
+        <div
+          ref={scrollRef}
+          onMouseDown={handleMouseDown}
+          onMouseLeave={handleMouseLeave}
+          onMouseUp={handleMouseUp}
+          onMouseMove={handleMouseMove}
+          className="flex gap-6 md:gap-8 px-6 md:px-0 md:ml-[calc(max(1.5rem,(100vw-80rem)/2+1.5rem))] w-full overflow-x-auto snap-x snap-mandatory pb-8 pt-4 cursor-grab active:cursor-grabbing [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] pr-6 md:pr-[calc(max(1.5rem,(100vw-80rem)/2+1.5rem))]"
         >
           {products.map((product) => {
             const titleText = typeof product.title === "string" ? product.title : product.title[locale as "en" | "id"];
@@ -176,26 +168,33 @@ function ProductCategoryShowcase({
               <Link
                 key={product.slug}
                 href={`/${locale}/product/${product.slug}`}
-                className={`w-[80vw] sm:w-[320px] md:w-[340px] lg:w-[360px] h-[480px] flex flex-col justify-end group shrink-0 rounded-3xl border relative overflow-hidden transition-all duration-300 hover:shadow-2xl cursor-pointer ${
+                onClick={(e) => {
+                  if (hasDragged) {
+                    e.preventDefault();
+                  }
+                }}
+                className={`snap-center w-[85vw] sm:w-[320px] md:w-[340px] lg:w-[360px] h-[480px] flex flex-col justify-end group shrink-0 rounded-3xl border relative overflow-hidden transition-all duration-300 hover:shadow-2xl ${
                   theme === "dark" 
                     ? "border-slate-800/80 bg-slate-900/40 hover:border-slate-700/60" 
                     : "border-slate-100 bg-slate-50 shadow-md hover:border-slate-200"
                 }`}
+                draggable={false}
               >
                 {/* Background Image */}
                 <Image
                   src={imageUrl}
                   alt={titleText}
                   fill
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  sizes="(max-width: 768px) 80vw, 360px"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 pointer-events-none"
+                  sizes="(max-width: 768px) 85vw, 360px"
+                  draggable={false}
                 />
 
                 {/* Dark Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent pointer-events-none z-10" />
 
                 {/* Details Area */}
-                <div className="flex flex-col gap-3 p-6 md:p-8 z-20 text-white relative justify-end">
+                <div className="flex flex-col gap-3 p-6 md:p-8 z-20 text-white relative justify-end pointer-events-none">
                   <h3 className="text-xl md:text-2xl font-bold text-white group-hover:text-primary transition-colors leading-tight font-sans">
                     {titleText}
                   </h3>
@@ -207,7 +206,7 @@ function ProductCategoryShowcase({
               </Link>
             );
           })}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
